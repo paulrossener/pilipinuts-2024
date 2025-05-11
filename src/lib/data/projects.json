@@ -1,0 +1,18 @@
+{
+    "1": [
+        {
+            "group": "1",
+            "name": "Navis",
+            "title": "A Project",
+            "desc": "Lorem ipsum",
+            "authors": [
+                "a",
+                "b",
+                "c"
+            ],
+            "plot": "/assets/plots/10.webp",
+            "website": "https://cs132-navis.github.io/barrioline/",
+            "class": "1"
+        }
+    ]
+}
