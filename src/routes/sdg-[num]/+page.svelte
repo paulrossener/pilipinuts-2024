@@ -12,17 +12,32 @@
         }[];
     }
 
+    interface SDG {
+        [key: string]: { 
+            title: string;
+            description: string;
+            image: string;
+        };
+    }
+
     import ProjectItem from './ProjectItem.svelte';
 
 	import type { PageProps } from './$types';
 	let { data }: PageProps = $props();
 
     import projects from "$lib/data/projects.json";
+    import sdg from "$lib/data/sdg.json";
+
+    // Type stricting as usual.
     const sdg_project: Project = projects;
+    const sdgs: SDG = sdg;
+
+    let curr_sdg = sdgs[data.content];
 
 </script>
 
-<h1 class="text-white">{data.title}</h1>
+<h1 class="text-white">{curr_sdg.title}</h1>
+<h2 class="text-white">{curr_sdg.description}</h2>
 {#if sdg_project[data.content] == null}
     <p class="text-white">None found here.</p>
 {:else}
