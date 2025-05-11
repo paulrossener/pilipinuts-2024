@@ -51,6 +51,7 @@
     </div>
 </div>
 
+<section class="container">
 {#each sdg_project[data.content] as project}
     <ProjectItem
         group={project.group}
@@ -63,6 +64,7 @@
         class_type={project.class}
     />
 {/each}
+</section>
 
 {/if}
 

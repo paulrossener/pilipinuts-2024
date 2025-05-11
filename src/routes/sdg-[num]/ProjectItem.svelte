@@ -12,22 +12,22 @@
     
 </script>
 
-<div class="grid grid-cols-2">
-    <div>
-        <p class="text-white">{title}</p>
+<div class="grid grid-cols-[80%_20%]">
+    <div class="border-2 border-indigo-600">
+        <h1>{title}</h1>
         {#await import(`$lib/assets/plots/${plot}.png`) then { default: src }}
-        <img {src} class="h-auto w-full" alt="Profile">
+        <img {src} class="h-auto w-auto" alt="Profile">
         {/await}
-        <p class="text-white">{desc}</p>
+        <p>{desc}</p>
     </div>
-    <div>
-        <p class="text-white">{group}</p>
-        <p class="text-white">{name}</p>
+    <div class="border-2 border-indigo-600">
+        <p>{group}</p>
+        <p>{name}</p>
         {#each authors as author}
-            <p class="text-white">{author}</p>
+            <p>{author}</p>
         {/each}
-        <p class="text-white">{class_type}</p>
-        <p class="text-white">{website}</p>
+        <p>{class_type}</p>
+        <p>{website}</p>
     </div>
 </div>
 
