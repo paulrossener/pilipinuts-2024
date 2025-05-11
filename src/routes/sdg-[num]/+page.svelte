@@ -42,19 +42,17 @@
     <p class="text-white">None found here.</p>
 {:else}
 {#each sdg_project[data.content] as project}
-    <p class="text-white">{project.group}</p>
-    <p class="text-white">{project.name}</p>
-    <p class="text-white">{project.title}</p>
-    <p class="text-white">{project.desc}</p>
-    {#each project.authors as author}
-        <p class="text-white">{author}</p>
-    {/each}
-    <p class="text-white">{project.plot}</p>
-    <p class="text-white">{project.website}</p>
-    <p class="text-white">{project.class}</p>
+    <ProjectItem
+        group={project.group}
+        name={project.name}
+        title={project.title}
+        desc={project.desc}
+        authors={project.authors}
+        plot={project.plot}
+        website={project.website}
+        class_type={project.class}
+    />
 {/each}
-<ProjectItem
-    adjective=""
-/>
+
 {/if}
 
