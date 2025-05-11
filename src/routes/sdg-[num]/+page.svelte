@@ -36,11 +36,21 @@
 
 </script>
 
-<h1 class="text-white">{curr_sdg.title}</h1>
-<h2 class="text-white">{curr_sdg.description}</h2>
+<h1>{curr_sdg.title}</h1>
+<p>{curr_sdg.description}</p>
+
 {#if sdg_project[data.content] == null}
-    <p class="text-white">None found here.</p>
+    <p>None found here.</p>
 {:else}
+
+<div class="grid grid-cols-2">
+    <h2>Projects</h2>
+    <div>
+        <p>List View</p>
+        <p>Table View</p>
+    </div>
+</div>
+
 {#each sdg_project[data.content] as project}
     <ProjectItem
         group={project.group}
