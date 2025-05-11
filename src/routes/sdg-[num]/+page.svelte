@@ -43,15 +43,17 @@
     <p>None found here.</p>
 {:else}
 
-<div class="grid grid-cols-2">
-    <h2>Projects</h2>
-    <div>
-        <p>List View</p>
-        <p>Table View</p>
+<section class="container mx-auto">
+    <div class="grid grid-cols-[80%_20%]">
+        <h2>Projects</h2>
+        <div>
+            <p>List View</p>
+            <p>Table View</p>
+        </div>
     </div>
-</div>
+</section>
 
-<section class="container">
+<section class="container mx-auto">
 {#each sdg_project[data.content] as project}
     <ProjectItem
         group={project.group}
