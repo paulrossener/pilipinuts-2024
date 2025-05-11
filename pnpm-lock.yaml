@@ -12,22 +12,22 @@ importers:
         specifier: ^6.0.0
         version: 6.0.0(@sveltejs/kit@2.20.8(@sveltejs/vite-plugin-svelte@5.0.3(svelte@5.28.2)(vite@6.3.5(jiti@2.4.2)(lightningcss@1.29.2)))(svelte@5.28.2)(vite@6.3.5(jiti@2.4.2)(lightningcss@1.29.2)))
       '@sveltejs/kit':
-        specifier: ^2.16.0
+        specifier: ^2.20.8
         version: 2.20.8(@sveltejs/vite-plugin-svelte@5.0.3(svelte@5.28.2)(vite@6.3.5(jiti@2.4.2)(lightningcss@1.29.2)))(svelte@5.28.2)(vite@6.3.5(jiti@2.4.2)(lightningcss@1.29.2))
       '@sveltejs/vite-plugin-svelte':
-        specifier: ^5.0.0
+        specifier: ^5.0.3
         version: 5.0.3(svelte@5.28.2)(vite@6.3.5(jiti@2.4.2)(lightningcss@1.29.2))
       '@tailwindcss/forms':
-        specifier: ^0.5.9
+        specifier: ^0.5.10
         version: 0.5.10(tailwindcss@4.1.6)
       '@tailwindcss/typography':
-        specifier: ^0.5.15
+        specifier: ^0.5.16
         version: 0.5.16(tailwindcss@4.1.6)
       '@tailwindcss/vite':
-        specifier: ^4.0.0
+        specifier: ^4.1.6
         version: 4.1.6(vite@6.3.5(jiti@2.4.2)(lightningcss@1.29.2))
       prettier:
-        specifier: ^3.4.2
+        specifier: ^3.5.3
         version: 3.5.3
       prettier-plugin-svelte:
         specifier: ^3.3.3
@@ -36,19 +36,19 @@ importers:
         specifier: ^0.6.11
         version: 0.6.11(prettier-plugin-svelte@3.3.3(prettier@3.5.3)(svelte@5.28.2))(prettier@3.5.3)
       svelte:
-        specifier: ^5.0.0
+        specifier: ^5.28.2
         version: 5.28.2
       svelte-check:
-        specifier: ^4.0.0
+        specifier: ^4.1.7
         version: 4.1.7(picomatch@4.0.2)(svelte@5.28.2)(typescript@5.8.3)
       tailwindcss:
-        specifier: ^4.0.0
+        specifier: ^4.1.6
         version: 4.1.6
       typescript:
-        specifier: ^5.0.0
+        specifier: ^5.8.3
         version: 5.8.3
       vite:
-        specifier: ^6.2.5
+        specifier: ^6.3.5
         version: 6.3.5(jiti@2.4.2)(lightningcss@1.29.2)
 
 packages:
