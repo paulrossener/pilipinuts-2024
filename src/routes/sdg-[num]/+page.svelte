@@ -23,6 +23,9 @@
 </script>
 
 <h1 class="text-white">{data.title}</h1>
+{#if sdg_project[data.content] == null}
+    <p class="text-white">None found here.</p>
+{:else}
 {#each sdg_project[data.content] as project}
     <p class="text-white">{project.group}</p>
     <p class="text-white">{project.name}</p>
@@ -38,3 +41,5 @@
 <ProjectItem
     adjective=""
 />
+{/if}
+
