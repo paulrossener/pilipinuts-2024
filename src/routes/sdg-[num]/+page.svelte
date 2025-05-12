@@ -20,7 +20,8 @@
         };
     }
 
-    import ProjectItem from './ProjectItem.svelte';
+    import ProjectList from './ProjectList.svelte';
+    import ProjectTable from './ProjectTable.svelte';
 
 	import type { PageProps } from './$types';
 	let { data }: PageProps = $props();
@@ -32,7 +33,13 @@
     const sdg_project: Project = projects;
     const sdgs: SDG = sdg;
 
+    // Getting new projects
     let curr_sdg = sdgs[data.content];
+    let curr_sdg_projects = sdg_project[data.content];
+
+    // State reactivity for tabs
+    // Yes, there are better ways to do this but... how they do it..
+    let currentTab = $state("list");
 
 </script>
 
@@ -43,29 +50,39 @@
     <p>None found here.</p>
 {:else}
 
-<section class="container mx-auto">
+<!-- Button section -->
+<section class="container mx-auto mt-4 mb-10">
     <div class="grid grid-cols-[80%_20%]">
         <h2>Projects</h2>
         <div>
-            <p>List View</p>
-            <p>Table View</p>
+            <ul class="flex flex-wrap text-sm font-medium text-center border-collapse font-robotomono">
+                <li class="py-1 flex-grow border border-white {currentTab == "list" ? "bg-white text-black" : ""}">
+                    <button class="uppercase" onclick={() => currentTab = "list"}>
+                        List View
+                    </button>
+                </li>
+                <li class="py-1 flex-grow border border-white {currentTab == "table" ? "bg-white text-black" : ""}">
+                    <button class="uppercase" onclick={() => currentTab = "table"}>
+                        Table View
+                    </button>
+                </li>
+            </ul>
         </div>
     </div>
 </section>
 
-<section class="container mx-auto">
-{#each sdg_project[data.content] as project}
-    <ProjectItem
-        group={project.group}
-        name={project.name}
-        title={project.title}
-        desc={project.desc}
-        authors={project.authors}
-        plot={project.plot}
-        website={project.website}
-        class_type={project.class}
-    />
-{/each}
+<!-- Tab Content -->
+<section>
+    <!-- List View -->
+     {#if currentTab == "list"}
+     <ProjectList project_data={curr_sdg_projects}/>
+     {/if}
+    
+    <!-- Table View -->
+     {#if currentTab == "table"}
+     <ProjectTable project_data={curr_sdg_projects}/>
+     {/if}
+    
 </section>
 
 {/if}
