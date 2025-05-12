@@ -51,18 +51,18 @@
 {:else}
 
 <!-- Button section -->
-<section class="container mx-auto">
+<section class="container mx-auto mt-4 mb-10">
     <div class="grid grid-cols-[80%_20%]">
         <h2>Projects</h2>
         <div>
-            <ul class="flex flex-wrap -mb-px text-sm font-medium text-center">
-                <li class="me-2">
-                    <button onclick={() => currentTab = "list"}>
+            <ul class="flex flex-wrap text-sm font-medium text-center border-collapse font-robotomono">
+                <li class="py-1 flex-grow border border-white {currentTab == "list" ? "bg-white text-black" : ""}">
+                    <button class="uppercase" onclick={() => currentTab = "list"}>
                         List View
                     </button>
                 </li>
-                <li class="me-2">
-                    <button onclick={() => currentTab = "table"}>
+                <li class="py-1 flex-grow border border-white {currentTab == "table" ? "bg-white text-black" : ""}">
+                    <button class="uppercase" onclick={() => currentTab = "table"}>
                         Table View
                     </button>
                 </li>
