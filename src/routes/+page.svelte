@@ -1,16 +1,14 @@
 <script>
-    import { triggerTypingAnimation, triggerAnimation, scrollToSection} from '$lib/animation.js';
+    import { triggerTypingAnimation } from '$lib/animation.js';
     import { onMount } from 'svelte';
     
     onMount(() => {
         triggerTypingAnimation();
-        triggerAnimation();
-        scrollToSection(id);
     });
 
     let homeButton = [
-        {id: "nutshell", content: "View Projects", width: "w-[180px]", spanList: ['T', 'A', 'K', 'E', ' ', 'M', 'E', '!']},
-        {id: "project-list", content: "What is PilipiNuts?", width: "w-[200px]", spanList: ['I', ' ', 'W', 'A', 'N', 'N', 'A', ' ', 'K', 'N', 'O', 'W', '!']}
+        {id: "projects", content: "View Projects", width: "w-[180px]", spanList: ['T', 'A', 'K', 'E', ' ', 'M', 'E', '!']},
+        {id: "nutshell", content: "What is PilipiNuts?", width: "w-[200px]", spanList: ['I', ' ', 'W', 'A', 'N', 'N', 'A', ' ', 'K', 'N', 'O', 'W', '!']}
     ]
 
     let num = [
@@ -21,6 +19,22 @@
     ]
 
     let titleAnimation = false;
+
+    function triggerAnimation() {
+        if (titleAnimation) return;
+
+        titleAnimation = true;
+        setTimeout(() => {
+            titleAnimation = false;
+        }, 1500 + num.length * 100);
+    }
+
+    function scrollToSection(id) {
+        console.log(id);
+        const el = document.getElementById(id);
+        if (el) el.scrollIntoView({ behavior: 'smooth' });
+    }
+
 </script>
 
 
@@ -85,9 +99,9 @@
         </div> 
         <div class="nutshell-content flex flex-col w-[50%] h-full">
             <div class="container w-[80%] h-[60%] flex flex-col gap-[10px] px-[10px]">
-                <h1 class="text-6xl">
-                    <span class="typing-text first">Pilipinuts</span>
-                    <span class="typing-text second">in A Nutshell</span>
+                <h1 class="text-6xl" aria-label="Pilipinuts in A Nutshell">
+                    <span class="typing-text"><span class="cursor">Pilipinuts</span></span>
+                    <span class="typing-text delay ml-2"><span class="cursor">in A Nutshell</span></span>
                 </h1>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
             </div>
@@ -95,7 +109,7 @@
     </div>
 </div>
 
-<div id="project-list" class = "relative flex w-full h-[100dvh] mt-[50px] px-[50px] pt-[100px] text-white">
+<div id="projects" class = "relative flex w-full h-[100dvh] mt-[50px] px-[50px] pt-[100px] text-white">
     Project List
 </div>
 
@@ -159,48 +173,19 @@
 
     .typing-text {
         font-weight: 700;
-        width: 0ch;
-        overflow: hidden;
         white-space: nowrap;
+        display: inline-block;
+    }
+
+    .cursor {
+        display: inline-block;
         border-right: 1px solid black;
-    }
-
-    .typing-text.first.animated {
-        animation: typingFirst 2s steps(9) forwards, blink 1s step-end 2 forwards 0s;
-    }
-
-    .typing-text.second.animated {
-        animation: typingSecond 3s steps(14) forwards 2s, blink 1s step-end infinite 2s;
-    }
-
-    @keyframes typingFirst {
-        from {
-            width: 0ch;
-        }
-        to {
-            width: 8.5ch;
-        }
-    }
-
-    @keyframes typingSecond {
-        from {
-            width: 0ch;
-        }
-        to {
-            width: 11.5ch;
-        }
+        animation: blink 1s step-end infinite;
     }
 
     @keyframes blink {
-        0% {
-            border-color: transparent;
-        }
-        50% {
-            border-color: white;
-        }
-        100% {
-            border-color: transparent;
-        }
+        0%, 100% { border-color: transparent; }
+        50% { border-color: white; }
     }
 
 </style>

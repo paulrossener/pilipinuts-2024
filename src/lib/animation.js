@@ -1,27 +1,49 @@
 export function triggerTypingAnimation() {
-    const observer = new IntersectionObserver((entries, observer) => {
+    const element = document.querySelector("#nutshell .container h1");
+    const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
-            (entry.isIntersecting) ? entry.target.classList.add('animated') : entry.target.classList.remove('animated');
+        if (entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+            startTyping(entry.target);
+        } else if (!entry.isIntersecting) {
+            entry.target.style.opacity = '0';
+        }
         });
-    }, { threshold: 0.5 }); // Trigger when 50% of the element is in view
+    }, { threshold: 0.5 });
 
-    const typingTexts = document.querySelectorAll('.typing-text');
-    typingTexts.forEach(text => {
-        observer.observe(text);
-    });
+    // elements.forEach(elem => observer.observe(elem));
+    observer.observe(element)
 }
 
-export function triggerAnimation() {
-    if (titleAnimation) return;
+function startTyping(el, speed = 200) {
+  const elements = el.querySelectorAll(".typing-text");
 
-    titleAnimation = true;
+  elements.forEach(elem => {
+    const cursor = elem.querySelector('.cursor');
+    const fullText = cursor.textContent.trim(); // keep the text already inside
+    let i = 0;
+
+    // Avoid retyping if already typed
+    if (cursor.dataset.typed === "true") return;
+
+    // Prepare
+    cursor.textContent = '';
+    cursor.style.animation = '';
+    cursor.dataset.typed = "true"; // prevent repeat typing
+
+    const baseDelay = elem.classList.contains("delay") ? 2500 : 0;
+
     setTimeout(() => {
-        titleAnimation = false;
-    }, 1500 + num.length * 100);
-}
-
-export function scrollToSection(id) {
-    console.log(id);
-    const el = document.getElementById(id);
-    if (el) el.scrollIntoView({ behavior: 'smooth' });
+      const interval = setInterval(() => {
+        if (i < fullText.length) {
+          cursor.textContent += fullText[i];
+          i++;
+        } else {
+          clearInterval(interval);
+          cursor.style.animation = 'none';
+          cursor.dataset.typed = "false";
+        }
+      }, speed);
+    }, baseDelay);
+  });
 }
