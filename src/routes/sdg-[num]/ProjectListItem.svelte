@@ -7,11 +7,11 @@
         authors, 
         plot, 
         website, 
-        class_type 
+        class_type,
     } = $props();
-    
 </script>
 
+<!-- If List View -->
 <div class="grid grid-cols-[80%_20%] border-collapse mb-20">
     <!-- First Column -->
     <div class="p-6 border-2 border-gray-500">
@@ -97,7 +97,4 @@
         </div>
     </div>
 </div>
-
-
-
 
