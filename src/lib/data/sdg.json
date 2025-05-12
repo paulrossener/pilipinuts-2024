@@ -1,0 +1,87 @@
+{
+	"1": {
+		"title": "No Poverty",
+		"description": "End poverty in all its forms everywhere.",
+		"image": "assets/sdg/1.png"
+	},
+	"2": {
+		"title": "Zero Hunger",
+		"description": "End hunger, achieve food security and improved nutrition, and promote sustainable agriculture.",
+		"image": "assets/sdg/2.png"
+	},
+	"3": {
+		"title": "Good Health and Well-being",
+		"description": "Ensure healthy lives and promote well-being for all at all ages.",
+		"image": "assets/sdg/3.png"
+	},
+	"4": {
+		"title": "Quality Education",
+		"description": "Ensure inclusive and equitable quality education and promote lifelong learning opportunities for all.",
+		"image": "assets/sdg/4.png"
+	},
+	"5": {
+		"title": "Gender Equality",
+		"description": "Achieve gender equality and empower all women and girls.",
+		"image": "assets/sdg/5.png"
+	},
+	"6": {
+		"title": "Clean Water and Sanitation",
+		"description": "Ensure availability and sustainable management of water and sanitation for all.",
+		"image": "assets/sdg/6.png"
+	},
+	"7": {
+		"title": "Affordable and Clean Energy",
+		"description": "Ensure access to affordable, reliable, sustainable, and modern energy for all.",
+		"image": "assets/sdg/7.png"
+	},
+	"8": {
+		"title": "Decent Work and Economic Growth",
+		"description": "Promote sustained, inclusive, and sustainable economic growth, full and productive employment, and decent work for all.",
+		"image": "assets/sdg/8.png"
+	},
+	"9": {
+		"title": "Industry, Innovation, and Infrastructure",
+		"description": "Build resilient infrastructure, promote inclusive and sustainable industrialization, and foster innovation.",
+		"image": "assets/sdg/9.png"
+	},
+	"10": {
+		"title": "Reduced Inequality",
+		"description": "Reduce inequality within and among countries.",
+		"image": "assets/sdg/10.png"
+	},
+	"11": {
+		"title": "Sustainable Cities and Communities",
+		"description": "Make cities and human settlements inclusive, safe, resilient, and sustainable.",
+		"image": "assets/sdg/11.png"
+	},
+	"12": {
+		"title": "Responsible Consumption and Production",
+		"description": "Ensure sustainable consumption and production patterns.",
+		"image": "assets/sdg/12.png"
+	},
+	"13": {
+		"title": "Climate Action",
+		"description": "Take urgent action to combat climate change and its impacts.",
+		"image": "assets/sdg/13.png"
+	},
+	"14": {
+		"title": "Life Below Water",
+		"description": "Conserve and sustainably use the oceans, seas, and marine resources for sustainable development.",
+		"image": "assets/sdg/14.png"
+	},
+	"15": {
+		"title": "Life on Land",
+		"description": "Protect, restore, and promote sustainable use of terrestrial ecosystems, sustainably manage forests, combat desertification, halt and reverse land degradation, and halt biodiversity loss.",
+		"image": "assets/sdg/15.png"
+	},
+	"16": {
+		"title": "Peace, Justice, and Strong Institutions",
+		"description": "Promote peaceful and inclusive societies for sustainable development, provide access to justice for all, and build effective, accountable, and inclusive institutions at all levels.",
+		"image": "assets/sdg/16.png"
+	},
+	"17": {
+		"title": "Partnerships for the Goals",
+		"description": "Strengthen the means of implementation and revitalize the Global Partnership for Sustainable Development.",
+		"image": "assets/sdg/17.png"
+	}
+}
