@@ -43,47 +43,51 @@
 
 </script>
 
-<h1>{curr_sdg.title}</h1>
-<p>{curr_sdg.description}</p>
+<div class="w-full p-[50px]">
+    <h1>{curr_sdg.title}</h1>
+    <p>{curr_sdg.description}</p>
 
-{#if sdg_project[data.content] == null}
-    <p>None found here.</p>
-{:else}
+    {#if sdg_project[data.content] == null}
+        <p>None found here.</p>
+    {:else}
 
-<!-- Button section -->
-<section class="container mx-auto mt-4 mb-10">
-    <div class="grid grid-cols-[80%_20%]">
-        <h2>Projects</h2>
-        <div>
-            <ul class="flex flex-wrap text-sm font-medium text-center border-collapse font-robotomono">
-                <li class="py-1 flex-grow border border-white {currentTab == "list" ? "bg-white text-black" : ""}">
-                    <button class="uppercase" onclick={() => currentTab = "list"}>
-                        List View
-                    </button>
-                </li>
-                <li class="py-1 flex-grow border border-white {currentTab == "table" ? "bg-white text-black" : ""}">
-                    <button class="uppercase" onclick={() => currentTab = "table"}>
-                        Table View
-                    </button>
-                </li>
-            </ul>
+    <!-- Button section -->
+    <section class="container mx-auto mt-4 mb-10">
+        <div class="grid grid-cols-[80%_20%]">
+            <h2>Projects</h2>
+            <div>
+                <ul class="flex flex-wrap text-sm font-medium text-center border-collapse font-robotomono">
+                    <li class="py-1 flex-grow border border-white {currentTab == "list" ? "bg-white text-black" : ""}">
+                        <button class="uppercase" onclick={() => currentTab = "list"}>
+                            List View
+                        </button>
+                    </li>
+                    <li class="py-1 flex-grow border border-white {currentTab == "table" ? "bg-white text-black" : ""}">
+                        <button class="uppercase" onclick={() => currentTab = "table"}>
+                            Table View
+                        </button>
+                    </li>
+                </ul>
+            </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<!-- Tab Content -->
-<section>
-    <!-- List View -->
-     {#if currentTab == "list"}
-     <ProjectList project_data={curr_sdg_projects}/>
-     {/if}
-    
-    <!-- Table View -->
-     {#if currentTab == "table"}
-     <ProjectTable project_data={curr_sdg_projects}/>
-     {/if}
-    
-</section>
+    <!-- Tab Content -->
+    <section>
+        <!-- List View -->
+        {#if currentTab == "list"}
+        <ProjectList project_data={curr_sdg_projects}/>
+        {/if}
+        
+        <!-- Table View -->
+        {#if currentTab == "table"}
+        <ProjectTable project_data={curr_sdg_projects}/>
+        {/if}
+        
+    </section>
 
-{/if}
+    {/if}
+</div>
+
+
 

@@ -1,17 +1,4 @@
 <script>
-    import { triggerTypingAnimation, triggerAnimation, scrollToSection} from '$lib/animation.js';
-    import { onMount } from 'svelte';
-    
-    onMount(() => {
-        triggerTypingAnimation();
-        triggerAnimation();
-        scrollToSection(id);
-    });
-
-    let homeButton = [
-        {id: "nutshell", content: "View Projects", width: "w-[180px]", spanList: ['T', 'A', 'K', 'E', ' ', 'M', 'E', '!']},
-        {id: "project-list", content: "What is PilipiNuts?", width: "w-[200px]", spanList: ['I', ' ', 'W', 'A', 'N', 'N', 'A', ' ', 'K', 'N', 'O', 'W', '!']}
-    ]
 
     let num = [
         {num: "2", color: "bg-yellow-500"},
@@ -21,6 +8,16 @@
     ]
 
     let titleAnimation = false;
+
+    function triggerAnimation() {
+        if (titleAnimation) return;
+
+        titleAnimation = true;
+        setTimeout(() => {
+            titleAnimation = false;
+        }, 1500 + num.length * 100);
+    }
+
 </script>
 
 <nav id="topBar" class="top-bar fixed flex flex-row items-center top-0 w-full h-[55px] bg-black text-white border-b border-white/30 z-[1000]">
@@ -49,3 +46,19 @@
         </div>
     </div>
 </nav>
+
+<style>
+    .num-buttons {
+        backface-visibility: hidden;
+        transform-style: preserve-3d;
+    }
+
+    .spin {
+        animation: spinY 1.5s linear;
+    }
+
+    @keyframes spinY {
+        0% { transform: rotateY(0deg); }
+        100% { transform: rotateY(360deg); }
+    }
+</style>

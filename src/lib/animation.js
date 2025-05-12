@@ -5,13 +5,12 @@ export function triggerTypingAnimation() {
         if (entry.isIntersecting) {
             entry.target.style.opacity = '1';
             startTyping(entry.target);
-        } else if (!entry.isIntersecting) {
+        } else {
             entry.target.style.opacity = '0';
         }
         });
     }, { threshold: 0.5 });
 
-    // elements.forEach(elem => observer.observe(elem));
     observer.observe(element)
 }
 
@@ -20,16 +19,15 @@ function startTyping(el, speed = 200) {
 
   elements.forEach(elem => {
     const cursor = elem.querySelector('.cursor');
-    const fullText = cursor.textContent.trim(); // keep the text already inside
+    const fullText = cursor.textContent.trim(); 
     let i = 0;
 
-    // Avoid retyping if already typed
     if (cursor.dataset.typed === "true") return;
 
     // Prepare
     cursor.textContent = '';
     cursor.style.animation = '';
-    cursor.dataset.typed = "true"; // prevent repeat typing
+    cursor.dataset.typed = "true"; 
 
     const baseDelay = elem.classList.contains("delay") ? 2500 : 0;
 

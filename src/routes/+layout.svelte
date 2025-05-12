@@ -8,7 +8,7 @@
 </script>
 
 <Header />
-<main class="mt-[25px] p-[50px]">
+<main class="mt-[25px]">
 	{@render children?.()}
 </main>
 <Footer />

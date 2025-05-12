@@ -1,9 +1,13 @@
 <script>
     import { triggerTypingAnimation } from '$lib/animation.js';
+    import { projectList } from '$lib/script.js';
     import { onMount } from 'svelte';
+    
+    import sdg from "$lib/data/sdg.json";
     
     onMount(() => {
         triggerTypingAnimation();
+        projectList();
     });
 
     let homeButton = [
@@ -18,17 +22,6 @@
         {num: "4", color: "bg-pink-500"}
     ]
 
-    let titleAnimation = false;
-
-    function triggerAnimation() {
-        if (titleAnimation) return;
-
-        titleAnimation = true;
-        setTimeout(() => {
-            titleAnimation = false;
-        }, 1500 + num.length * 100);
-    }
-
     function scrollToSection(id) {
         console.log(id);
         const el = document.getElementById(id);
@@ -36,7 +29,6 @@
     }
 
 </script>
-
 
 <div id="home" class = "relative flex w-full h-[calc(100dvh-25px)] p-[50px] text-white">
     <div class="home-container flex flex-row w-full h-full gap-[10px]">
@@ -71,8 +63,8 @@
     </div>
 </div>
 
-<div id="nutshell" class = "relative flex w-full h-[100dvh] mt-[50px] px-[50px] pt-[100px] text-white">
-    <div class="nutshell-container flex flex-row w-full h-full gap-[10px]">
+<div id="nutshell" class = "relative flex w-full h-[100dvh] mt-[50px] px-[50px] pt-[100px] text-white ">
+    <div class="nutshell-container flex flex-row w-full h-full gap-[10px] ">
         <div class="nutshell-pic w-[50%] h-[95%] relative">
             <div class="absolute inset-0 z-0 grid grid-cols-2 grid-rows-2 gap-[10px]">
                 <div class="bg-blue-400/50"></div>
@@ -87,7 +79,7 @@
                     <span>Projects</span>
                 </div>
                 <div class="flex flex-col ml-auto right-0 bg-transparent p-[30px] text-4xl text-right">
-                    <span>12</span>
+                    <span>17</span>
                     <span>SDGs</span>
                 </div>
                 <div class="flex flex-col justify-start bg-transparent p-[30px] text-4xl">
@@ -97,40 +89,80 @@
                 <div class="flex bg-transparent"></div>
             </div>
         </div> 
-        <div class="nutshell-content flex flex-col w-[50%] h-full">
-            <div class="container w-[80%] h-[60%] flex flex-col gap-[10px] px-[10px]">
-                <h1 class="text-6xl" aria-label="Pilipinuts in A Nutshell">
-                    <span class="typing-text"><span class="cursor">Pilipinuts</span></span>
-                    <span class="typing-text delay ml-2"><span class="cursor">in A Nutshell</span></span>
-                </h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        <div class="nutshell-content flex flex-col w-[50%] h-full ">
+            <div class="container w-[90%] h-full flex flex-col gap-[10px] px-[10px] mb-[5%] border-b border-white/60 ">
+                <div class = "flex flex-col w-[60%] h-[50%] gap-[10px]">
+                    <h3>WHAT IS PILIPINUTS?</h3>
+                    <div class="relative flex h-[20px]">
+                        <div class="absolute inset-0 grid grid-cols-4">
+                            <div class="bg-yellow-400"></div>
+                            <div class="bg-red-400"></div>
+                            <div class="bg-blue-400"></div>
+                            <div class="bg-pink-400"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex flex-col h-[50%] gap-[20px]">
+                    <h1 class="text-6xl" aria-label="Pilipinuts in A Nutshell">
+                        <span class="typing-text"><span class="cursor">Pilipinuts</span></span>
+                        <span class="typing-text delay ml-2"><span class="cursor">in A Nutshell</span></span>
+                    </h1>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et orci sem. Maecenas pharetra venenatis est, non rutrum odio dignissim ac. 
+                        Duis fermentum eleifend turpis. Donec viverra mi in odio varius fringilla. Fusce lacinia vehicula fringilla. 
+                        Integer enim arcu, bibendum suscipit tortor quis, scelerisque tempor nulla. Vivamus scelerisque elit vitae sem tristique, fermentum faucibus urna maximus.
+                    </p>
+                </div>
             </div>
         </div>
     </div>
 </div>
 
-<div id="projects" class = "relative flex w-full h-[100dvh] mt-[50px] px-[50px] pt-[100px] text-white">
-    Project List
+<div id="projects" class = "relative flex flex-col w-full h-[200dvh] mt-[25px] px-[50px] pt-[100px] text-white">
+    <div class = "flex flex-col justify-between w-[250px] h-[90px]">
+        <h1 class="text-5xl break-words">PROJECTS</h1>
+        <div class="relative flex h-[20px]">
+            <div class="absolute inset-0 grid grid-cols-4">
+                <div class="bg-yellow-400"></div>
+                <div class="bg-red-400"></div>
+                <div class="bg-blue-400"></div>
+                <div class="bg-pink-400"></div>
+            </div>
+        </div>
+    </div>
+    <p class="w-full my-[20px]">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et orci sem. Maecenas pharetra venenatis est, non rutrum odio dignissim ac. 
+        Duis fermentum eleifend turpis. Donec viverra mi in odio varius fringilla. Fusce lacinia vehicula fringilla. 
+        Integer enim arcu, bibendum suscipit tortor quis, scelerisque tempor nulla. Vivamus scelerisque elit vitae sem tristique, fermentum faucibus urna maximus.
+    </p>
+    <div class="flex flex-col w-full h-full gap-[50px]">
+        <div class="flex flex-col gap-[30px]">
+            <div class="flex justify-between w-full">
+                <h3>FEATURED WORKS</h3>
+                <div class="flex gap-[30px] text-xl">
+                    <button type="button" aria-label="Previous"><i class="fa-solid fa-arrow-left"></i></button>
+                    <button type="button" aria-label="Next"><i class="fa-solid fa-arrow-right"></i></button>
+                </div>
+            </div>
+            <div class="flex h-[400px] border-y border-white/60"> 
+                <!-- Features Project List -->
+            </div>
+        </div>
+        <div class="flex flex-col flex-grow w-full gap-[20px]">
+            <h3>ALL PROJECTS BY SDG</h3>
+            <div class="relative flex h-full border-t border-white">
+                <div class="w-[95%] absolute inset-0 grid grid-cols-2 gap-[10px] m-auto mt-[10px]">
+                    <!-- projectList function -->
+                    <div id="col-1" class="flex flex-col gap-[10px]"></div>
+                    <div id="col-2" class="flex flex-col gap-[10px]"></div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
 
 <style>
     #home {
         background: linear-gradient(170deg, gray 0%,  rgb(89, 89, 89) 8%, black 20%);
-    }
-
-    .num-buttons {
-        backface-visibility: hidden;
-        transform-style: preserve-3d;
-    }
-
-    .spin {
-        animation: spinY 1.5s linear;
-    }
-
-    @keyframes spinY {
-        0% { transform: rotateY(0deg); }
-        100% { transform: rotateY(360deg); }
     }
 
     .home-btn {
@@ -186,6 +218,20 @@
     @keyframes blink {
         0%, 100% { border-color: transparent; }
         50% { border-color: white; }
+    }
+
+    :global(.sdg-img),
+    :global(.sdg-item) {
+        transition: background-color 0.2s ease-in-out;
+    }
+
+    :global(.sdg-item:hover) {
+        cursor: pointer;
+    }
+
+
+    :global(.sdg-item:hover .sdg-img) {
+        background-color: transparent;
     }
 
 </style>

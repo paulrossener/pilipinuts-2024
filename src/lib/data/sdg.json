@@ -2,86 +2,103 @@
 	"1": {
 		"title": "No Poverty",
 		"description": "End poverty in all its forms everywhere.",
-		"image": "assets/sdg/1.png"
+		"image": "/sdg-icons/sdg-1.svg",
+		"color": "bg-[#E6223B]"
 	},
 	"2": {
 		"title": "Zero Hunger",
 		"description": "End hunger, achieve food security and improved nutrition, and promote sustainable agriculture.",
-		"image": "assets/sdg/2.png"
+		"image": "/sdg-icons/sdg-2.svg",
+		"color": "bg-[#DBA63B]"
 	},
 	"3": {
 		"title": "Good Health and Well-being",
 		"description": "Ensure healthy lives and promote well-being for all at all ages.",
-		"image": "assets/sdg/3.png"
+		"image": "/sdg-icons/sdg-3.svg",
+		"color": "bg-[#4C9F38]"
 	},
 	"4": {
 		"title": "Quality Education",
 		"description": "Ensure inclusive and equitable quality education and promote lifelong learning opportunities for all.",
-		"image": "assets/sdg/4.png"
+		"image": "/sdg-icons/sdg-4.svg",
+		"color": "bg-[#E74659]"
 	},
 	"5": {
 		"title": "Gender Equality",
 		"description": "Achieve gender equality and empower all women and girls.",
-		"image": "assets/sdg/5.png"
+		"image": "/sdg-icons/sdg-5.svg",
+		"color": "bg-[#FF6952]"
 	},
 	"6": {
 		"title": "Clean Water and Sanitation",
 		"description": "Ensure availability and sustainable management of water and sanitation for all.",
-		"image": "assets/sdg/6.png"
+		"image": "/sdg-icons/sdg-6.svg",
+		"color": "bg-[#26BDE3]"
 	},
 	"7": {
 		"title": "Affordable and Clean Energy",
 		"description": "Ensure access to affordable, reliable, sustainable, and modern energy for all.",
-		"image": "assets/sdg/7.png"
+		"image": "/sdg-icons/sdg-7.svg",
+		"color": "bg-[#FCC309]"
 	},
 	"8": {
 		"title": "Decent Work and Economic Growth",
 		"description": "Promote sustained, inclusive, and sustainable economic growth, full and productive employment, and decent work for all.",
-		"image": "assets/sdg/8.png"
+		"image": "/sdg-icons/sdg-8.svg",
+		"color": "bg-[#DF3A68]"
 	},
 	"9": {
 		"title": "Industry, Innovation, and Infrastructure",
 		"description": "Build resilient infrastructure, promote inclusive and sustainable industrialization, and foster innovation.",
-		"image": "assets/sdg/9.png"
+		"image": "/sdg-icons/sdg-9.svg",
+		"color": "bg-[#FD6824]"
 	},
 	"10": {
 		"title": "Reduced Inequality",
 		"description": "Reduce inequality within and among countries.",
-		"image": "assets/sdg/10.png"
+		"image": "/sdg-icons/sdg-10.svg",
+		"color": "bg-[#F95AB6]"
 	},
 	"11": {
 		"title": "Sustainable Cities and Communities",
 		"description": "Make cities and human settlements inclusive, safe, resilient, and sustainable.",
-		"image": "assets/sdg/11.png"
+		"image": "/sdg-icons/sdg-11.svg",
+		"color": "bg-[#FE9E23]"
 	},
 	"12": {
 		"title": "Responsible Consumption and Production",
 		"description": "Ensure sustainable consumption and production patterns.",
-		"image": "assets/sdg/12.png"
+		"image": "/sdg-icons/sdg-12.svg",
+		"color": "bg-[#D3A350]"
 	},
 	"13": {
 		"title": "Climate Action",
 		"description": "Take urgent action to combat climate change and its impacts.",
-		"image": "assets/sdg/13.png"
+		"image": "/sdg-icons/sdg-13.svg",
+		"color": "bg-[#57A85E]"
 	},
 	"14": {
 		"title": "Life Below Water",
 		"description": "Conserve and sustainably use the oceans, seas, and marine resources for sustainable development.",
-		"image": "assets/sdg/14.png"
+		"image": "/sdg-icons/sdg-14.svg",
+		"color": "bg-[#0A97D9]"
 	},
 	"15": {
 		"title": "Life on Land",
 		"description": "Protect, restore, and promote sustainable use of terrestrial ecosystems, sustainably manage forests, combat desertification, halt and reverse land degradation, and halt biodiversity loss.",
-		"image": "assets/sdg/15.png"
+		"image": "/sdg-icons/sdg-15.svg",
+		"color": "bg-[#56C02A]"
 	},
 	"16": {
 		"title": "Peace, Justice, and Strong Institutions",
 		"description": "Promote peaceful and inclusive societies for sustainable development, provide access to justice for all, and build effective, accountable, and inclusive institutions at all levels.",
-		"image": "assets/sdg/16.png"
+		"image": "/sdg-icons/sdg-16.svg",
+		"color": "bg-[#99DDFF]"
 	},
 	"17": {
 		"title": "Partnerships for the Goals",
 		"description": "Strengthen the means of implementation and revitalize the Global Partnership for Sustainable Development.",
-		"image": "assets/sdg/17.png"
+		"image": "/sdg-icons/sdg-17.svg",
+		"color": "bg-[#8FC1E5]"
 	}
 }
