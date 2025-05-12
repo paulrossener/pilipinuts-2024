@@ -1,7 +1,14 @@
 <script lang="ts">
 	import '../app.css';
 
-	// let { children } = $props();
+	import Header from './Header.svelte';
+	import Footer from './Footer.svelte';
+
+	let { children } = $props();
 </script>
-<slot />
-<!-- {@render children()} -->
+
+<Header />
+<main class="mt-[25px] p-[50px]">
+	{@render children?.()}
+</main>
+<Footer />
