@@ -23,7 +23,7 @@ export function projectList() {
 
 function sdgItem(key, sdg) {
     const sdgCont = document.createElement('div');
-    sdgCont.setAttribute("class", `sdg-item flex flex-row w-full items-center gap-[10px] border-b border-white/50`);
+    sdgCont.setAttribute("class", `sdg-item flex flex-row w-full items-center gap-[10px] py-[7px] border-b border-white/50`);
     sdgCont.setAttribute('data-color', sdg.color); 
 
     const img = document.createElement('img');
@@ -45,9 +45,9 @@ function sdgItem(key, sdg) {
     });
 
     const textCont = document.createElement('div');
-    textCont.setAttribute('class', 'flex flex-col justify-center truncate mb-[10px]');
+    textCont.setAttribute('class', 'flex flex-col h-[100%] justify-center truncate');
 
-    const header = document.createElement('h2');
+    const header = document.createElement('h3');
     header.setAttribute('class', 'font-semibold');
     header.innerText = sdg.title;
 

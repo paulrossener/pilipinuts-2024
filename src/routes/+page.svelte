@@ -63,30 +63,30 @@
     </div>
 </div>
 
-<div id="nutshell" class = "relative flex w-full h-[100dvh] mt-[50px] px-[50px] pt-[100px] text-white ">
+<div id="nutshell" class = "relative flex w-full h-[100dvh] px-[50px] pt-[100px] text-white ">
     <div class="nutshell-container flex flex-row w-full h-full gap-[10px] ">
         <div class="nutshell-pic w-[50%] h-[95%] relative">
             <div class="absolute inset-0 z-0 grid grid-cols-2 grid-rows-2 gap-[10px]">
-                <div class="bg-blue-400/50"></div>
-                <div class="bg-gray-400/50"></div>
-                <div class="bg-gray-400/50"></div>
-                <div class="bg-gray-400/50"></div>
+                <div class="nutshell-change bg-gray-400/50"></div>
+                <div class="nutshell-change bg-gray-400/50"></div>
+                <div class="nutshell-change bg-gray-400/50"></div>
+                <div class="nutshell-change bg-gray-400/50"></div>
             </div>
             <div class="absolute inset-0 z-10 bg-[url('/nutshell-pic.png')] bg-no-repeat bg-size-[100%] bg-position-[50%_20%]"></div>
-            <div class="absolute inset-0 z-20 grid grid-cols-2 grid-rows-2 gap-[10px] text-white">
-                <div class="flex flex-col justify-start bg-transparent p-[30px] text-4xl">
+            <div class=" absolute inset-0 z-20 grid grid-cols-2 grid-rows-2 gap-[10px] text-white">
+                <div class="nutshell-hover flex flex-col justify-start bg-transparent p-[30px] text-4xl">
                     <span>42</span>
                     <span>Projects</span>
                 </div>
-                <div class="flex flex-col ml-auto right-0 bg-transparent p-[30px] text-4xl text-right">
+                <div class="nutshell-hover flex flex-col ml-auto right-0 bg-transparent p-[30px] text-4xl text-right">
                     <span>17</span>
                     <span>SDGs</span>
                 </div>
-                <div class="flex flex-col justify-start bg-transparent p-[30px] text-4xl">
+                <div class="nutshell-hover flex flex-col justify-start bg-transparent p-[30px] text-4xl">
                     <span>1</span>
                     <span>Country</span>
                 </div>
-                <div class="flex bg-transparent"></div>
+                <div class="nutshell-hover flex bg-transparent"></div>
             </div>
         </div> 
         <div class="nutshell-content flex flex-col w-[50%] h-full ">
@@ -117,7 +117,7 @@
     </div>
 </div>
 
-<div id="projects" class = "relative flex flex-col w-full h-[200dvh] mt-[25px] px-[50px] pt-[100px] text-white">
+<div id="projects" class = "relative flex flex-col w-full min-h-[195dvh] px-[50px] pt-[100px] text-white">
     <div class = "flex flex-col justify-between w-[250px] h-[90px]">
         <h1 class="text-5xl break-words">PROJECTS</h1>
         <div class="relative flex h-[20px]">
@@ -133,7 +133,7 @@
         Duis fermentum eleifend turpis. Donec viverra mi in odio varius fringilla. Fusce lacinia vehicula fringilla. 
         Integer enim arcu, bibendum suscipit tortor quis, scelerisque tempor nulla. Vivamus scelerisque elit vitae sem tristique, fermentum faucibus urna maximus.
     </p>
-    <div class="flex flex-col w-full h-full gap-[50px]">
+    <div class="flex flex-col w-full h-full gap-[75px]">
         <div class="flex flex-col gap-[30px]">
             <div class="flex justify-between w-full">
                 <h3>FEATURED WORKS</h3>
@@ -142,17 +142,47 @@
                     <button type="button" aria-label="Next"><i class="fa-solid fa-arrow-right"></i></button>
                 </div>
             </div>
-            <div class="flex h-[400px] border-y border-white/60"> 
+            <div class="flex items-center h-[400px] border-y border-white/60 gap-[10px]">  <!-- Practicing Layout palang to -->
                 <!-- Features Project List -->
+                 <div class="featured flex flex-col w-[500px] h-full p-[15px]">
+                    {#await import(`$lib/assets/plots/16.png`) then { default: src }}
+                    <img {src} class="mb-4 h-auto w-auto" alt="Profile">
+                    {/await}
+                    <h3 class ="flex flex-grow text-xl">IO-n na nga: Correlation Spotted Between Agriculture and Other Industries</h3>
+                    <div class="flex flex-row w-full h-[20px] justify-between">
+                        <p class = "text-sm">FLASK</p>
+                        <p class = "text-sm">SDG NAME</p>
+                    </div>
+                 </div>
+                 <div class="featured flex flex-col w-[500px] h-full p-[15px]">
+                    {#await import(`$lib/assets/plots/16.png`) then { default: src }}
+                    <img {src} class="mb-4 h-auto w-auto" alt="Profile">
+                    {/await}
+                    <h3 class ="flex flex-grow text-xl">IO-n na nga: Correlation Spotted Between Agriculture and Other Industries</h3>
+                    <div class="flex flex-row w-full h-[20px] justify-between">
+                        <p class = "text-sm">FLASK</p>
+                        <p class = "text-sm">SDG NAME</p>
+                    </div>
+                 </div>
+                 <div class="featured flex flex-col w-[500px] h-full p-[15px]">
+                    {#await import(`$lib/assets/plots/16.png`) then { default: src }}
+                    <img {src} class="mb-4 h-auto w-auto" alt="Profile">
+                    {/await}
+                    <h3 class ="flex flex-grow text-xl">IO-n na nga: Correlation Spotted Between Agriculture and Other Industries</h3>
+                    <div class="flex flex-row w-full h-[20px] justify-between">
+                        <p class = "text-sm">FLASK</p>
+                        <p class = "text-sm">SDG NAME</p>
+                    </div>
+                 </div>
             </div>
         </div>
         <div class="flex flex-col flex-grow w-full gap-[20px]">
             <h3>ALL PROJECTS BY SDG</h3>
-            <div class="relative flex h-full border-t border-white">
-                <div class="w-[95%] absolute inset-0 grid grid-cols-2 gap-[10px] m-auto mt-[10px]">
+            <div class="relative flex h-full">
+                <div class="w-[95%] absolute inset-0 grid grid-cols-2 gap-[10px] m-auto">
                     <!-- projectList function -->
-                    <div id="col-1" class="flex flex-col gap-[10px]"></div>
-                    <div id="col-2" class="flex flex-col gap-[10px]"></div>
+                    <div id="col-1" class="flex flex-col border-t border-white"></div>
+                    <div id="col-2" class="flex flex-col border-t border-white"></div>
                 </div>
             </div>
         </div>
@@ -218,6 +248,15 @@
     @keyframes blink {
         0%, 100% { border-color: transparent; }
         50% { border-color: white; }
+    }
+
+    .featured {
+        transition: background-color 0.5s ease, color 0.5s ease;
+    }
+
+    .featured:hover {
+        background-color: white;
+        color: black;
     }
 
     :global(.sdg-img),
