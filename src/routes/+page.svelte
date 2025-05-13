@@ -1,6 +1,6 @@
 <script>
     import { triggerTypingAnimation } from '$lib/animation.js';
-    import { projectList } from '$lib/script.js';
+    import { projectList, featuredProjects } from '$lib/script.js';
     import { onMount } from 'svelte';
     
     import sdg from "$lib/data/sdg.json";
@@ -8,6 +8,7 @@
     onMount(() => {
         triggerTypingAnimation();
         projectList();
+        featuredProjects();
     });
 
     let homeButton = [
@@ -117,7 +118,7 @@
     </div>
 </div>
 
-<div id="projects" class = "relative flex flex-col w-full min-h-[195dvh] px-[50px] pt-[100px] text-white">
+<div id="projects" class = "relative flex flex-col w-full min-h-[195dvh] px-[50px] pt-[75px] text-white">
     <div class = "flex flex-col justify-between w-[250px] h-[90px]">
         <h1 class="text-5xl break-words">PROJECTS</h1>
         <div class="relative flex h-[20px]">
@@ -138,42 +139,20 @@
             <div class="flex justify-between w-full">
                 <h3>FEATURED WORKS</h3>
                 <div class="flex gap-[30px] text-xl">
-                    <button type="button" aria-label="Previous"><i class="fa-solid fa-arrow-left"></i></button>
-                    <button type="button" aria-label="Next"><i class="fa-solid fa-arrow-right"></i></button>
+                    <button id="prev" class="styleButton flex justify-center items-center px-[10px] py-[5px]" type="button" aria-label="Previous">
+                        <span class="button-content"><i class="fa-solid fa-arrow-left"></i></span>
+                    </button>
+                    <button id="next" class="styleButton flex justify-center items-center px-[10px] py-[5px]" type="button" aria-label="Next">
+                        <span class="button-content"><i class="fa-solid fa-arrow-right"></i></span>
+                    </button>
                 </div>
             </div>
-            <div class="flex items-center h-[400px] border-y border-white/60 gap-[10px]">  <!-- Practicing Layout palang to -->
-                <!-- Features Project List -->
-                 <div class="featured flex flex-col w-[500px] h-full p-[15px]">
-                    {#await import(`$lib/assets/plots/16.png`) then { default: src }}
-                    <img {src} class="mb-4 h-auto w-auto" alt="Profile">
-                    {/await}
-                    <h3 class ="flex flex-grow text-xl">IO-n na nga: Correlation Spotted Between Agriculture and Other Industries</h3>
-                    <div class="flex flex-row w-full h-[20px] justify-between">
-                        <p class = "text-sm">FLASK</p>
-                        <p class = "text-sm">SDG NAME</p>
-                    </div>
-                 </div>
-                 <div class="featured flex flex-col w-[500px] h-full p-[15px]">
-                    {#await import(`$lib/assets/plots/16.png`) then { default: src }}
-                    <img {src} class="mb-4 h-auto w-auto" alt="Profile">
-                    {/await}
-                    <h3 class ="flex flex-grow text-xl">IO-n na nga: Correlation Spotted Between Agriculture and Other Industries</h3>
-                    <div class="flex flex-row w-full h-[20px] justify-between">
-                        <p class = "text-sm">FLASK</p>
-                        <p class = "text-sm">SDG NAME</p>
-                    </div>
-                 </div>
-                 <div class="featured flex flex-col w-[500px] h-full p-[15px]">
-                    {#await import(`$lib/assets/plots/16.png`) then { default: src }}
-                    <img {src} class="mb-4 h-auto w-auto" alt="Profile">
-                    {/await}
-                    <h3 class ="flex flex-grow text-xl">IO-n na nga: Correlation Spotted Between Agriculture and Other Industries</h3>
-                    <div class="flex flex-row w-full h-[20px] justify-between">
-                        <p class = "text-sm">FLASK</p>
-                        <p class = "text-sm">SDG NAME</p>
-                    </div>
-                 </div>
+            <div class="relative h-[400px]">
+                <div class="absolute inset-y-0 left-0 w-[150px] h-full bg-gradient-to-l from-transparent to-[#080808] pointer-events-none z-10"></div>
+                <div class="absolute inset-y-0 right-0 w-[150px] h-full bg-gradient-to-r from-transparent to-[#080808] pointer-events-none z-10"></div>
+                <div id="featuredProjects" class="feature grid grid-flow-col h-full place-items-center border-y border-white/60 overflow-hidden">
+                    <!-- Features Project List -->
+                </div>
             </div>
         </div>
         <div class="flex flex-col flex-grow w-full gap-[20px]">
@@ -250,13 +229,50 @@
         50% { border-color: white; }
     }
 
-    .featured {
-        transition: background-color 0.5s ease, color 0.5s ease;
+    .styleButton {
+        transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
     }
 
-    .featured:hover {
+    .styleButton:hover {
         background-color: white;
         color: black;
+    }
+
+    .button-content {
+        transition: transform 0.3s ease; 
+    }
+
+    #prev:active .button-content {
+        transform: rotateY(30deg) scale(0.95);  
+    }
+
+    #next:active .button-content {
+        transform: rotateY(-30deg) scale(0.95); 
+    }
+
+    :global(.empty h3) {
+        opacity: 0.5;
+    }
+
+    :global(.featured) {
+        transition: background-color 0.5s ease, color 0.5s ease, transform 0.3s ease;
+        perspective: 1000px;
+    }
+
+    :global(.rotating) {
+        transition: transform 0.3s ease;
+        transform-style: preserve-3d; 
+    }
+
+    :global(.featured:hover) {
+        cursor: pointer;
+        background-color: white;
+        color: black;
+    }
+
+    :global(.featured:hover .rotating) {
+        transform: rotateX(5deg) scale(0.98);
+        transform-origin: center; 
     }
 
     :global(.sdg-img),
