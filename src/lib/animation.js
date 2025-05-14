@@ -14,7 +14,7 @@ export function triggerTypingAnimation() {
     observer.observe(element)
 }
 
-function startTyping(el, speed = 200) {
+function startTyping(el, speed = 100) {
   const elements = el.querySelectorAll(".typing-text");
 
   elements.forEach(elem => {
@@ -29,7 +29,7 @@ function startTyping(el, speed = 200) {
     cursor.style.animation = '';
     cursor.dataset.typed = "true"; 
 
-    const baseDelay = elem.classList.contains("delay") ? 2500 : 0;
+    const baseDelay = elem.classList.contains("delay") ? 1500 : 0;
 
     setTimeout(() => {
       const interval = setInterval(() => {
@@ -44,4 +44,23 @@ function startTyping(el, speed = 200) {
       }, speed);
     }, baseDelay);
   });
+}
+
+export function proceedProject() {
+  const projectIntro = document.getElementById('projectIntro');
+  const projectStart = document.getElementById('startProject');
+  const proceedIcon = projectIntro?.querySelector('.proceed');
+
+  if (!projectIntro || !projectStart || !proceedIcon) return; // Safety check
+
+  projectIntro.scrollIntoView({ behavior: 'smooth' });
+  proceedIcon.classList.add('animate');
+    setTimeout(() => {
+      console.log('ugh');
+      proceedIcon.classList.remove('animate');
+      projectStart.scrollIntoView({ behavior: 'smooth' });
+    }, 2500); 
+
+
+  observer.observe(projectIntro);
 }

@@ -1,5 +1,5 @@
 <script>
-    import { triggerTypingAnimation } from '$lib/animation.js';
+    import { triggerTypingAnimation, proceedProject } from '$lib/animation.js';
     import { projectList, featuredProjects } from '$lib/script.js';
     import { onMount } from 'svelte';
     
@@ -9,6 +9,7 @@
         triggerTypingAnimation();
         projectList();
         featuredProjects();
+        // proceedProject();
     });
 
     let homeButton = [
@@ -24,9 +25,12 @@
     ]
 
     function scrollToSection(id) {
-        console.log(id);
         const el = document.getElementById(id);
-        if (el) el.scrollIntoView({ behavior: 'smooth' });
+        if (id === "nutshell") {
+            if (el) el.scrollIntoView({ behavior: 'smooth' });
+        } else {
+            if (el) proceedProject();
+        }
     }
 
 </script>
@@ -118,56 +122,105 @@
     </div>
 </div>
 
-<div id="projects" class = "relative flex flex-col w-full min-h-[195dvh] px-[50px] pt-[75px] text-white">
-    <div class = "flex flex-col justify-between w-[250px] h-[90px]">
-        <h1 class="text-5xl break-words">PROJECTS</h1>
-        <div class="relative flex h-[20px]">
-            <div class="absolute inset-0 grid grid-cols-4">
-                <div class="bg-yellow-400"></div>
-                <div class="bg-red-400"></div>
-                <div class="bg-blue-400"></div>
-                <div class="bg-pink-400"></div>
+<div id="projects" class = "relative flex flex-col w-full min-h-[295dvh] px-[50px] text-white">
+    <div class="flex justify-center items-center w-full h-[100dvh] px-[150px] pb-[135px]">
+        <div id="projectIntro" class="relative flex flex-col justify-center items-center text-center w-full h-full">
+            <div class="flex flex-col justify-center items-center w-[50%] gap-[20px]">
+                <div class = "w-[150px]">
+                    <div class="relative flex h-[10px]">
+                        <div class="absolute inset-0 grid grid-cols-4">
+                            <div class="bg-yellow-400"></div>
+                            <div class="bg-red-400"></div>
+                            <div class="bg-blue-400"></div>
+                            <div class="bg-pink-400"></div>
+                        </div>
+                    </div>
+                </div>
+                <p>WHEN POWERED BY PURPOSE, <br> — DATA SCIENCE DOESN’T JUST REVEAL THE TRUTH —</p>
+                <h2 class="text-4xl">It sparks action, drives change, and helps build a better future for all.</h2>
             </div>
+            <div class = "absolute bottom-0 flex flex-col gap-[10px]">
+                <p>PROCEED TO THE PROJECTS</p>
+                <i class="proceed fa-solid fa-arrow-down"></i>
+            </div>  
         </div>
     </div>
-    <p class="w-full my-[20px]">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et orci sem. Maecenas pharetra venenatis est, non rutrum odio dignissim ac. 
-        Duis fermentum eleifend turpis. Donec viverra mi in odio varius fringilla. Fusce lacinia vehicula fringilla. 
-        Integer enim arcu, bibendum suscipit tortor quis, scelerisque tempor nulla. Vivamus scelerisque elit vitae sem tristique, fermentum faucibus urna maximus.
-    </p>
-    <div class="flex flex-col w-full h-full gap-[75px]">
-        <div class="flex flex-col gap-[30px]">
-            <div class="flex justify-between w-full">
-                <h3>FEATURED WORKS</h3>
-                <div class="flex gap-[30px] text-xl">
-                    <button id="prev" class="styleButton flex justify-center items-center px-[10px] py-[5px]" type="button" aria-label="Previous">
-                        <span class="button-content"><i class="fa-solid fa-arrow-left"></i></span>
-                    </button>
-                    <button id="next" class="styleButton flex justify-center items-center px-[10px] py-[5px]" type="button" aria-label="Next">
-                        <span class="button-content"><i class="fa-solid fa-arrow-right"></i></span>
-                    </button>
-                </div>
-            </div>
-            <div class="relative h-[400px]">
-                <div class="absolute inset-y-0 left-0 w-[150px] h-full bg-gradient-to-l from-transparent to-[#080808] pointer-events-none z-10"></div>
-                <div class="absolute inset-y-0 right-0 w-[150px] h-full bg-gradient-to-r from-transparent to-[#080808] pointer-events-none z-10"></div>
-                <div id="featuredProjects" class="feature grid grid-flow-col h-full place-items-center border-y border-white/60 overflow-hidden">
-                    <!-- Features Project List -->
+    <div id="startProject" class="w-full pt-[75px]">
+        <div class = "flex flex-col justify-between w-[250px] h-[90px]">
+            <h1 class="text-5xl break-words">PROJECTS</h1>
+            <div class="relative flex h-[20px]">
+                <div class="absolute inset-0 grid grid-cols-4">
+                    <div class="bg-yellow-400"></div>
+                    <div class="bg-red-400"></div>
+                    <div class="bg-blue-400"></div>
+                    <div class="bg-pink-400"></div>
                 </div>
             </div>
         </div>
-        <div class="flex flex-col flex-grow w-full gap-[20px]">
-            <h3>ALL PROJECTS BY SDG</h3>
-            <div class="relative flex h-full">
-                <div class="w-[95%] absolute inset-0 grid grid-cols-2 gap-[10px] m-auto">
-                    <!-- projectList function -->
-                    <div id="col-1" class="flex flex-col border-t border-white"></div>
-                    <div id="col-2" class="flex flex-col border-t border-white"></div>
+        <p class="w-full my-[20px]">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et orci sem. Maecenas pharetra venenatis est, non rutrum odio dignissim ac. 
+            Duis fermentum eleifend turpis. Donec viverra mi in odio varius fringilla. Fusce lacinia vehicula fringilla. 
+            Integer enim arcu, bibendum suscipit tortor quis, scelerisque tempor nulla. Vivamus scelerisque elit vitae sem tristique, fermentum faucibus urna maximus.
+        </p>
+        <div class="flex flex-col w-full h-full gap-[75px]">
+            <div class="flex flex-col gap-[30px]">
+                <div class="flex justify-between w-full">
+                    <h3>FEATURED WORKS</h3>
+                    <div class="flex gap-[30px] text-xl">
+                        <button id="prev" class="styleButton flex justify-center items-center px-[10px] py-[5px]" type="button" aria-label="Previous">
+                            <span class="button-content"><i class="fa-solid fa-arrow-left"></i></span>
+                        </button>
+                        <button id="next" class="styleButton flex justify-center items-center px-[10px] py-[5px]" type="button" aria-label="Next">
+                            <span class="button-content"><i class="fa-solid fa-arrow-right"></i></span>
+                        </button>
+                    </div>
+                </div>
+                <div class="relative h-[400px]">
+                    <div class="absolute inset-y-0 left-0 w-[150px] h-full bg-gradient-to-l from-transparent to-[#080808] pointer-events-none z-10"></div>
+                    <div class="absolute inset-y-0 right-0 w-[150px] h-full bg-gradient-to-r from-transparent to-[#080808] pointer-events-none z-10"></div>
+                    <div id="featuredProjects" class="feature grid grid-flow-col h-full place-items-center border-y border-white/60 overflow-hidden">
+                        <!-- Features Project List -->
+                    </div>
+                </div>
+            </div>
+            <div class="flex flex-col flex-grow w-full gap-[20px]">
+                <h3>ALL PROJECTS BY SDG</h3>
+                <div class="relative flex h-full">
+                    <div class="w-[95%] absolute inset-0 grid grid-cols-2 gap-[10px] m-auto">
+                        <!-- projectList function -->
+                        <div id="col-1" class="flex flex-col border-t border-white"></div>
+                        <div id="col-2" class="flex flex-col border-t border-white"></div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
 
+<div id="inquiries" class = "relative flex flex-col w-full min-h-[45dvh] px-[50px] text-white">
+    <div class="flex flex-col mt-[75px] justify-center items-center gap-[15px]">
+        <div class = "w-[150px]">
+            <div class="relative flex h-[10px]">
+                <div class="absolute inset-0 grid grid-cols-4">
+                    <div class="bg-yellow-400"></div>
+                    <div class="bg-red-400"></div>
+                    <div class="bg-blue-400"></div>
+                    <div class="bg-pink-400"></div>
+                </div>
+            </div>
+        </div>
+        <h3>GOT QUESTIONS?</h3>
+        <div class="flex flex-col flex-grow gap border-y mt-[10px] w-[280px] text-white">
+            <button type = "button" class = "inquiry-btn flex justify-between items-center w-full px-[2px] py-[15px] border-b ">
+                <p class='text-xl'>Google Form</p>    
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </button>
+            <button type = "button" class = "inquiry-btn flex justify-between items-center w-full px-[2px] py-[10px]">
+                <p class='text-xl'>Dev Team</p>    
+                <i class="fa-solid fa-code"></i>
+            </button>
+        </div>
+    </div>
+</div>
 
 <style>
     #home {
@@ -229,6 +282,15 @@
         50% { border-color: white; }
     }
 
+    .proceed.animate {
+        animation: hi 1s ease-in-out 2;
+    }
+
+    @keyframes hi {
+        0%, 100% {transform: translateY(0px);}
+        50% { transform: translateY(20px);}
+    }
+
     .styleButton {
         transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
     }
@@ -287,6 +349,16 @@
 
     :global(.sdg-item:hover .sdg-img) {
         background-color: transparent;
+    }
+
+    .inquiry-btn {
+        transition: background-color 0.3s ease, color 0.3s ease, padding 0.3s ease;
+    }
+
+    .inquiry-btn:hover {
+        background-color: white;
+        color: black;
+        padding-inline: 10px;
     }
 
 </style>
