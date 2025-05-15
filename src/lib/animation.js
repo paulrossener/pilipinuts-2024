@@ -1,5 +1,5 @@
 export function triggerTypingAnimation() {
-    const element = document.querySelector("#nutshell .container h1");
+    const element = document.querySelector("#nutshell .text-container");
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -9,19 +9,26 @@ export function triggerTypingAnimation() {
             entry.target.style.opacity = '0';
         }
         });
-    }, { threshold: 0.5 });
+    }, { threshold: 0.1 });
 
     observer.observe(element)
 }
 
-function startTyping(el, speed = 100) {
+function startTyping(el, speed = 50) {
   const elements = el.querySelectorAll(".typing-text");
-
-  elements.forEach(elem => {
+  const baseDelay = {
+    0 : 0,
+    1 : 1500,
+    2 : 2500,
+    3 : 3500
+  }
+  
+  elements.forEach((elem, count) => {
     const cursor = elem.querySelector('.cursor');
     const fullText = cursor.textContent.trim(); 
     let i = 0;
 
+    console.log('helloo');
     if (cursor.dataset.typed === "true") return;
 
     // Prepare
@@ -29,7 +36,7 @@ function startTyping(el, speed = 100) {
     cursor.style.animation = '';
     cursor.dataset.typed = "true"; 
 
-    const baseDelay = elem.classList.contains("delay") ? 1500 : 0;
+    // const baseDelay = elem.classList.contains("delay") ? 1200 : 0;
 
     setTimeout(() => {
       const interval = setInterval(() => {
@@ -42,7 +49,7 @@ function startTyping(el, speed = 100) {
           cursor.dataset.typed = "false";
         }
       }, speed);
-    }, baseDelay);
+    }, baseDelay[count]);
   });
 }
 

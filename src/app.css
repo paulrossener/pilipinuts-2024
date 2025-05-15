@@ -22,7 +22,8 @@
         @apply font-poppins;
     }
     span {
-        @apply font-delius-unicase;
+        @apply font-poppins;
+        /* @apply font-delius-unicase; */
     }
     h1, h2 {
         @apply font-bold ;

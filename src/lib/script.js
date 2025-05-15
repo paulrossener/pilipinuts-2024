@@ -167,3 +167,15 @@ async function image() {
         console.error('Error loading the image:', error);
     }
 }
+
+export function icons() {
+    const iconList = document.getElementById('iconList');
+
+    Object.entries(sdgs).forEach(([key, sdg]) => {
+        const img = document.createElement('img');
+        img.setAttribute('src', sdg.image);
+        img.setAttribute('alt', sdg.title);
+        img.setAttribute('class', `sdg-img p-[5px] w-[50px] h-[50px] object-contain ${sdg.color}`);
+        iconList.appendChild(img);
+    });
+}
