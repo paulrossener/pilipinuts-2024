@@ -29,7 +29,7 @@ function sdgItem(key, sdg) {
     const img = document.createElement('img');
     img.setAttribute('src', sdg.image);
     img.setAttribute('alt', sdg.title);
-    img.setAttribute('class', `sdg-img mx-[10px] p-[5px] w-[50px] h-[50px] object-contain ${sdg.color}`);
+    img.setAttribute('class', `sdg-img mx-[10px] p-2 w-[50px] h-[50px] object-contain ${sdg.color}`);
 
     sdgCont.addEventListener('mouseenter', () => {
         const color = sdgCont.dataset.color.replace(/^bg-|\[|\]/g, '');
@@ -175,7 +175,7 @@ export function icons() {
         const img = document.createElement('img');
         img.setAttribute('src', sdg.image);
         img.setAttribute('alt', sdg.title);
-        img.setAttribute('class', `sdg-img p-[5px] w-[50px] h-[50px] object-contain ${sdg.color}`);
+        img.setAttribute('class', `sdg-img p-2 w-[50px] h-[50px] object-contain ${sdg.color}`);
         iconList.appendChild(img);
     });
 }

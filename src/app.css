@@ -6,6 +6,7 @@
 @import 'tailwindcss';
 @plugin '@tailwindcss/forms';
 @plugin '@tailwindcss/typography';
+@plugin "@iconify/tailwind4";
 
 @theme {
     --font-robotomono: "Roboto Mono", sans-serif; 
@@ -17,6 +18,7 @@
 @layer base {
     html {
         @apply text-white;
+        font-family: "DM Sans";
     }
     p {
         @apply font-poppins;
@@ -71,6 +73,10 @@ body::-webkit-scrollbar-thumb {
 body:hover::-webkit-scrollbar {
     width: 4px; 
     height: 4px; 
+}
+
+.font-mono {
+    font-family: "Roboto Mono";
 }
 
 

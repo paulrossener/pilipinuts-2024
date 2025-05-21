@@ -47,7 +47,7 @@
                 <div class="buttons flex flex-row gap-[20px] mt-[5px] max-[700px]:flex-col max-[700px]:justify-center max-[700px]:items-center">
                     {#each homeButton as btn}
                         <button class = {`home-btn relative flex flex-row items-center justify-center ${btn.width} border border-white 
-                        overflow-hidden rounded-[5px] px-[20px] py-[10px] text-[15px] `} 
+                        overflow-hidden rounded-none font-mono px-2 py-[10px] text-[15px] `} 
                         type="button" on:click={() => scrollToSection(btn.id)}>
                             <div class="original absolute flex justify-center items-center bg-black text-white gap-[10px] inset-0 ">{btn.content} <i class="fa-solid fa-arrow-right"></i></div>
                             <div class="inline-flex bg-transparent" role="button" aria-label="Hover effect button" tabindex = 0>
@@ -75,7 +75,7 @@
 <div id="nutshell" class = "relative flex flex-col justify-center items-center w-full min-h-[200dvh] pt-[55px] text-white gap-[50px]">
     <div class="flex flex-col justify-center items-center w-[90%] h-[80dvh] gap-[20px]">
         <div class = "flex flex-col justify-between w-[90%] gap-[10px] ">
-            <h3 class="text-3xl break-words">PILIPINUTS 2024</h3>
+            <h3 class="break-words font-mono">PILIPINUTS 2024</h3>
             <div class="relative flex h-[10px] w-[250px]">
                 <div class="absolute inset-0 grid grid-cols-4">
                     <div class="bg-yellow-400"></div>
@@ -87,7 +87,7 @@
         </div>
         <div class="flex flex-row h-[60%] w-[90%] gap-[20px]">
             <div class="flex w-[45%] justify-center text-left pt-[10px]">
-                <h3 class="text-6xl">Where Data Meets the Nation’s <br> Most Urgent <br> Questions</h3>
+                <h3 class="text-5xl font-medium">Where Data Meets <br> the Nation’s <br> Most Urgent <br> Questions</h3>
             </div>
             <div class="flex flex-col gap-[20px] w-[55%] border-t">
                 <div></div>
@@ -141,7 +141,7 @@
         <div class="nutshell-content flex flex-col w-[50%] h-full max-[1200px]:flex-row max-[1200px]:w-full max-[1200px]:h-[50%] ">
             <div class="container w-[100%] h-full flex flex-col px-[10px] border-b border-white/60">
                 <div class = "flex flex-col w-full h-[50%] gap-[10px] max-[1200px]:h-[80%]">
-                    <h3>WHY PILIPINUTS?</h3>
+                    <h3 class="font-mono">WHY PILIPINUTS?</h3>
                     <div class="relative flex h-[20px] w-[250px]">
                         <div class="absolute inset-0 grid grid-cols-4">
                             <div class="bg-yellow-400"></div>
@@ -159,7 +159,7 @@
                     </p>
                 </div>
                 <div class="flex flex-col w-full h-[50%] gap-[20px]">
-                    <div class="text-container text-5xl mt-[20px] gap-[10px] flex flex-col max-[1200px]:flex-row max-[1200px]:gap-[0px] max-[1200px]:text-base">
+                    <div class="text-container text-5xl mt-[20px] gap-[10px] flex flex-col max-[1200px]:flex-row max-[1200px]:gap-[0px] max-[1200px]:text-base font-medium">
                         <span class="typing-text"><span class="cursor font-medium">This is the story of the</span></span>
                         <span class="typing-text ml-2"><span class="cursor font-medium">Philippines, told</span></span>
                         <span class="typing-text ml-2"><span class="cursor font-medium">through data —</span></span>
@@ -189,8 +189,8 @@
                         </div>
                     </div>
                 </div>
-                <p>WHEN POWERED BY PURPOSE, <br> — DATA SCIENCE DOESN’T JUST REVEAL THE TRUTH —</p>
-                <div class="w-full max-w-[800px]">
+                <p class="font-mono">WHEN POWERED BY PURPOSE,<br>DATA SCIENCE DOESN’T JUST REVEAL THE TRUTH —</p>
+                <div class="w-full max-w-[800px] font-medium">
                     <span class="text-5xl">It sparks 
                         <span class = "underline decoration-red-500">action</span>, drives 
                         <span class = "underline decoration-yellow-500">change</span>, and helps build a 
@@ -200,14 +200,14 @@
                 </div>
             </div>
             <div class = "absolute bottom-0 flex flex-col gap-[10px]">
-                <p>PROCEED TO THE PROJECTS</p>
+                <p class=font-mono>PROCEED TO THE PROJECTS</p>
                 <i class="proceed fa-solid fa-arrow-down"></i>
             </div>  
         </div>
     </div>
     <div id="startProject" class="w-full pt-[75px]">
-        <div class = "flex flex-col justify-between w-[250px] h-[90px]">
-            <h1 class="text-5xl break-words">PROJECTS</h1>
+        <div class = "flex flex-col justify-between w-[500px] h-[90px]">
+            <h1 class="text-5xl break-words font-medium">Our Projects</h1>
             <div class="relative flex h-[20px]">
                 <div class="absolute inset-0 grid grid-cols-4">
                     <div class="bg-yellow-400"></div>
@@ -224,7 +224,7 @@
         <div class="flex flex-col w-full h-full gap-[75px]">
             <div class="flex flex-col gap-[30px]">
                 <div class="flex justify-between w-full">
-                    <h3>FEATURED WORKS</h3>
+                    <h3 class="font-mono">FEATURED WORKS</h3>
                     <div class="flex gap-[30px] text-xl">
                         <button id="prev" class="styleButton flex justify-center items-center px-[10px] py-[5px]" type="button" aria-label="Previous">
                             <span class="button-content"><i class="fa-solid fa-arrow-left"></i></span>
@@ -243,7 +243,7 @@
                 </div>
             </div>
             <div class="flex flex-col flex-grow w-full gap-[20px]">
-                <h3>ALL PROJECTS BY SDG</h3>
+                <h3 class="font-mono">ALL PROJECTS BY SDG</h3>
                 <div class="relative flex h-full">
                     <div class="w-[95%] absolute inset-0 grid grid-cols-2 gap-[10px] m-auto">
                         <!-- projectList function -->
@@ -268,7 +268,7 @@
                 </div>
             </div>
         </div>
-        <h3>GOT QUESTIONS?</h3>
+        <h3 class="font-mono">GOT QUESTIONS?</h3>
         <div class="flex flex-col flex-grow gap border-y mt-[10px] w-[280px] text-white">
             <button type = "button" class = "inquiry-btn flex justify-between items-center w-full px-[2px] py-[15px] border-b ">
                 <p class='text-xl'>Google Form</p>    
