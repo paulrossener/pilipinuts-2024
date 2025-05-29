@@ -1,5 +1,9 @@
-<script lang="ts">
-	let { 
+<script lang="ts">	
+    
+    import FacebookShare from "$lib/components/FacebookShare.svelte";
+    import TwitterShare from "$lib/components/TwitterShare.svelte";
+
+    let { 
         group, 
         name, 
         title, 
@@ -9,6 +13,9 @@
         website, 
         class_type,
     } = $props();
+
+    
+
 </script>
 
 <!-- If List View -->
@@ -32,20 +39,27 @@
                     LEARN MORE
                 </div>
                 <div class="space-y-3 mb-4">
-                    <a href="{website}" class="flex items-center justify-between w-full bg-pink-500 hover:bg-pink-600 text-black font-medium py-2 px-4 rounded">
+                    <a href="{website}" class="flex items-center justify-between w-full bg-pink-500 hover:bg-pink-600 text-black font-medium py-2 px-4 rounded transition duration-150">
                         Portfolio
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25" />
                         </svg>
                         
                     </a>
-                    <a href="share" class="flex items-center justify-between w-full bg-pink-500 hover:bg-pink-600 text-black font-medium py-2 px-4 rounded">
+
+                    <div class="uppercase text-gray-400 text-xs tracking-widest mb-4">
+                        SHARE
+                    </div>
+                    <div class="mx-auto flex items-center justify-center">
+                        <FacebookShare/>
+                        <TwitterShare/>
+                    </div>
+                    <!-- <a href="share" class="flex items-center justify-between w-full bg-pink-500 hover:bg-pink-600 text-black font-medium py-2 px-4 rounded">
                         Share
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5m-13.5-9L12 3m0 0 4.5 4.5M12 3v13.5" />
                         </svg>
-                        
-                    </a>
+                    </a> -->
                 </div>
             </div>
             
