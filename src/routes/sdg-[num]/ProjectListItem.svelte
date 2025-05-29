@@ -14,12 +14,10 @@
         class_type,
     } = $props();
 
-    
-
 </script>
 
 <!-- If List View -->
-<div class="mb-10">
+<div class="mb-10" id="{title}">
     <h1 class="mb-4 text-justify">{title}</h1>
 
     <div class="grid grid-cols-[80%_20%] border-collapse ">
