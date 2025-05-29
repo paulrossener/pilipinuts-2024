@@ -1,4 +1,7 @@
-<script lang="ts">	
+<script lang="ts">
+	import { page } from "$app/state";
+	
+    import { getContext } from 'svelte';
     
     import FacebookShare from "$lib/components/FacebookShare.svelte";
     import TwitterShare from "$lib/components/TwitterShare.svelte";
@@ -11,8 +14,10 @@
         authors, 
         plot, 
         website, 
-        class_type,
+        class_type
     } = $props();
+
+    const showModalImage: Function = getContext('modal-image');
 
 </script>
 
@@ -24,7 +29,9 @@
         <!-- First Column -->
         <div class="p-6">
             {#await import(`$lib/assets/plots/${plot}.png`) then { default: src }}
-            <img {src} class="mb-4 h-auto w-auto" alt="Profile">
+            <button onclick={()=>showModalImage(plot)} type="button" aria-haspopup="dialog" aria-expanded="false" data-melt-dialog-trigger="" data-dialog-trigger="">
+                <img {src} class="mb-4 h-auto w-auto transition-all duration-200 hover:scale-[1.01] hover:brightness-125" alt="Profile">
+            </button>
             {/await}
         </div>
         <!-- Second Column -->

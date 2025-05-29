@@ -1,9 +1,11 @@
 <script lang="ts">
+
     let { 
-        project_data
+        project_data,
     } = $props();
 
     import ProjectListItem from './ProjectListItem.svelte';
+
 </script>
 
 <div class="container mx-auto">

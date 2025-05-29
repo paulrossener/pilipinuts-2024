@@ -5,6 +5,8 @@
 	import Footer from './Footer.svelte';
 
 	let { children } = $props();
+
+
 </script>
 
 <link rel="stylesheet" href="icons.css">
