@@ -49,7 +49,7 @@
                         SHARE
                     </div>
                     <div class="mx-auto flex items-center justify-center">
-                        <FacebookShare/>
+                        <FacebookShare project_title={title}/>
                         <TwitterShare/>
                     </div>
                     <!-- <a href="share" class="flex items-center justify-between w-full bg-pink-500 hover:bg-pink-600 text-black font-medium py-2 px-4 rounded">
