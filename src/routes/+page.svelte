@@ -76,14 +76,7 @@
     <div class="flex flex-col justify-center items-center w-[90%] h-[80dvh] gap-[20px]">
         <div class = "flex flex-col justify-between w-[90%] gap-[10px] ">
             <h3 class="break-words font-mono">PILIPINUTS 2024</h3>
-            <div class="relative flex h-[10px] w-[250px]">
-                <div class="absolute inset-0 grid grid-cols-4">
-                    <div class="bg-yellow-400"></div>
-                    <div class="bg-red-400"></div>
-                    <div class="bg-blue-400"></div>
-                    <div class="bg-pink-400"></div>
-                </div>
-            </div>
+            <img src="/misc/accent-sm.svg" class="w-[150px]" alt="Accent">
         </div>
         <div class="flex flex-row h-[60%] w-[90%] gap-[20px]">
             <div class="flex w-[45%] justify-center text-left pt-[10px]">
@@ -96,21 +89,9 @@
             </div>
         </div>
         <div id = "iconList" class="flex flex-wrap h-[55px] gap-[20px]"></div>
-        <div class="absolute bottom-0 top-[45%] flex flex-col w-full mt-[10px]">
-            <div class="relative flex justify-center items-center left-0 h-[18px] w-[55%] bg-yellow-500 text-yellow-500">
-                g
-            </div>
-            <div class="relative flex justify-center items-center left-[15%] h-[18px] w-[55%] bg-red-500 text-red-500">
-                g
-            </div>
-            <div class="relative flex justify-center items-center left-[30%] h-[18px] w-[55%] bg-blue-500 text-blue-500">
-                g
-            </div>
-            <div class="relative flex justify-center items-center left-[45%] h-[18px] w-[55%] bg-pink-500 text-pink-500">
-                g
-            </div>
-        </div>
+        
     </div>
+    <img src="/misc/accent-lg.svg" class="w-full" alt="Accent">
     <div class="nutshell-container flex flex-row w-full h-[93dvh] gap-[30px] p-[50px] max-[1200px]:flex-col">
         <div class="nutshell-c-child flex w-[50%] h-full items-center justify-center max-[1200px]:w-full">
             <div class="nutshell-pic w-full h-[100%] relative ">
@@ -142,14 +123,7 @@
             <div class="container w-[100%] h-full flex flex-col px-[10px] border-b border-white/60">
                 <div class = "flex flex-col w-full h-[50%] gap-[10px] max-[1200px]:h-[80%]">
                     <h3 class="font-mono">WHY PILIPINUTS?</h3>
-                    <div class="relative flex h-[20px] w-[250px]">
-                        <div class="absolute inset-0 grid grid-cols-4">
-                            <div class="bg-yellow-400"></div>
-                            <div class="bg-red-400"></div>
-                            <div class="bg-blue-400"></div>
-                            <div class="bg-pink-400"></div>
-                        </div>
-                    </div>
+                    <img src="/misc/accent-sm.svg" class="w-[150px]" alt="Accent">
                     <p class = "text-sm mt-[10px]">Each project in PilipiNuts 2025 draws inspiration from the United Nations Sustainable Development Goals (SDGs) — 
                         a global framework for ending poverty, protecting the planet, and ensuring peace and prosperity for all.
                     </p>
@@ -179,16 +153,7 @@
     <div class="flex justify-center items-center w-full h-[100dvh] pb-[135px]">
         <div id="projectIntro" class="relative flex flex-col justify-center items-center text-center w-full h-full">
             <div class="flex flex-col justify-center items-center w-[100%] gap-[20px]">
-                <div class = "w-[150px]">
-                    <div class="relative flex h-[10px]">
-                        <div class="absolute inset-0 grid grid-cols-4">
-                            <div class="bg-yellow-400"></div>
-                            <div class="bg-red-400"></div>
-                            <div class="bg-blue-400"></div>
-                            <div class="bg-pink-400"></div>
-                        </div>
-                    </div>
-                </div>
+                <img src="/misc/accent-sm.svg" class="w-[150px]" alt="Accent">
                 <p class="font-mono">WHEN POWERED BY PURPOSE,<br>DATA SCIENCE DOESN’T JUST REVEAL THE TRUTH —</p>
                 <div class="w-full max-w-[800px] font-medium">
                     <span class="text-5xl">It sparks 
@@ -208,14 +173,7 @@
     <div id="startProject" class="w-full pt-[75px]">
         <div class = "flex flex-col justify-between w-[500px] h-[90px]">
             <h1 class="text-5xl break-words font-medium">Our Projects</h1>
-            <div class="relative flex h-[20px]">
-                <div class="absolute inset-0 grid grid-cols-4">
-                    <div class="bg-yellow-400"></div>
-                    <div class="bg-red-400"></div>
-                    <div class="bg-blue-400"></div>
-                    <div class="bg-pink-400"></div>
-                </div>
-            </div>
+            <img src="/misc/accent-sm.svg" class="w-[150px]" alt="Accent">
         </div>
         <p class="w-full my-[20px]">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et orci sem. Maecenas pharetra venenatis est, non rutrum odio dignissim ac. 
             Duis fermentum eleifend turpis. Donec viverra mi in odio varius fringilla. Fusce lacinia vehicula fringilla. 
@@ -258,16 +216,7 @@
 
 <div id="inquiries" class = "relative flex flex-col w-full min-h-[45dvh] px-[50px] text-white">
     <div class="flex flex-col mt-[75px] justify-center items-center gap-[15px]">
-        <div class = "w-[150px]">
-            <div class="relative flex h-[10px]">
-                <div class="absolute inset-0 grid grid-cols-4">
-                    <div class="bg-yellow-400"></div>
-                    <div class="bg-red-400"></div>
-                    <div class="bg-blue-400"></div>
-                    <div class="bg-pink-400"></div>
-                </div>
-            </div>
-        </div>
+        <img src="/misc/accent-sm.svg" class="w-[150px]" alt="Accent">
         <h3 class="font-mono">GOT QUESTIONS?</h3>
         <div class="flex flex-col flex-grow gap border-y mt-[10px] w-[280px] text-white">
             <button type = "button" class = "inquiry-btn flex justify-between items-center w-full px-[2px] py-[15px] border-b ">
