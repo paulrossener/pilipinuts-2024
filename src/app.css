@@ -13,6 +13,10 @@
     --font-dmsans: "DM Sans", sans-serif; 
     --font-poppins: "Poppins", sans-serif; 
     --font-delius-unicase: "Delius Unicase", cursive; 
+    --color-blue: #559FFF;
+    --color-yellow: #FFE034;
+    --color-red: #F9452F;
+    --color-pink: #F95AB6;
 }
 
 @layer base {
@@ -49,7 +53,6 @@
         @apply text-base sm:text-lg;
     }
 }
-
 
 html {
     
