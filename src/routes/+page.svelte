@@ -36,7 +36,6 @@
 
 </script>
 
-
 <div id="home" class = "flex w-full h-[100dvh] p-[50px] pt-[55px] text-white">
     <div class="home-container flex flex-row w-full h-full gap-[10px] max-[950px]:justify-center max-[950px]:items-center">
         <div class="home-content flex flex-col w-[60%] h-full justify-center items-center p-[10px] max-[950px]:w-[70%]">
@@ -65,7 +64,6 @@
             </div>
         </div>
         <div class="home-pic w-[40%] h-full max-[950px]:hidden">
-            put home picture here
         </div>
     </div>
 </div>
@@ -73,7 +71,7 @@
     <div class="flex flex-col items-center w-full h-[calc(100dvh-60px)] pt-[20vh] pb-[20vh]">
         <div class="flex flex-col w-[70%]">
             <div class="flex flex-row w-full gap-[20px] mb-24">
-                <div class="w-full justify-center text-left pt-[10px]">
+                <div class="w-full justify-start text-left">
                     <h3 class="text-5xl font-medium">Where Data Meets <br> the Philippines' <br> Most Urgent <br> Questions</h3>
                 </div>
                 <div class="">
@@ -106,19 +104,19 @@
                     </div>
                     <div class="absolute inset-0 z-10 bg-[url('/misc/map.svg')] bg-no-repeat bg-size-[100%] bg-position-[50%_20%] max-[1200px]:bg-size-[60%] pointer-events-none"></div>
                     <div class=" absolute inset-0 z-20 grid grid-cols-2 grid-rows-2 gap-[10px] text-white pointer-events-none">
-                        <div class="nutshell-hover  flex flex-col justify-start bg-transparent p-[30px] text-4xl aspect-square">
+                        <div class="nutshell-hover  flex flex-col justify-start bg-transparent p-[30px] text-3xl aspect-square">
                             <span>42</span>
                             <span>Projects</span>
                         </div>
-                        <div class="nutshell-hover flex flex-col items-end bg-transparent p-[30px] text-4xl aspect-square">
+                        <div class="nutshell-hover flex flex-col items-end bg-transparent p-[30px] text-3xl aspect-square">
                             <span>15</span>
                             <span>Global Goals</span>
                         </div>
-                        <div class="nutshell-hover flex flex-col justify-end bg-transparent p-[30px] text-4xl aspect-square">
+                        <div class="nutshell-hover flex flex-col justify-end bg-transparent p-[30px] text-3xl aspect-square">
                             <span>1</span>
                             <span>Country</span>
                         </div>
-                        <div class="nutshell-hover z-10 flex flex-col justify-end items-end bg-transparent p-[30px] text-4xl aspect-square">
+                        <div class="nutshell-hover z-10 flex flex-col justify-end items-end bg-transparent p-[30px] text-3xl aspect-square">
                             <span>All In</span>
                             <span>A Nutshell</span>
                         </div>
