@@ -125,7 +125,7 @@
 </nav>
 <div id="data-scroll-watcher"></div>
 <div class="flex flex-col items-center {curr_sdg.color} w-full text-black p-10">
-    <img src="{curr_sdg.image}" class="sdg-img p-2 w-[50px] h-[50px] object-contain bg-white mb-2" alt="sdg">
+    <img src={curr_sdg.image} class="sdg-img p-2 w-[50px] h-[50px] object-contain {curr_sdg.color} mb-2" alt="sdg">
     <h1 class="font-bold text-5xl mb-4">{curr_sdg.title}</h1>
     <p class="font-mono text-sm">{curr_sdg.description}</p>
 </div>
