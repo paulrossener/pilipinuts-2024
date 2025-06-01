@@ -38,7 +38,7 @@
 <div class="container mx-auto">
     <table class="w-full text-left border-collapse">
         <thead class="border-b border-b-amber-50">
-            <tr class="uppercase text-gray-400 text-xs tracking-widest mb-4 font-robotomono">
+            <tr class="uppercase  text-xs mb-4 font-mono font-medium">
                 <th class="py-4">Project by</th>
                 <th class="py-4">Title</th>
                 <th class="py-4">Related SDGs</th>
@@ -56,6 +56,7 @@
                     plot={project.plot}
                     website={project.website}
                     class_type={project.class}
+                    related_sdg={project.related_sdg}
                     view_item={()=>showModal(project)}
                 />
             {/each}

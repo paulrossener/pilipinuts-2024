@@ -72,15 +72,15 @@
                 <div class="uppercase font-mono text-xs tracking-widest mb-2 py-2">
                     Section
                 </div>
-                <p class="py-2">{class_type}</p>
+                <p class="py-2 text-xl font-medium">{class_type}</p>
                 <!-- Group Description -->
                 <div class="uppercase font-mono text-xs tracking-widest mb-2">
                     Group {group}
                 </div>
                 <div>
-                    <p class="text-xl mb-1">{name}</p>
+                    <p class="text-xl mb-1 font-medium">{name}</p>
                     {#each authors as author}
-                    <p class="text-sm">{author}</p>
+                    <p class="text-sm font-mono">{author}</p>
                     {/each}
                 </div>
                 
