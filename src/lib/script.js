@@ -23,13 +23,13 @@ export function projectList() {
 
 function sdgItem(key, sdg) {
     const sdgCont = document.createElement('div');
-    sdgCont.setAttribute("class", `sdg-item flex flex-row w-full items-center gap-[10px] py-[7px] border-b border-white/50`);
+    sdgCont.setAttribute("class", `sdg-item flex flex-row w-full items-center gap-4 py-[7px] border-b border-white/50`);
     sdgCont.setAttribute('data-color', sdg.color); 
 
     const img = document.createElement('img');
     img.setAttribute('src', sdg.image);
     img.setAttribute('alt', sdg.title);
-    img.setAttribute('class', `sdg-img mx-[10px] p-2 w-[50px] h-[50px] object-contain ${sdg.color}`);
+    img.setAttribute('class', `sdg-img p-2 w-[50px] h-[50px] object-contain ${sdg.color}`);
 
     sdgCont.addEventListener('mouseenter', () => {
         const color = sdgCont.dataset.color.replace(/^bg-|\[|\]/g, '');
@@ -53,7 +53,7 @@ function sdgItem(key, sdg) {
 
     const desc = document.createElement('p');
     desc.innerText = sdg.description;
-    desc.setAttribute('class', 'truncate');
+    desc.setAttribute('class', 'truncate font-mono font-light text-sm');
 
     textCont.appendChild(header);
     textCont.appendChild(desc);

@@ -12,7 +12,7 @@
 <link rel="stylesheet" href="icons.css">
 
 <Header />
-<main class="mt-[25px]">
+<main class="mt-[60px] min-h-[calc(100dvh-60px-20dvh)] flex flex-col">
 	{@render children?.()}
 </main>
 <Footer />

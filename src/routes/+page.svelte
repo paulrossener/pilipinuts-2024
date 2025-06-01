@@ -36,13 +36,12 @@
 
 </script>
 
-
-<div id="home" class = "relative flex w-full h-[100dvh] p-[50px] pt-[55px] text-white">
+<div id="home" class = "flex w-full h-[100dvh] p-[50px] pt-[55px] text-white">
     <div class="home-container flex flex-row w-full h-full gap-[10px] max-[950px]:justify-center max-[950px]:items-center">
         <div class="home-content flex flex-col w-[60%] h-full justify-center items-center p-[10px] max-[950px]:w-[70%]">
             <div class="container flex flex-grow max-[700px]:w-full"></div>
             <div class="container min-h-[60%] flex flex-col gap-[20px] px-[10px] max-[700px]:w-full">
-                <h3 class = "w-[80%] text-7xl">Can Numbers Change a Nation?</h3>
+                <h3 class = "w-[80%] text-8xl font-medium">Can Numbers<br>Change a Nation?</h3>
                 <p class = "text-sm w-[65%] max-[700px]:w-full max-[700px]:justify-center max-[700px]:items-center">Dive into data science projects that expose the truths, trends, and turning points in the Philippines’ path to sustainable development.</p>
                 <div class="buttons flex flex-row gap-[20px] mt-[5px] max-[700px]:flex-col max-[700px]:justify-center max-[700px]:items-center">
                     {#each homeButton as btn}
@@ -65,130 +64,98 @@
             </div>
         </div>
         <div class="home-pic w-[40%] h-full max-[950px]:hidden">
-            put home picture here
         </div>
     </div>
 </div>
-
-
-
-<div id="nutshell" class = "relative flex flex-col justify-center items-center w-full min-h-[200dvh] pt-[55px] text-white gap-[50px]">
-    <div class="flex flex-col justify-center items-center w-[90%] h-[80dvh] gap-[20px]">
-        <div class = "flex flex-col justify-between w-[90%] gap-[10px] ">
-            <h3 class="break-words font-mono">PILIPINUTS 2024</h3>
-            <div class="relative flex h-[10px] w-[250px]">
-                <div class="absolute inset-0 grid grid-cols-4">
-                    <div class="bg-yellow-400"></div>
-                    <div class="bg-red-400"></div>
-                    <div class="bg-blue-400"></div>
-                    <div class="bg-pink-400"></div>
+<div id="nutshell" class = "flex flex-col justify-center items-center w-full pt-[55px] text-white gap-[50px]">
+    <div class="flex flex-col items-center w-full h-[calc(100dvh-60px)] pt-[20vh] pb-[20vh]">
+        <div class="flex flex-col w-[70%]">
+            <div class="flex flex-row w-full gap-[20px] mb-24">
+                <div class="w-full justify-start text-left">
+                    <h3 class="text-5xl font-medium">Where Data Meets <br> the Philippines' <br> Most Urgent <br> Questions</h3>
+                </div>
+                <div class="">
+                    <div class="mb-6">
+                        <h3 class="break-words font-mono mb-3">PILIPINUTS 2024</h3>
+                        <img src="/misc/accent-sm.svg" class="w-[150px]" alt="Accent">
+                    </div>
+                    <p class = "text-sm mb-3">PilipiNuts 2024 is the culminating showcase of CS 132: Introduction to Data Science at UP Diliman, guided by Asst. Prof. Paul Regonia. This year’s symposium brings together powerful student-led projects that harness data science to investigate and address the Philippines’ most pressing social, economic, and environmental challenges.</p>
+                    <p class = "text-sm">From climate resilience to education equity, from poverty trends to public health — PilipiNuts 2025 transforms raw data into meaningful insights and action-driven narratives rooted in the United Nations Sustainable Development Goals (SDGs).</p>
                 </div>
             </div>
+            <div id = "iconList" class="w-full flex flex-wrap justify-between h-[55px]"></div>
         </div>
-        <div class="flex flex-row h-[60%] w-[90%] gap-[20px]">
-            <div class="flex w-[45%] justify-center text-left pt-[10px]">
-                <h3 class="text-5xl font-medium">Where Data Meets <br> the Nation’s <br> Most Urgent <br> Questions</h3>
-            </div>
-            <div class="flex flex-col gap-[20px] w-[55%] border-t">
-                <div></div>
-                <p class = "text-sm mt-[20px]">PilipiNuts 2024 is the culminating showcase of CS 132: Introduction to Data Science at UP Diliman, guided by Asst. Prof. Paul Regonia. This year’s symposium brings together powerful student-led projects that harness data science to investigate and address the Philippines’ most pressing social, economic, and environmental challenges.</p>
-                <p class = "text-sm mt-[20px]">From climate resilience to education equity, from poverty trends to public health — PilipiNuts 2025 transforms raw data into meaningful insights and action-driven narratives rooted in the United Nations Sustainable Development Goals (SDGs).</p>
-            </div>
-        </div>
-        <div id = "iconList" class="flex flex-wrap h-[55px] gap-[20px]"></div>
-        <div class="absolute bottom-0 top-[45%] flex flex-col w-full mt-[10px]">
-            <div class="relative flex justify-center items-center left-0 h-[18px] w-[55%] bg-yellow-500 text-yellow-500">
-                g
-            </div>
-            <div class="relative flex justify-center items-center left-[15%] h-[18px] w-[55%] bg-red-500 text-red-500">
-                g
-            </div>
-            <div class="relative flex justify-center items-center left-[30%] h-[18px] w-[55%] bg-blue-500 text-blue-500">
-                g
-            </div>
-            <div class="relative flex justify-center items-center left-[45%] h-[18px] w-[55%] bg-pink-500 text-pink-500">
-                g
-            </div>
-        </div>
+        <div class="flex-grow"></div>
+        <img src="/misc/accent-lg.svg" class="w-full" alt="Accent">
     </div>
-    <div class="nutshell-container flex flex-row w-full h-[93dvh] gap-[30px] p-[50px] max-[1200px]:flex-col">
-        <div class="nutshell-c-child flex w-[50%] h-full items-center justify-center max-[1200px]:w-full">
-            <div class="nutshell-pic w-full h-[100%] relative ">
-                <div class="absolute inset-0 z-0 grid grid-cols-2 grid-rows-2 gap-[10px]">
-                    <div class="nutshell-change bg-gray-400/50 "></div>
-                    <div class="nutshell-change bg-gray-400/50 "></div>
-                    <div class="nutshell-change bg-gray-400/50 "></div>
-                    <div class="nutshell-change bg-gray-400/50 "></div>
-                </div>
-                <div class="absolute inset-0 z-10 bg-[url('/nutshell-pic.png')] bg-no-repeat bg-size-[100%] bg-position-[50%_20%] max-[1200px]:bg-size-[60%]"></div>
-                <div class=" absolute inset-0 z-20 grid grid-cols-2 grid-rows-2 gap-[10px] text-white">
-                    <div class="nutshell-hover flex flex-col justify-start bg-transparent p-[30px] text-4xl aspect-square">
-                        <span>42</span>
-                        <span>Projects</span>
-                    </div>
-                    <div class="nutshell-hover flex flex-col bg-transparent p-[30px] text-4xl text-right aspect-square">
-                        <span>17</span>
-                        <span>SDGs</span>
-                    </div>
-                    <div class="nutshell-hover flex flex-col justify-start bg-transparent p-[30px] text-4xl aspect-square">
-                        <span>1</span>
-                        <span>Country</span>
-                    </div>
-                    <div class="nutshell-hover flex bg-transparent aspect-square"></div>
-                </div>
-            </div>
-        </div>
-        <div class="nutshell-content flex flex-col w-[50%] h-full max-[1200px]:flex-row max-[1200px]:w-full max-[1200px]:h-[50%] ">
-            <div class="container w-[100%] h-full flex flex-col px-[10px] border-b border-white/60">
-                <div class = "flex flex-col w-full h-[50%] gap-[10px] max-[1200px]:h-[80%]">
-                    <h3 class="font-mono">WHY PILIPINUTS?</h3>
-                    <div class="relative flex h-[20px] w-[250px]">
-                        <div class="absolute inset-0 grid grid-cols-4">
-                            <div class="bg-yellow-400"></div>
-                            <div class="bg-red-400"></div>
-                            <div class="bg-blue-400"></div>
-                            <div class="bg-pink-400"></div>
+    <div class="flex justify-center items-center w-full h-[calc(100dvh-60px)]">
+        <div class="w-[70%] flex flex-row gap-12">
+            <div class="nutshell-c-child flex w-[50%] aspect-square items-center justify-center max-[1200px]:w-full">
+                <div class="nutshell-pic w-full h-[100%] relative ">
+                    <div class="absolute inset-0 z-0 grid grid-cols-2 grid-rows-2 gap-[10px] ">
+                        <div class="nutshell-change bg-gray-400/50 transition duration-200 ease-in-out hover:bg-blue">
+                        </div>
+                        <div class="nutshell-change bg-gray-400/50 transition duration-200 ease-in-out hover:bg-red">
+                        </div>
+                        <div class="nutshell-change bg-gray-400/50 transition duration-200 ease-in-out hover:bg-pink">
+                        </div>
+                        <div class="nutshell-change bg-gray-400/50 transition duration-200 ease-in-out hover:bg-yellow">
                         </div>
                     </div>
-                    <p class = "text-sm mt-[10px]">Each project in PilipiNuts 2025 draws inspiration from the United Nations Sustainable Development Goals (SDGs) — 
-                        a global framework for ending poverty, protecting the planet, and ensuring peace and prosperity for all.
-                    </p>
-                    <p class = "text-sm mt-[10px]">Grounded in the realities of the Philippine context, these data science projects tackle urgent challenges such 
-                        as climate change, gender inequality, and poverty. More than just academic work, they represent informed, data-driven 
-                        contributions to shaping a more just, resilient, and sustainable future.
-                    </p>
-                </div>
-                <div class="flex flex-col w-full h-[50%] gap-[20px]">
-                    <div class="text-container text-5xl mt-[20px] gap-[10px] flex flex-col max-[1200px]:flex-row max-[1200px]:gap-[0px] max-[1200px]:text-base font-medium">
-                        <span class="typing-text"><span class="cursor font-medium">This is the story of the</span></span>
-                        <span class="typing-text ml-2"><span class="cursor font-medium">Philippines, told</span></span>
-                        <span class="typing-text ml-2"><span class="cursor font-medium">through data —</span></span>
-                        <span class="typing-text ml-2"><span class="cursor font-medium">one SDG at a time.</span></span>
+                    <div class="absolute inset-0 z-10 bg-[url('/misc/map.svg')] bg-no-repeat bg-size-[100%] bg-position-[50%_20%] max-[1200px]:bg-size-[60%] pointer-events-none"></div>
+                    <div class=" absolute inset-0 z-20 grid grid-cols-2 grid-rows-2 gap-[10px] text-white pointer-events-none">
+                        <div class="nutshell-hover  flex flex-col justify-start bg-transparent p-[30px] text-3xl aspect-square">
+                            <span>42</span>
+                            <span>Projects</span>
+                        </div>
+                        <div class="nutshell-hover flex flex-col items-end bg-transparent p-[30px] text-3xl aspect-square">
+                            <span>15</span>
+                            <span>Global Goals</span>
+                        </div>
+                        <div class="nutshell-hover flex flex-col justify-end bg-transparent p-[30px] text-3xl aspect-square">
+                            <span>1</span>
+                            <span>Country</span>
+                        </div>
+                        <div class="nutshell-hover z-10 flex flex-col justify-end items-end bg-transparent p-[30px] text-3xl aspect-square">
+                            <span>All In</span>
+                            <span>A Nutshell</span>
+                        </div>
                     </div>
-                    <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et orci sem. Maecenas pharetra venenatis est, non rutrum odio dignissim ac. 
-                        Duis fermentum eleifend turpis. Donec viverra mi in odio varius fringilla. Fusce lacinia vehicula fringilla. 
-                        Integer enim arcu, bibendum suscipit tortor quis, scelerisque tempor nulla. Vivamus scelerisque elit vitae sem tristique, fermentum faucibus urna maximus.
-                    </p> -->
+                    <!-- <div class="absolute inset-0 z-10 bg-[url('/misc/map.svg')] bg-no-repeat bg-size-[100%] bg-position-[50%_20%] max-[1200px]:bg-size-[60%]"></div> -->
+                </div>
+            </div>
+            <div class="nutshell-content flex flex-col w-[50%] flex-grow max-[1200px]:flex-row max-[1200px]:w-full max-[1200px]:h-[50%] ">
+                <div class="container w-[100%] h-full flex flex-col border-b border-white/60">
+                    <div class = "flex flex-col w-full gap-[10px] max-[1200px]:h-[80%]">
+                        <h3 class="font-mono">WHY PILIPINUTS?</h3>
+                        <img src="/misc/accent-sm.svg" class="w-[150px]" alt="Accent">
+                        <p class = "text-sm mt-[10px]">Each project in PilipiNuts 2025 draws inspiration from the United Nations Sustainable Development Goals (SDGs) — 
+                            a global framework for ending poverty, protecting the planet, and ensuring peace and prosperity for all.
+                        </p>
+                        <p class = "text-sm mt-[10px]">Grounded in the realities of the Philippine context, these data science projects tackle urgent challenges such 
+                            as climate change, gender inequality, and poverty. More than just academic work, they represent informed, data-driven 
+                            contributions to shaping a more just, resilient, and sustainable future.
+                        </p>
+                    </div>
+                    <div class="flex-grow"></div>
+                    <div class="flex flex-col w-full pb-12">
+                        <div class="text-container text-5xl gap-[10px] flex flex-col max-[1200px]:flex-row max-[1200px]:gap-[0px] max-[1200px]:text-base font-medium">
+                            <span class="typing-text"><span class="cursor font-medium">This is the story of the</span></span>
+                            <span class="typing-text ml-2"><span class="cursor font-medium">Philippines, told</span></span>
+                            <span class="typing-text ml-2"><span class="cursor font-medium">through data —</span></span>
+                            <span class="typing-text ml-2"><span class="cursor font-medium">one SDG at a time.</span></span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
-
-<div id="projects" class = "relative flex flex-col w-full min-h-[295dvh] px-[50px] text-white">
-    <div class="flex justify-center items-center w-full h-[100dvh] pb-[135px]">
+<div id="projects" class = "flex flex-col items-center w-full min-h-[250dvh] px-[50px] text-white">
+    <div class="flex justify-center items-center w-full h-[calc(100dvh)] pb-[135px]">
         <div id="projectIntro" class="relative flex flex-col justify-center items-center text-center w-full h-full">
             <div class="flex flex-col justify-center items-center w-[100%] gap-[20px]">
-                <div class = "w-[150px]">
-                    <div class="relative flex h-[10px]">
-                        <div class="absolute inset-0 grid grid-cols-4">
-                            <div class="bg-yellow-400"></div>
-                            <div class="bg-red-400"></div>
-                            <div class="bg-blue-400"></div>
-                            <div class="bg-pink-400"></div>
-                        </div>
-                    </div>
-                </div>
+                <img src="/misc/accent-sm.svg" class="w-[150px]" alt="Accent">
                 <p class="font-mono">WHEN POWERED BY PURPOSE,<br>DATA SCIENCE DOESN’T JUST REVEAL THE TRUTH —</p>
                 <div class="w-full max-w-[800px] font-medium">
                     <span class="text-5xl">It sparks 
@@ -205,19 +172,13 @@
             </div>  
         </div>
     </div>
-    <div id="startProject" class="w-full pt-[75px]">
-        <div class = "flex flex-col justify-between w-[500px] h-[90px]">
-            <h1 class="text-5xl break-words font-medium">Our Projects</h1>
-            <div class="relative flex h-[20px]">
-                <div class="absolute inset-0 grid grid-cols-4">
-                    <div class="bg-yellow-400"></div>
-                    <div class="bg-red-400"></div>
-                    <div class="bg-blue-400"></div>
-                    <div class="bg-pink-400"></div>
-                </div>
-            </div>
+    <div id="startProject" class="w-[70%] pt-[75px]">
+        <div class = "flex flex-col mb-4">
+            <h1 class="text-5xl break-words font-medium mb-3">Our Projects</h1>
+            <img src="/misc/accent-sm.svg" class="w-[150px]" alt="Accent">
         </div>
-        <p class="w-full my-[20px]">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et orci sem. Maecenas pharetra venenatis est, non rutrum odio dignissim ac. 
+        <p class="w-full my-[20px] mb-12">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et orci sem. Maecenas pharetra venenatis est, non rutrum odio dignissim ac. 
             Duis fermentum eleifend turpis. Donec viverra mi in odio varius fringilla. Fusce lacinia vehicula fringilla. 
             Integer enim arcu, bibendum suscipit tortor quis, scelerisque tempor nulla. Vivamus scelerisque elit vitae sem tristique, fermentum faucibus urna maximus.
         </p>
@@ -234,10 +195,10 @@
                         </button>
                     </div>
                 </div>
-                <div class="relative h-[400px]">
+                <div class="relative h-[400px] ">
                     <div class="absolute inset-y-0 left-0 w-[150px] h-full bg-gradient-to-l from-transparent to-[#080808] pointer-events-none z-10"></div>
                     <div class="absolute inset-y-0 right-0 w-[150px] h-full bg-gradient-to-r from-transparent to-[#080808] pointer-events-none z-10"></div>
-                    <div id="featuredProjects" class="feature grid grid-flow-col h-full place-items-center border-y border-white/60 overflow-hidden">
+                    <div id="featuredProjects" class="text-lg/2 font-medium feature grid grid-flow-col h-full place-items-center border-y border-white/60 overflow-hidden">
                         <!-- Features Project List -->
                     </div>
                 </div>
@@ -245,7 +206,7 @@
             <div class="flex flex-col flex-grow w-full gap-[20px]">
                 <h3 class="font-mono">ALL PROJECTS BY SDG</h3>
                 <div class="relative flex h-full">
-                    <div class="w-[95%] absolute inset-0 grid grid-cols-2 gap-[10px] m-auto">
+                    <div class="absolute inset-0 grid grid-cols-2 gap-[10px] m-auto">
                         <!-- projectList function -->
                         <div id="col-1" class="flex flex-col border-t border-white"></div>
                         <div id="col-2" class="flex flex-col border-t border-white"></div>
@@ -255,19 +216,12 @@
         </div>
     </div>
 </div>
-
-<div id="inquiries" class = "relative flex flex-col w-full min-h-[45dvh] px-[50px] text-white">
+<div class="flex items-center justify-center w-full h-[20dvh]">
+    <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24"><rect width="2.8" height="12" x="1" y="6" fill="#fff"><animate id="svgSpinnersBarsScale0" attributeName="y" begin="0;svgSpinnersBarsScale1.end-0.1s" calcMode="spline" dur="0.6s" keySplines=".36,.61,.3,.98;.36,.61,.3,.98" values="6;1;6"/><animate attributeName="height" begin="0;svgSpinnersBarsScale1.end-0.1s" calcMode="spline" dur="0.6s" keySplines=".36,.61,.3,.98;.36,.61,.3,.98" values="12;22;12"/></rect><rect width="2.8" height="12" x="5.8" y="6" fill="#fff"><animate attributeName="y" begin="svgSpinnersBarsScale0.begin+0.1s" calcMode="spline" dur="0.6s" keySplines=".36,.61,.3,.98;.36,.61,.3,.98" values="6;1;6"/><animate attributeName="height" begin="svgSpinnersBarsScale0.begin+0.1s" calcMode="spline" dur="0.6s" keySplines=".36,.61,.3,.98;.36,.61,.3,.98" values="12;22;12"/></rect><rect width="2.8" height="12" x="10.6" y="6" fill="#fff"><animate attributeName="y" begin="svgSpinnersBarsScale0.begin+0.2s" calcMode="spline" dur="0.6s" keySplines=".36,.61,.3,.98;.36,.61,.3,.98" values="6;1;6"/><animate attributeName="height" begin="svgSpinnersBarsScale0.begin+0.2s" calcMode="spline" dur="0.6s" keySplines=".36,.61,.3,.98;.36,.61,.3,.98" values="12;22;12"/></rect><rect width="2.8" height="12" x="15.4" y="6" fill="#fff"><animate attributeName="y" begin="svgSpinnersBarsScale0.begin+0.3s" calcMode="spline" dur="0.6s" keySplines=".36,.61,.3,.98;.36,.61,.3,.98" values="6;1;6"/><animate attributeName="height" begin="svgSpinnersBarsScale0.begin+0.3s" calcMode="spline" dur="0.6s" keySplines=".36,.61,.3,.98;.36,.61,.3,.98" values="12;22;12"/></rect><rect width="2.8" height="12" x="20.2" y="6" fill="#fff"><animate id="svgSpinnersBarsScale1" attributeName="y" begin="svgSpinnersBarsScale0.begin+0.4s" calcMode="spline" dur="0.6s" keySplines=".36,.61,.3,.98;.36,.61,.3,.98" values="6;1;6"/><animate attributeName="height" begin="svgSpinnersBarsScale0.begin+0.4s" calcMode="spline" dur="0.6s" keySplines=".36,.61,.3,.98;.36,.61,.3,.98" values="12;22;12"/></rect></svg>
+</div>
+<div id="inquiries" class = "flex flex-col w-full min-h-[45dvh] px-[50px] text-white">
     <div class="flex flex-col mt-[75px] justify-center items-center gap-[15px]">
-        <div class = "w-[150px]">
-            <div class="relative flex h-[10px]">
-                <div class="absolute inset-0 grid grid-cols-4">
-                    <div class="bg-yellow-400"></div>
-                    <div class="bg-red-400"></div>
-                    <div class="bg-blue-400"></div>
-                    <div class="bg-pink-400"></div>
-                </div>
-            </div>
-        </div>
+        <img src="/misc/accent-sm.svg" class="w-[150px]" alt="Accent">
         <h3 class="font-mono">GOT QUESTIONS?</h3>
         <div class="flex flex-col flex-grow gap border-y mt-[10px] w-[280px] text-white">
             <button type = "button" class = "inquiry-btn flex justify-between items-center w-full px-[2px] py-[15px] border-b ">
