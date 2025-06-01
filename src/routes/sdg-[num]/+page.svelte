@@ -21,6 +21,8 @@
         };
     }
 
+    import { setContext } from 'svelte';
+
     import ProjectList from './ProjectList.svelte';
     import ProjectTable from './ProjectTable.svelte';
 
@@ -43,6 +45,21 @@
     // Yes, there are better ways to do this but... how they do it..
     let currentTab = $state("list");
 
+    let view_image = $state() as HTMLImageElement;
+    let thisModal = $state() as HTMLDivElement;
+ 
+    setContext('modal-image', showModalImage);
+
+    async function showModalImage(delta: String) {
+        const imageModule = await import(`$lib/assets/plots/${delta}.png`);
+		view_image.src = imageModule.default;
+        thisModal.classList.remove('hidden')
+	}
+
+    function hideModal(){
+        thisModal.classList.add('hidden');
+    }
+
     let num = [
         {num: "2", color: "bg-black"},
         {num: "0", color: "bg-black"},
@@ -62,10 +79,11 @@
     }
 
     import {onMount} from "svelte";
+    
+    let navbar = $state() as HTMLElement;
 
     onMount(() => {
-        let navbar = document.getElementById("topBarColored");
-        let scrollWatcher = document.querySelector("#data-scroll-watcher");
+        let scrollWatcher = document.querySelector("#data-scroll-watcher") as HTMLDivElement;
 
         const navObserver = new IntersectionObserver((entries) => {
             navbar.classList.toggle("hidden", !entries[0].isIntersecting);
@@ -77,7 +95,7 @@
 
 </script>
 
-<nav id="topBarColored" class="top-bar fixed flex flex-row items-center top-0 w-full h-[60px] {curr_sdg.color} text-black border-b border-black z-[1000]">
+<nav bind:this={navbar} class="top-bar fixed flex flex-row items-center top-0 w-full h-[60px] {curr_sdg.color} text-black border-b border-black z-[1000]">
     <div class="flex flex-row items-center bg-black-500 w-full h-full ">
         <a target="_self" href="/" aria-label="Page Title" class="px-4 py-[10px] title-content flex items-center" onmouseenter={triggerAnimation}>
             <div class="relative flex items-center gap-2">
@@ -167,5 +185,21 @@
     </div>
 </div>
 
+<div bind:this={thisModal}  tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full bg-gray-900/50">
 
+    <!-- Catcher -->
+    <!-- svelte-ignore a11y_click_events_have_key_events -->
+    <!-- svelte-ignore a11y_no_static_element_interactions -->
+    <div onclick={hideModal} class="h-full w-full z-50 fixed"></div>
+
+    <div class="max-w-7xl my-20 bg-black p-10 mx-auto z-51 relative rounded-2xl">
+        <button onclick={hideModal} type="button" class="absolute top-3 end-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center" data-modal-hide="progress-modal">
+            <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+            </svg>
+            <span class="sr-only">Close modal</span>
+        </button>
+        <img bind:this={view_image} class="mb-4 h-auto w-full" alt="Profile">
+    </div>
+</div>
 

@@ -1,5 +1,12 @@
 <script lang="ts">
-	let { 
+	import { page } from "$app/state";
+	
+    import { getContext } from 'svelte';
+    
+    import FacebookShare from "$lib/components/FacebookShare.svelte";
+    import TwitterShare from "$lib/components/TwitterShare.svelte";
+
+    let { 
         group, 
         name, 
         title, 
@@ -24,6 +31,8 @@
     const sdgs: SDG = sdg;
     const curr_sdg = sdgs[sdg_num];
 
+    const showModalImage: Function = getContext('modal-image');
+
     console.log(curr_sdg);
 </script>
 
@@ -35,7 +44,9 @@
         <!-- First Column -->
         <div class="">
             {#await import(`$lib/assets/plots/${plot}.png`) then { default: src }}
-            <img {src} class="h-auto w-auto" alt="Profile">
+            <button onclick={()=>showModalImage(plot)} type="button" aria-haspopup="dialog" aria-expanded="false" data-melt-dialog-trigger="" data-dialog-trigger="">
+                <img {src} class="mb-4 h-auto w-auto transition-all duration-200 hover:scale-[1.01] hover:brightness-125" alt="Profile">
+            </button>
             {/await}
         </div>
         <!-- Second Column -->
@@ -87,13 +98,19 @@
                         </svg>
                         
                     </a>
-                    <a href="share" class="flex items-center justify-between w-full {curr_sdg.color} hover:opacity-[0.5] text-black font-medium py-2 px-4">
+                    <div class="uppercase text-gray-400 text-xs tracking-widest mb-4">
+                        SHARE
+                    </div>
+                    <div class="mx-auto flex items-center justify-center">
+                        <FacebookShare project_title={title}/>
+                        <TwitterShare project_title={title}/>
+                    </div>
+                    <!-- <a href="share" class="flex items-center justify-between w-full bg-pink-500 hover:bg-pink-600 text-black font-medium py-2 px-4 rounded">
                         Share
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5m-13.5-9L12 3m0 0 4.5 4.5M12 3v13.5" />
                         </svg>
-                        
-                    </a>
+                    </a> -->
                 </div>
             </div>
             

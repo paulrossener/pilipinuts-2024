@@ -31,6 +31,7 @@
         theModal.classList.add('hidden')
     }
 
+
 </script>
 
 <div class="container mx-auto">

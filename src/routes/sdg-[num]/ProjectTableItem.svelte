@@ -1,4 +1,8 @@
 <script lang="ts">
+
+    import FacebookShare from "$lib/components/FacebookShare.svelte";
+    import TwitterShare from "$lib/components/TwitterShare.svelte";
+    
 	let { 
         group, 
         name, 

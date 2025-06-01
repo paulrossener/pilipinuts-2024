@@ -1,10 +1,12 @@
 <script lang="ts">
+
     let { 
         project_data,
         sdg_num
     } = $props();
 
     import ProjectListItem from './ProjectListItem.svelte';
+
 </script>
 
 <div class="container mx-auto">
