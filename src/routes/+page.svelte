@@ -1,13 +1,24 @@
-<script>
+<script lang="ts">
+    interface SDG {
+        [key: string]: { 
+            title: string;
+            description: string;
+            image: string;
+            color: string;
+        };
+    }
+    
     import { triggerTypingAnimation, proceedProject } from '$lib/animation.js';
     import { projectList, featuredProjects, icons } from '$lib/script.js';
     import { onMount } from 'svelte';
     
     import sdg from "$lib/data/sdg.json";
     
+    const sdgs: SDG = sdg;
+
     onMount(() => {
         triggerTypingAnimation();
-        projectList();
+        // projectList();
         featuredProjects();
         icons();
         // proceedProject();
@@ -25,13 +36,23 @@
         {num: "4", color: "bg-pink-500"}
     ]
 
-    function scrollToSection(id) {
+    function scrollToSection(id: any) {
         const el = document.getElementById(id);
         if (id === "nutshell") {
             if (el) el.scrollIntoView({ behavior: 'smooth' });
         } else {
             if (el) proceedProject();
         }
+    }
+
+    function goToSDG(sdg_num: Number){
+        window.location.href = `/sdg-${sdg_num}`;
+    }
+
+    function changeSDGBGColor(newColor: String, target_sdg: Number){
+        const color = newColor.replace(/^bg-|\[|\]/g, '');
+        const target_element = document.getElementById(`sdg-${target_sdg}`) as HTMLDivElement;
+        target_element.style.backgroundColor = color;
     }
 
 </script>
@@ -47,7 +68,7 @@
                     {#each homeButton as btn}
                         <button class = {`home-btn relative flex flex-row items-center justify-center ${btn.width} border border-white 
                         overflow-hidden rounded-none font-mono px-2 py-[10px] text-[15px] `} 
-                        type="button" on:click={() => scrollToSection(btn.id)}>
+                        type="button" onclick={() => scrollToSection(btn.id)}>
                             <div class="original absolute flex justify-center items-center bg-black text-white gap-[10px] inset-0 ">{btn.content} <i class="fa-solid fa-arrow-right"></i></div>
                             <div class="inline-flex bg-transparent" role="button" aria-label="Hover effect button" tabindex = 0>
                                 {#each btn.spanList as n, i} 
@@ -207,9 +228,52 @@
                 <h3 class="font-mono">ALL PROJECTS BY SDG</h3>
                 <div class="relative flex h-full">
                     <div class="absolute inset-0 grid grid-cols-2 gap-[10px] m-auto">
-                        <!-- projectList function -->
-                        <div id="col-1" class="flex flex-col border-t border-white"></div>
-                        <div id="col-2" class="flex flex-col border-t border-white"></div>
+                        <!-- NOTE: projectList function -->
+                        <!-- sdgs -> JSON File -->
+                        <div id="col-1" class="flex flex-col border-t border-white">
+                            <!-- SDGS 1 - 9 -->
+                            {#each { length: 9 }, rank}
+                            <!-- svelte-ignore a11y_click_events_have_key_events -->
+                            <!-- svelte-ignore a11y_no_static_element_interactions -->
+                            <div
+                                id="sdg-{rank+1}"
+                                class="sdg-item flex flex-row w-full items-center gap-4 py-[7px] border-b border-white/50"
+                                onclick={()=>goToSDG(rank + 1)}
+                                onmouseenter={()=>changeSDGBGColor(sdgs[rank + 1].color, rank+1)}
+                                onmouseleave={()=>changeSDGBGColor("", rank+1)}
+                            >
+                                <div class="min-w-[50px] max-w-[50px]">
+                                    <img src={sdgs[rank + 1].image} alt="{sdgs[rank + 1].title}" class="sdg-img p-2 w-full h-[50px] object-contain {sdgs[rank + 1].color}"/>
+                                </div>
+                                <div class="flex flex-col h-[100%] justify-center truncate">
+                                    <h3 class="font-semibold">{@html sdgs[rank + 1].title}</h3>
+                                    <p class="truncate font-mono font-light text-sm">{@html sdgs[rank + 1].description}</p>
+                                </div>
+                            </div>
+                            {/each}
+                        </div>
+                        <div id="col-2" class="flex flex-col border-t border-white">
+                            <!-- SDGS 10 - 17 -->
+                            {#each { length: 8 }, rank}
+                            <!-- svelte-ignore a11y_click_events_have_key_events -->
+                            <!-- svelte-ignore a11y_no_static_element_interactions -->
+                            <div
+                                id="sdg-{rank+10}"
+                                class="sdg-item flex flex-row w-full items-center gap-4 py-[7px] border-b border-white/50"
+                                onclick={()=>goToSDG(rank + 10)}
+                                onmouseenter={()=>changeSDGBGColor(sdgs[rank + 10].color, rank + 10)}
+                                onmouseleave={()=>changeSDGBGColor("", rank + 10)}
+                            >
+                                <div class="min-w-[50px] max-w-[50px]">
+                                    <img src={sdgs[rank + 10].image} alt="{sdgs[rank + 10].title}" class="sdg-img p-2 w-full h-[50px] object-contain {sdgs[rank + 10].color}"/>
+                                </div>
+                                <div class="flex flex-col h-[100%] justify-center truncate">
+                                    <h3 class="font-semibold">{@html sdgs[rank + 10].title}</h3>
+                                    <p class="truncate font-mono font-light text-sm">{@html sdgs[rank + 10].description}</p>
+                                </div>
+                            </div>
+                            {/each}
+                        </div>
                     </div>
                 </div>
             </div>
