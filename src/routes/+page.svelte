@@ -57,6 +57,27 @@
 
 </script>
 
+<!-- NOTE: Snippet Area -->
+{#snippet sdg_item(number: number)}
+    <!-- svelte-ignore a11y_click_events_have_key_events -->
+    <!-- svelte-ignore a11y_no_static_element_interactions -->
+    <div
+        id="sdg-{number}"
+        class="sdg-item flex flex-row w-full items-center gap-4 py-[7px] border-b border-white/50"
+        onclick={()=>goToSDG(number)}
+        onmouseenter={()=>changeSDGBGColor(sdgs[number].color, number)}
+        onmouseleave={()=>changeSDGBGColor("", number)}
+    >
+        <div class="min-w-[50px] max-w-[50px]">
+            <img src={sdgs[number].image} alt="{sdgs[number].title}" class="sdg-img p-2 w-full h-[50px] object-contain {sdgs[number].color}"/>
+        </div>
+        <div class="flex flex-col h-[100%] justify-center truncate">
+            <h3 class="font-semibold">{@html sdgs[number].title}</h3>
+            <p class="truncate font-mono font-light text-sm">{@html sdgs[number].description}</p>
+        </div>
+    </div>
+{/snippet}
+
 <div id="home" class = "flex w-full h-[100dvh] p-[50px] pt-[55px] text-white">
     <div class="home-container flex flex-row w-full h-full gap-[10px] max-[950px]:justify-center max-[950px]:items-center">
         <div class="home-content flex flex-col w-[60%] h-full justify-center items-center p-[10px] max-[950px]:w-[70%]">
@@ -233,45 +254,13 @@
                         <div id="col-1" class="flex flex-col border-t border-white">
                             <!-- SDGS 1 - 9 -->
                             {#each { length: 9 }, rank}
-                            <!-- svelte-ignore a11y_click_events_have_key_events -->
-                            <!-- svelte-ignore a11y_no_static_element_interactions -->
-                            <div
-                                id="sdg-{rank+1}"
-                                class="sdg-item flex flex-row w-full items-center gap-4 py-[7px] border-b border-white/50"
-                                onclick={()=>goToSDG(rank + 1)}
-                                onmouseenter={()=>changeSDGBGColor(sdgs[rank + 1].color, rank+1)}
-                                onmouseleave={()=>changeSDGBGColor("", rank+1)}
-                            >
-                                <div class="min-w-[50px] max-w-[50px]">
-                                    <img src={sdgs[rank + 1].image} alt="{sdgs[rank + 1].title}" class="sdg-img p-2 w-full h-[50px] object-contain {sdgs[rank + 1].color}"/>
-                                </div>
-                                <div class="flex flex-col h-[100%] justify-center truncate">
-                                    <h3 class="font-semibold">{@html sdgs[rank + 1].title}</h3>
-                                    <p class="truncate font-mono font-light text-sm">{@html sdgs[rank + 1].description}</p>
-                                </div>
-                            </div>
+                                {@render sdg_item(rank + 1)}
                             {/each}
                         </div>
                         <div id="col-2" class="flex flex-col border-t border-white">
                             <!-- SDGS 10 - 17 -->
                             {#each { length: 8 }, rank}
-                            <!-- svelte-ignore a11y_click_events_have_key_events -->
-                            <!-- svelte-ignore a11y_no_static_element_interactions -->
-                            <div
-                                id="sdg-{rank+10}"
-                                class="sdg-item flex flex-row w-full items-center gap-4 py-[7px] border-b border-white/50"
-                                onclick={()=>goToSDG(rank + 10)}
-                                onmouseenter={()=>changeSDGBGColor(sdgs[rank + 10].color, rank + 10)}
-                                onmouseleave={()=>changeSDGBGColor("", rank + 10)}
-                            >
-                                <div class="min-w-[50px] max-w-[50px]">
-                                    <img src={sdgs[rank + 10].image} alt="{sdgs[rank + 10].title}" class="sdg-img p-2 w-full h-[50px] object-contain {sdgs[rank + 10].color}"/>
-                                </div>
-                                <div class="flex flex-col h-[100%] justify-center truncate">
-                                    <h3 class="font-semibold">{@html sdgs[rank + 10].title}</h3>
-                                    <p class="truncate font-mono font-light text-sm">{@html sdgs[rank + 10].description}</p>
-                                </div>
-                            </div>
+                                {@render sdg_item(rank + 10)}
                             {/each}
                         </div>
                     </div>
