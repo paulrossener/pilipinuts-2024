@@ -1,0 +1,60 @@
+{
+    "devs" : [
+        {
+            "name" : "Paul Regonia",
+            "role": ["CS 132", "Adviser"],
+            "description" : "Assistant Professor, Computer Vision and Machine Intelligence Lab, UP Diliman.",
+            "github" : "",
+            "linkedin" : "",
+            "img" : "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Jisoo_of_Blackpink_at_a_Dior_event%2C_April_18%2C_2025_%283%29.png/1200px-Jisoo_of_Blackpink_at_a_Dior_event%2C_April_18%2C_2025_%283%29.png"
+        },
+        {
+            "name" : "Gavril Coronel",
+            "role": ["Developer", "Designer"],
+            "description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. ",
+            "github" : "",
+            "linkedin" : "",
+            "img" : "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Jisoo_of_Blackpink_at_a_Dior_event%2C_April_18%2C_2025_%283%29.png/1200px-Jisoo_of_Blackpink_at_a_Dior_event%2C_April_18%2C_2025_%283%29.png"
+        },
+        {
+            "name" : "Michael Omisol",
+            "role": ["Developer", "Designer"],
+            "description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. ",
+            "github" : "",
+            "linkedin" : "",
+            "img" : "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Jisoo_of_Blackpink_at_a_Dior_event%2C_April_18%2C_2025_%283%29.png/1200px-Jisoo_of_Blackpink_at_a_Dior_event%2C_April_18%2C_2025_%283%29.png"
+        },
+        {
+            "name" : "Jopeth Seda",
+            "role": ["Developer", "Designer"],
+            "description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. ",
+            "github" : "",
+            "linkedin" : "",
+            "img" : "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Jisoo_of_Blackpink_at_a_Dior_event%2C_April_18%2C_2025_%283%29.png/1200px-Jisoo_of_Blackpink_at_a_Dior_event%2C_April_18%2C_2025_%283%29.png"
+        },
+        {
+            "name" : "Emilio Tagudin",
+            "role": ["Developer"],
+            "description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. ",
+            "github" : "",
+            "linkedin" : "",
+            "img" : "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Jisoo_of_Blackpink_at_a_Dior_event%2C_April_18%2C_2025_%283%29.png/1200px-Jisoo_of_Blackpink_at_a_Dior_event%2C_April_18%2C_2025_%283%29.png"
+        },
+        {
+            "name" : "Paul Abyado",
+            "role": ["Content Manager", "Designer"],
+            "description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. ",
+            "github" : "",
+            "linkedin" : "",
+            "img" : "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Jisoo_of_Blackpink_at_a_Dior_event%2C_April_18%2C_2025_%283%29.png/1200px-Jisoo_of_Blackpink_at_a_Dior_event%2C_April_18%2C_2025_%283%29.png"
+        },
+        {
+            "name" : "Jakin Bacalla",
+            "role": ["Content Manager"],
+            "description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. ",
+            "github" : "",
+            "linkedin" : "",
+            "img" : "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Jisoo_of_Blackpink_at_a_Dior_event%2C_April_18%2C_2025_%283%29.png/1200px-Jisoo_of_Blackpink_at_a_Dior_event%2C_April_18%2C_2025_%283%29.png"
+        }
+    ]
+}
