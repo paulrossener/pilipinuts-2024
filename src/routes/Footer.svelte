@@ -5,9 +5,9 @@
             <p class="text-sm">Pilipinas in a Nutshell (PilipiNuts) 2024 is a data science awareness initiative, presenting the current state of the Philippines in 2024 through visualizations.</p>
         </div>
         <div class="flex flex-col justify-center items-end w-[50%] gap-[10px] font-medium">
-            <p>Home</p>
-            <p>Projects By SDG</p>
-            <p>Meet The Team</p>
+            <a href="/"><p>Home</p></a>
+            <a href="/#sdgProjects"><p>Projects By SDG</p></a>
+            <a href="/bts"><p>Meet The Team</p></a>
         </div>
     </div>
 </nav>
