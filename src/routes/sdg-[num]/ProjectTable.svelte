@@ -8,11 +8,12 @@
         plot: string;
         website: string;
         class: string;
+        related_sdg: Number[];
     }
 
     let { 
         project_data,
-        sdg_num,
+        sdg_num
     } = $props();
 
     let theModal = $state() as HTMLDivElement;
@@ -86,6 +87,7 @@
             plot={modalProjectData.plot}
             website={modalProjectData.website}
             class_type={modalProjectData.class}
+            related_sdg={modalProjectData.related_sdg}
             sdg_num={sdg_num}
         />
     </div>

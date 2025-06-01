@@ -12,7 +12,7 @@
 
 <!-- svelte-ignore a11y_consider_explicit_label -->
 <a
-    class="text-pink-500 hover:text-pink-600 font-medium px-4 rounded inline-block transition duration-150"
+    class="font-medium px-4 rounded inline-block transition duration-150"
     href="https://twitter.com/intent/post?text={tweet_text}&url=https://www.wallahi.com{page.url.pathname}/#{encodeURIComponent(encoded_url)}"
     target="_blank"
 >

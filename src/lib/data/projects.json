@@ -12,7 +12,8 @@
             ],
             "plot": "16",
             "website": "https://cs132-navis.github.io/barrioline/",
-            "class": "WFW Summer"
+            "class": "WFW Summer",
+            "related_sdg": [1,2,3]
         },
         {
             "group": "2",
@@ -26,7 +27,8 @@
             ],
             "plot": "16",
             "website": "https://cs132-navis.github.io/barrioline/",
-            "class": "WFW Summer"
+            "class": "WFW Summer",
+            "related_sdg": [4,5,6]
         }
     ]
 }

@@ -15,7 +15,8 @@
         plot, 
         website, 
         class_type,
-        sdg_num,
+        related_sdg,
+        sdg_num
     } = $props();
 
     import sdg from "$lib/data/sdg.json";
@@ -59,9 +60,13 @@
                     Related SDG
                 </div>
                 <div class="flex flex-row flex-wrap gap-2 py-2">
-                    <img src="{curr_sdg.image}" class="sdg-img p-2 w-[40px] h-[40px] object-contain bg-white mb-2" alt="sdg">
-                    <img src="{curr_sdg.image}" class="sdg-img p-2 w-[40px] h-[40px] object-contain bg-white mb-2" alt="sdg">
-                    <img src="{curr_sdg.image}" class="sdg-img p-2 w-[40px] h-[40px] object-contain bg-white mb-2" alt="sdg">
+                    {#each related_sdg as sdg_num }
+                        <img 
+                            src="{sdgs[sdg_num].image}"
+                            class="sdg-img p-1 w-[40px] h-[40px] object-contain {sdgs[sdg_num].color} mb-2"
+                            alt="sdg">
+                    {/each}
+                    
                 </div>
                 <!-- Class Description -->
                 <div class="uppercase font-mono text-xs tracking-widest mb-2 py-2">
@@ -101,7 +106,7 @@
                     <div class="uppercase text-gray-400 text-xs tracking-widest mb-4">
                         SHARE
                     </div>
-                    <div class="mx-auto flex items-center justify-center">
+                    <div class="{"text-" + curr_sdg.color.substring(3)} mx-auto flex items-center justify-center">
                         <FacebookShare project_title={title}/>
                         <TwitterShare project_title={title}/>
                     </div>

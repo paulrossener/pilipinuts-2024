@@ -21,6 +21,7 @@
                 plot={project.plot}
                 website={project.website}
                 class_type={project.class}
+                related_sdg={project.related_sdg}
                 sdg_num={sdg_num}
             />
         {/each}

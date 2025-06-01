@@ -9,6 +9,7 @@
             plot: string;
             website: string;
             class: string;
+            related_sdg: Number[];
         }[];
     }
 
