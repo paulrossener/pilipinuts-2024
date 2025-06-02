@@ -6,8 +6,8 @@
 
 <div class="flex flex-col items-center bg-black w-full text-white p-10">
     <img src="/misc/logo-black.svg" class="sdg-img p-2 w-[50px] h-[50px] object-contain bg-white mb-2" alt="sdg">
-    <h1 class="font-bold text-5xl mb-4">Team PilipiNuts 2024</h1>
-    <p class="font-mono text-sm">Get to know more about the developers of this website!</p>
+    <h1 class="font-bold text-5xl text-center mb-4">Team PilipiNuts 2024</h1>
+    <p class="font-mono text-sm text-center">Get to know more about the developers of this website!</p>
 </div>
 <img src="/misc/accent-full.svg" class="w-full" alt="Accent">
 <div class="flex flex-col w-full items-center mt-8">
@@ -17,8 +17,8 @@
             <button class="uppercase bg-white h-full py-2 px-4">MEET THE TEAM</button>
         </div>
     </div> -->
-    <div class="w-[60%]">
-        <div class="w-full grid grid-cols-4 gap-6" style="">
+    <div class="w-[80%] lg:w-[60%]">
+        <div class="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
             {#each devs as dev}
                 <Profile dev={dev}/>
             {/each}
