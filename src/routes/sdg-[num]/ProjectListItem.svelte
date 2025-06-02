@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { page } from "$app/state";
-	
+	import {onMount} from "svelte";
     import { getContext } from 'svelte';
     
     import FacebookShare from "$lib/components/FacebookShare.svelte";
@@ -29,10 +29,18 @@
             color: string;
         };
     }
+    let sharingPanel = $state() as HTMLDivElement;
+
     const sdgs: SDG = sdg;
     const curr_sdg = sdgs[sdg_num];
 
     const showModalImage: Function = getContext('modal-image');
+
+    onMount(() => {
+        const new_color = curr_sdg.color.replace(/^bg-|\[|\]/g, '');
+        sharingPanel.style.color = new_color;
+    });
+
 
     console.log(curr_sdg);
 </script>
@@ -106,7 +114,7 @@
                     <div class="uppercase text-gray-400 text-xs tracking-widest mb-4">
                         SHARE
                     </div>
-                    <div class="{"text-" + curr_sdg.color.substring(3)} mx-auto flex items-center justify-center">
+                    <div bind:this={sharingPanel} class="mx-auto flex items-center justify-center">
                         <FacebookShare project_title={title}/>
                         <TwitterShare project_title={title}/>
                     </div>

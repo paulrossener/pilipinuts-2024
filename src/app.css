@@ -82,4 +82,8 @@ body:hover::-webkit-scrollbar {
     font-family: "Roboto Mono";
 }
 
+#home {
+    background: none !important;
+}
+
 

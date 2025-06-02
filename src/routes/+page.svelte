@@ -78,14 +78,13 @@
     </div>
 {/snippet}
 
-<div id="home" class = "flex w-full h-[100dvh] p-[50px] pt-[55px] text-white">
-    <div class="home-container flex flex-row w-full h-full gap-[10px] max-[950px]:justify-center max-[950px]:items-center">
-        <div class="home-content flex flex-col w-[60%] h-full justify-center items-center p-[10px] max-[950px]:w-[70%]">
-            <div class="container flex flex-grow max-[700px]:w-full"></div>
-            <div class="container min-h-[60%] flex flex-col gap-[20px] px-[10px] max-[700px]:w-full">
-                <h3 class = "w-[80%] text-8xl font-medium">Can Numbers<br>Change a Nation?</h3>
+<div id="home" class = "bg-black flex items-center justify-center w-full h-[calc(100dvh-60px)] text-white bg-black">
+    <div class="home-container flex flex-row w-[70%] h-full gap-[10px] max-[950px]:justify-center max-[950px]:items-center bg-black">
+        <div class="flex flex-col h-full w-[60%] justify-center">
+            <div class="flex flex-col gap-4">
+                <h3 class = "text-7xl font-medium">Can Numbers<br>Change a Nation?</h3>
                 <p class = "text-sm w-[65%] max-[700px]:w-full max-[700px]:justify-center max-[700px]:items-center">Dive into data science projects that expose the truths, trends, and turning points in the Philippines’ path to sustainable development.</p>
-                <div class="buttons flex flex-row gap-[20px] mt-[5px] max-[700px]:flex-col max-[700px]:justify-center max-[700px]:items-center">
+                <div class="buttons flex flex-row gap-[20px] mt-[5px] max-[700px]:flex-col max-[700px]:justify-center max-[700px]:items-center uppercase">
                     {#each homeButton as btn}
                         <button class = {`home-btn relative flex flex-row items-center justify-center ${btn.width} border border-white 
                         overflow-hidden rounded-none font-mono px-2 py-[10px] text-[15px] `} 
@@ -105,7 +104,33 @@
                 </div>
             </div>
         </div>
-        <div class="home-pic w-[40%] h-full max-[950px]:hidden">
+        <!-- <div class="home-content flex flex-col w-[60%] h-full justify-center items-center p-[10px] max-[950px]:w-[70%]">
+            <div class="container flex flex-grow max-[700px]:w-full"></div>
+            <div class="container min-h-[60%] flex flex-col gap-[20px] px-[200px] max-[700px]:w-full">
+                <h3 class = "text-7xl font-medium">Can Numbers<br>Change a Nation?</h3>
+                <p class = "text-sm w-[65%] max-[700px]:w-full max-[700px]:justify-center max-[700px]:items-center">Dive into data science projects that expose the truths, trends, and turning points in the Philippines’ path to sustainable development.</p>
+                <div class="buttons flex flex-row gap-[20px] mt-[5px] max-[700px]:flex-col max-[700px]:justify-center max-[700px]:items-center uppercase">
+                    {#each homeButton as btn}
+                        <button class = {`home-btn relative flex flex-row items-center justify-center ${btn.width} border border-white 
+                        overflow-hidden rounded-none font-mono px-2 py-[10px] text-[15px] `} 
+                        type="button" onclick={() => scrollToSection(btn.id)}>
+                            <div class="original absolute flex justify-center items-center bg-black text-white gap-[10px] inset-0 ">{btn.content} <i class="fa-solid fa-arrow-right"></i></div>
+                            <div class="inline-flex bg-transparent" role="button" aria-label="Hover effect button" tabindex = 0>
+                                {#each btn.spanList as n, i} 
+                                    {#if n === ' '}
+                                        <span style="--i: {i + 1}">&nbsp;</span>
+                                    {:else}
+                                        <span style="--i: {i + 1}">{n}</span>
+                                    {/if}
+                                {/each}
+                            </div>
+                        </button>
+                    {/each}
+                </div>
+            </div>
+        </div> -->
+        <div class="home-pic bg-blue h-full max-[950px]:hidden">
+            <img src="misc/map-colored.svg" class="map h-full object-cover" alt="pic">
         </div>
     </div>
 </div>
@@ -193,7 +218,7 @@
         </div>
     </div>
 </div>
-<div id="projects" class = "flex flex-col items-center w-full min-h-[250dvh] px-[50px] text-white">
+<div id="projects" class = "flex flex-col items-center w-full min-h-[300dvh] px-[50px] text-white">
     <div class="flex justify-center items-center w-full h-[calc(100dvh)] pb-[135px]">
         <div id="projectIntro" class="relative flex flex-col justify-center items-center text-center w-full h-full">
             <div class="flex flex-col justify-center items-center w-[100%] gap-[20px]">
@@ -245,7 +270,7 @@
                     </div>
                 </div>
             </div>
-            <div class="flex flex-col flex-grow w-full gap-[20px]">
+            <div id="sdgProjects" class="flex flex-col flex-grow w-full gap-[20px]">
                 <h3 class="font-mono">ALL PROJECTS BY SDG</h3>
                 <div class="relative flex h-full">
                     <div class="absolute inset-0 grid grid-cols-2 gap-[10px] m-auto">
