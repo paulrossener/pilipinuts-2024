@@ -36,6 +36,13 @@
     // Type stricting as usual.
     const sdg_project: Project = projects;
     const sdgs: SDG = sdg;
+    const sdg_entries = Object.entries(sdgs);
+
+    function changeSDGBGColor(newColor: String, target_sdg: String){
+        const color = newColor.replace(/^bg-|\[|\]/g, '');
+        const target_element = document.getElementById(`sdg-dynamic-${target_sdg}`) as HTMLDivElement;
+        target_element.style.backgroundColor = color;
+    }
 
     // Getting new projects
     let sdg_num = data.content;
@@ -81,9 +88,11 @@
 
     import {onMount} from "svelte";
     
-    let navbar = $state() as HTMLElement;
+    
 
     onMount(() => {
+        let navbar = document.getElementById("topBarColored");
+
         let scrollWatcher = document.querySelector("#data-scroll-watcher") as HTMLDivElement;
 
         const navObserver = new IntersectionObserver((entries) => {
@@ -96,7 +105,7 @@
 
 </script>
 
-<nav bind:this={navbar} class="top-bar fixed flex flex-row items-center top-0 w-full h-[60px] {curr_sdg.color} text-black border-b border-black z-[1000]">
+<nav id="topBarColored" class="top-bar fixed flex flex-row items-center top-0 w-full h-[60px] {curr_sdg.color} text-black border-b border-black z-[1000]">
     <div class="flex flex-row items-center bg-black-500 w-full h-full ">
         <a target="_self" href="/" aria-label="Page Title" class="px-4 py-[10px] title-content flex items-center" onmouseenter={triggerAnimation}>
             <div class="relative flex items-center gap-2">
@@ -119,7 +128,31 @@
                 <input type="text" placeholder="Search by Project Name" class="flex p-0 bg-transparent text-sm text-black placeholder-black border-none">
                 <button type = "button" aria-label="Search Button"><span class="size-4 nrk--search-active"></span></button>
             </div>
-            <div class="hover:bg-[rgb(255,255,255,0.3)] flex flex-row items-center h-full border-l-1 border-l-black text-sm px-6 gap-6">View SDGs <span class="size-4 nrk--category-active"></span></div>
+            <div class="dropdown dropdown-end h-full">
+                <div tabindex="0" class="hover:bg-[rgb(255,255,255,0.3)] flex flex-row items-center h-full border-l-1 border-l-black text-sm px-6 gap-6 cursor-pointer">View SDGs <span class="size-4 nrk--category-active"></span></div>
+                <div class="dropdown-content z-1 h-[calc(100dvh-60px)] overflow-y-auto flex flex-col m-auto bg-black text-white">
+                    <!-- NOTE: projectList function -->
+                    <!-- sdgs -> JSON File -->
+                    {#each sdg_entries as [number, sdg]}
+                        <a href="sdg-{number}">
+                            <div
+                                id="sdg-dynamic-{number}"
+                                class="sdg-item flex flex-row w-full items-center gap-4 py-2 pl-2 border-b-[0.5] border-t border-amber-50"
+                                onmouseenter={()=>changeSDGBGColor(sdg.color, number)}
+                                onmouseleave={()=>changeSDGBGColor("", number)}
+                            >
+                                <div class="min-w-[50px] max-w-[50px]">
+                                    <img src={sdg.image} alt="{sdg.title}" class="sdg-img p-2 w-full h-[50px] object-contain {sdg.color}"/>
+                                </div>
+                                <div class="flex flex-col h-[100%] justify-center truncate">
+                                    <h3 class="font-semibold">{sdg.title}</h3>
+                                    <!-- <p class="truncate font-mono font-light text-sm">{sdg.description}</p> -->
+                                </div>
+                            </div>
+                        </a>
+                    {/each}
+                </div>
+            </div>
         </div>
     </div>
 </nav>
@@ -139,47 +172,46 @@
                 <a target="_self" href="/#sdgProjects" class="underline"><span class="font-mono">Back to the SDGs</span></a>
             </div>
         {:else}
-
-        <!-- Button section -->
-        <section class="container mx-auto mt-2 mb-10">
-            <div class="grid grid-cols-[80%_20%]">
-                <div class="flex flex-row gap-2 text-xs font-mono font-medium text-black items-center">
-                    <a href="/"><button class="uppercase bg-[rgb(255,255,255,0.3)] hover:bg-white h-full py-2 px-4">PilipiNuts 2024</button></a>
-                    <button class="uppercase {curr_sdg.color} h-full py-2 px-4">SUSTAINABLE DEVELOPMENT GOAL #{sdg_num}</button>
-                    <span class="uppercase text-white font-mono ml-2">{curr_sdg_projects.length} Projects Found</span>
+            <!-- Button section -->
+            <section class="container mx-auto mt-2 mb-10">
+                <div class="grid grid-cols-[80%_20%]">
+                    <div class="flex flex-row gap-2 text-xs font-mono font-medium text-black items-center">
+                        <a href="/"><button class="uppercase bg-[rgb(255,255,255,0.3)] hover:bg-white h-full py-2 px-4">PilipiNuts 2024</button></a>
+                        <button class="uppercase {curr_sdg.color} h-full py-2 px-4">SUSTAINABLE DEVELOPMENT GOAL #{sdg_num}</button>
+                        <span class="uppercase text-white font-mono ml-2">{curr_sdg_projects.length} Projects Found</span>
+                    </div>
+                    <!-- <h2 class="font-medium">Projects</h2> -->
+                    <div>
+                        <ul class="flex flex-wrap text-xs font-medium text-center border-collapse font-mono">
+                            <li class="py-1 flex-grow border border-white {currentTab == "list" ? "bg-white text-black" : ""}">
+                                <button class="uppercase" onclick={() => currentTab = "list"}>
+                                    List View
+                                </button>
+                            </li>
+                            <li class="py-1 flex-grow border border-white {currentTab == "table" ? "bg-white text-black" : ""}">
+                                <button class="uppercase" onclick={() => currentTab = "table"}>
+                                    Table View
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-                <!-- <h2 class="font-medium">Projects</h2> -->
-                <div>
-                    <ul class="flex flex-wrap text-xs font-medium text-center border-collapse font-mono">
-                        <li class="py-1 flex-grow border border-white {currentTab == "list" ? "bg-white text-black" : ""}">
-                            <button class="uppercase" onclick={() => currentTab = "list"}>
-                                List View
-                            </button>
-                        </li>
-                        <li class="py-1 flex-grow border border-white {currentTab == "table" ? "bg-white text-black" : ""}">
-                            <button class="uppercase" onclick={() => currentTab = "table"}>
-                                Table View
-                            </button>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </section>
+            </section>
 
-        <!-- Tab Content -->
-        <section>
-            <!-- List View -->
-            {#if currentTab == "list"}
-            <ProjectList project_data={curr_sdg_projects} sdg_num={sdg_num}/>
-            {/if}
-            
-            <!-- Table View -->
-            {#if currentTab == "table"}
-            <ProjectTable project_data={curr_sdg_projects} sdg_num={sdg_num}/>
-            {/if}
-            
-        </section>
-        <div class="w-full uppercase font-mono text-sm text-center mt-10">Nothing Follows</div>
+            <!-- Tab Content -->
+            <section>
+                <!-- List View -->
+                {#if currentTab == "list"}
+                <ProjectList project_data={curr_sdg_projects} sdg_num={sdg_num}/>
+                {/if}
+                
+                <!-- Table View -->
+                {#if currentTab == "table"}
+                <ProjectTable project_data={curr_sdg_projects} sdg_num={sdg_num}/>
+                {/if}
+                
+            </section>
+            <div class="w-full uppercase font-mono text-sm text-center mt-10">Nothing Follows</div>
         {/if}
 
         

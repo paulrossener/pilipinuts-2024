@@ -165,6 +165,6 @@
 
     <!-- Description -->
     <p class="text-sm py-6">{desc}</p>
-    <hr class="h-px border-0 bg-gray-500">
+    {@render theSeparator()}
 </div>
 

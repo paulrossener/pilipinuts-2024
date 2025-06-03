@@ -65,6 +65,7 @@
             <div class="flex flex-col gap-4">
                 <h3 class = "text-7xl font-medium">Can Numbers<br>Change a Nation?</h3>
                 <p class = "text-sm w-[65%] max-[700px]:w-full max-[700px]:justify-center max-[700px]:items-center">Dive into data science projects that expose the truths, trends, and turning points in the Philippines’ path to sustainable development.</p>
+                <p class = "text-sm w-[65%] max-[700px]:w-full max-[700px]:justify-center max-[700px]:items-center">Scroll to explore how data science is shaping the future of the Philippines.</p>
                 <div class="buttons flex flex-row gap-[20px] mt-[5px] max-[700px]:flex-col max-[700px]:justify-center max-[700px]:items-center uppercase">
                     {#each homeButton as btn}
                         <button class = {`home-btn relative flex flex-row items-center justify-center ${btn.width} border border-white 
@@ -127,8 +128,11 @@
                         <h3 class="break-words font-mono mb-3">PILIPINUTS 2024</h3>
                         <img src="/misc/accent-sm.svg" class="w-[150px]" alt="Accent">
                     </div>
-                    <p class = "text-sm mb-3">PilipiNuts 2024 is the culminating showcase of CS 132: Introduction to Data Science at UP Diliman, guided by Asst. Prof. Paul Regonia. This year’s symposium brings together powerful student-led projects that harness data science to investigate and address the Philippines’ most pressing social, economic, and environmental challenges.</p>
-                    <p class = "text-sm">From climate resilience to education equity, from poverty trends to public health — PilipiNuts 2024 transforms raw data into meaningful insights and action-driven narratives rooted in the United Nations Sustainable Development Goals (SDGs).</p>
+                    <p class = "text-sm mb-3">PilipiNuts 2024 is the culminating showcase of CS 132: Introduction to Data Science at UP Diliman, guided by Asst. Prof. Paul Regonia. This year brings powerful student-led projects that harness data science to investigate and address the Philippines’ most pressing social, economic, and environmental challenges.</p>
+                    <p class = "text-sm mb-3">From climate resilience to education equity, from poverty trends to public health — <span class="font-mono">PilipiNuts 2024</span> transforms raw data into meaningful insights and action-driven narratives rooted in the United Nations Sustainable Development Goals (SDGs).</p>
+                    <p class="text-sm mb-3">
+                        Named as a portmanteau of <span class="font-mono">Pilipinas in a Nutshell</span>, PilipiNuts serves as a concise, data-driven visualization of the Philippines — a snapshot of the nation's most urgent issues in 2024, told through the lens of student-led data science projects.
+                    </p>
                 </div>
             </div>
             <div id = "iconList" class="w-full flex flex-wrap justify-between h-[55px]"></div>
@@ -177,12 +181,11 @@
                     <div class = "flex flex-col w-full gap-[10px] max-[1200px]:h-[80%]">
                         <h3 class="font-mono">WHY PILIPINUTS?</h3>
                         <img src="/misc/accent-sm.svg" class="w-[150px]" alt="Accent">
-                        <p class = "text-sm mt-[10px]">Each project in PilipiNuts 2024 draws inspiration from the United Nations Sustainable Development Goals (SDGs) — 
-                            a global framework for ending poverty, protecting the planet, and ensuring peace and prosperity for all.
+                        <p class = "text-sm mt-[10px]">
+                            Each project in PilipiNuts 2024 draws inspiration from the United Nations Sustainable Development Goals (SDGs) — a global framework for ending poverty, protecting the planet, and ensuring peace and prosperity for all.
                         </p>
-                        <p class = "text-sm mt-[10px]">Grounded in the realities of the Philippine context, these data science projects tackle urgent challenges such 
-                            as climate change, gender inequality, and poverty. More than just academic work, they represent informed, data-driven 
-                            contributions to shaping a more just, resilient, and sustainable future.
+                        <p class = "text-sm mt-[10px]">
+                            Grounded in the realities of the Philippine context, these data science projects tackle urgent challenges such as climate change, gender inequality, and poverty. More than just academic work, they represent informed, data-driven contributions to shaping a more just, resilient, and sustainable future.
                         </p>
                     </div>
                     <div class="flex-grow"></div>
