@@ -136,7 +136,7 @@
             <div class="flex items-center justify-center w-full h-full flex-col">
                 <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 24 24"><rect width="6" height="14" x="1" y="4" fill="#fff"><animate id="svgSpinnersBarsFade0" fill="freeze" attributeName="opacity" begin="0;svgSpinnersBarsFade1.end-0.25s" dur="0.75s" values="1;0.2"/></rect><rect width="6" height="14" x="9" y="4" fill="#fff" opacity="0.4"><animate fill="freeze" attributeName="opacity" begin="svgSpinnersBarsFade0.begin+0.15s" dur="0.75s" values="1;0.2"/></rect><rect width="6" height="14" x="17" y="4" fill="#fff" opacity="0.3"><animate id="svgSpinnersBarsFade1" fill="freeze" attributeName="opacity" begin="svgSpinnersBarsFade0.begin+0.3s" dur="0.75s" values="1;0.2"/></rect></svg>
                 <span class="font-mono">No Projects Found.</span>
-                <a target="_self" href="/" class="underline"><span class="font-mono">Back to Home</span></a>
+                <a target="_self" href="/#sdgProjects" class="underline"><span class="font-mono">Back to the SDGs</span></a>
             </div>
         {:else}
 

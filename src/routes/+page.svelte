@@ -16,6 +16,8 @@
     
     const sdgs: SDG = sdg;
 
+    const sdg_entries = Object.entries(sdgs);
+
     onMount(() => {
         triggerTypingAnimation();
         // projectList();
@@ -56,27 +58,6 @@
     }
 
 </script>
-
-<!-- NOTE: Snippet Area -->
-{#snippet sdg_item(number: number)}
-    <!-- svelte-ignore a11y_click_events_have_key_events -->
-    <!-- svelte-ignore a11y_no_static_element_interactions -->
-    <div
-        id="sdg-{number}"
-        class="sdg-item flex flex-row w-full items-center gap-4 py-[7px] border-b border-white/50"
-        onclick={()=>goToSDG(number)}
-        onmouseenter={()=>changeSDGBGColor(sdgs[number].color, number)}
-        onmouseleave={()=>changeSDGBGColor("", number)}
-    >
-        <div class="min-w-[50px] max-w-[50px]">
-            <img src={sdgs[number].image} alt="{sdgs[number].title}" class="sdg-img p-2 w-full h-[50px] object-contain {sdgs[number].color}"/>
-        </div>
-        <div class="flex flex-col h-[100%] justify-center truncate">
-            <h3 class="font-semibold">{@html sdgs[number].title}</h3>
-            <p class="truncate font-mono font-light text-sm">{@html sdgs[number].description}</p>
-        </div>
-    </div>
-{/snippet}
 
 <div id="home" class = "bg-black flex items-center justify-center w-full h-[calc(100dvh-60px)] text-white bg-black">
     <div class="home-container flex flex-row w-[70%] h-full gap-[10px] max-[950px]:justify-center max-[950px]:items-center bg-black">
@@ -218,7 +199,7 @@
         </div>
     </div>
 </div>
-<div id="projects" class = "flex flex-col items-center w-full min-h-[300dvh] px-[50px] text-white">
+<div id="projects" class = "flex flex-col items-center w-full px-[50px] text-white">
     <div class="flex justify-center items-center w-full h-[calc(100dvh)] pb-[135px]">
         <div id="projectIntro" class="relative flex flex-col justify-center items-center text-center w-full h-full">
             <div class="flex flex-col justify-center items-center w-[100%] gap-[20px]">
@@ -270,31 +251,45 @@
                     </div>
                 </div>
             </div>
-            <div id="sdgProjects" class="flex flex-col flex-grow w-full gap-[20px]">
+            <div id="sdgProjects" class="flex flex-col flex-grow w-full gap-[20px] mt-8">
                 <h3 class="font-mono">ALL PROJECTS BY SDG</h3>
-                <div class="relative flex h-full">
-                    <div class="absolute inset-0 grid grid-cols-2 gap-[10px] m-auto">
-                        <!-- NOTE: projectList function -->
-                        <!-- sdgs -> JSON File -->
-                        <div id="col-1" class="flex flex-col border-t border-white">
-                            <!-- SDGS 1 - 9 -->
-                            {#each { length: 9 }, rank}
-                                {@render sdg_item(rank + 1)}
-                            {/each}
-                        </div>
-                        <div id="col-2" class="flex flex-col border-t border-white">
-                            <!-- SDGS 10 - 17 -->
-                            {#each { length: 8 }, rank}
-                                {@render sdg_item(rank + 10)}
-                            {/each}
-                        </div>
+                <div class="grid grid-flow-col grid-cols-2 grid-rows-9 gap-x-4 m-auto">
+                    <!-- NOTE: projectList function -->
+                    <!-- sdgs -> JSON File -->
+                    {#each sdg_entries as [number, sdg]}
+                        <a href="/sdg-{number}">
+                            <div
+                                id="sdg-{number}"
+                                class="sdg-item flex flex-row w-full items-center gap-4 py-[7px] border-b border-t border-amber-50"
+                                onmouseenter={()=>changeSDGBGColor(sdg.color, number)}
+                                onmouseleave={()=>changeSDGBGColor("", number)}
+                            >
+                                <div class="min-w-[50px] max-w-[50px]">
+                                    <img src={sdg.image} alt="{sdg.title}" class="sdg-img p-2 w-full h-[50px] object-contain {sdg.color}"/>
+                                </div>
+                                <div class="flex flex-col h-[100%] justify-center truncate">
+                                    <h3 class="font-semibold">{sdg.title}</h3>
+                                    <p class="truncate font-mono font-light text-sm">{sdg.description}</p>
+                                </div>
+                            </div>
+                        </a>
+                    {/each}
+                    <!-- <div id="col-1" class="flex flex-col border-t border-white">
+                        {#each { length: 9 }, rank}
+                            {@render sdg_item(rank + 1)}
+                        {/each}
                     </div>
+                    <div id="col-2" class="flex flex-col border-t border-white">
+                        {#each { length: 8 }, rank}
+                            {@render sdg_item(rank + 10)}
+                        {/each}
+                    </div> -->
                 </div>
             </div>
         </div>
     </div>
 </div>
-<div id="inquiries" class = "flex flex-col w-full min-h-[45dvh] px-[50px] text-white">
+<div id="inquiries" class = "flex flex-col w-full justify-center min-h-[80dvh] px-[50px] text-white">
     <div class="flex flex-col mt-[75px] justify-center items-center gap-[15px]">
         <img src="/misc/accent-sm.svg" class="w-[150px]" alt="Accent">
         <h3 class="font-mono">GOT QUESTIONS?</h3>
