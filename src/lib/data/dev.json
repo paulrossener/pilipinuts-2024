@@ -10,7 +10,7 @@
         },
         {
             "name" : "Gavril Coronel",
-            "role": ["Developer", "Designer"],
+            "role": ["Developer"],
             "description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. ",
             "github" : "",
             "linkedin" : "",
@@ -18,7 +18,7 @@
         },
         {
             "name" : "Michael Omisol",
-            "role": ["Developer", "Designer"],
+            "role": ["Developer"],
             "description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. ",
             "github" : "",
             "linkedin" : "",
@@ -34,7 +34,7 @@
         },
         {
             "name" : "Emilio Tagudin",
-            "role": ["Developer"],
+            "role": ["Contributor"],
             "description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. ",
             "github" : "",
             "linkedin" : "",
