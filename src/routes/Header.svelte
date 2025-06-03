@@ -20,7 +20,7 @@
 
 </script>
 
-<nav id="topBar" class="top-bar fixed flex flex-row items-center top-0 w-full h-[60px] bg-black text-white border-b border-white/30 z-[1000]">
+<nav id="topBar" class="top-bar fixed flex flex-row items-center top-0 w-full h-[60px] bg-black text-white border-b border-amber-50 z-[1000]">
     <div class="flex flex-row items-center bg-black-500 w-full h-full ">
         <a target="_self" href="/" aria-label="Page Title" class="px-4 py-[10px] title-content flex items-center" on:mouseenter={triggerAnimation}>
             <div class="relative flex items-center gap-2">
@@ -39,11 +39,11 @@
         </a>
         <div class=flex-grow></div>
         <div class="flex items-center h-full font-mono transition duration-300 ease-in">
-            <div class="hover:bg-[rgb(255,255,255,0.3)] serch-input relative flex flex-row h-full border-l-1 border-l-white/30 gap-6 px-6">
+            <div class="hover:bg-[rgb(255,255,255,0.3)] serch-input relative flex flex-row h-full border-l-1 border-l-amber-50 gap-6 px-6">
                 <input type="text" placeholder="Search by Project Name" class="flex p-0 bg-transparent text-sm text-white placeholder-white border-none">
                 <button type = "button" aria-label="Search Button"><span class="size-4 nrk--search-active"></span></button>
             </div>
-            <div class="hover:bg-[rgb(255,255,255,0.3)] flex flex-row items-center h-full border-l-1 border-l-white/30 text-sm px-6 gap-6">View SDGs <span class="size-4 nrk--category-active"></span></div>
+            <div class="hover:bg-[rgb(255,255,255,0.3)] flex flex-row items-center h-full border-l-1 border-l-amber-50 text-sm px-6 gap-6">View SDGs <span class="size-4 nrk--category-active"></span></div>
         </div>
     </div>
 </nav>

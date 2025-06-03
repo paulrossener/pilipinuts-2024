@@ -70,7 +70,7 @@
                         <button class = {`home-btn relative flex flex-row items-center justify-center ${btn.width} border border-white 
                         overflow-hidden rounded-none font-mono px-2 py-[10px] text-[15px] `} 
                         type="button" onclick={() => scrollToSection(btn.id)}>
-                            <div class="original absolute flex justify-center items-center bg-black text-white gap-[10px] inset-0 ">{btn.content} <i class="fa-solid fa-arrow-right"></i></div>
+                            <div class="original absolute flex justify-center items-center bg-black text-white gap-[10px] inset-0 ">{btn.content} <span class="nrk--arrow-right size-5"></span></div>
                             <div class="inline-flex bg-transparent" role="button" aria-label="Hover effect button" tabindex = 0>
                                 {#each btn.spanList as n, i} 
                                     {#if n === ' '}
@@ -128,7 +128,7 @@
                         <img src="/misc/accent-sm.svg" class="w-[150px]" alt="Accent">
                     </div>
                     <p class = "text-sm mb-3">PilipiNuts 2024 is the culminating showcase of CS 132: Introduction to Data Science at UP Diliman, guided by Asst. Prof. Paul Regonia. This year’s symposium brings together powerful student-led projects that harness data science to investigate and address the Philippines’ most pressing social, economic, and environmental challenges.</p>
-                    <p class = "text-sm">From climate resilience to education equity, from poverty trends to public health — PilipiNuts 2025 transforms raw data into meaningful insights and action-driven narratives rooted in the United Nations Sustainable Development Goals (SDGs).</p>
+                    <p class = "text-sm">From climate resilience to education equity, from poverty trends to public health — PilipiNuts 2024 transforms raw data into meaningful insights and action-driven narratives rooted in the United Nations Sustainable Development Goals (SDGs).</p>
                 </div>
             </div>
             <div id = "iconList" class="w-full flex flex-wrap justify-between h-[55px]"></div>
@@ -173,11 +173,11 @@
                 </div>
             </div>
             <div class="nutshell-content flex flex-col w-[50%] flex-grow max-[1200px]:flex-row max-[1200px]:w-full max-[1200px]:h-[50%] ">
-                <div class="container w-[100%] h-full flex flex-col border-b border-white/60">
+                <div class="container w-[100%] h-full flex flex-col border-b border-amber-50">
                     <div class = "flex flex-col w-full gap-[10px] max-[1200px]:h-[80%]">
                         <h3 class="font-mono">WHY PILIPINUTS?</h3>
                         <img src="/misc/accent-sm.svg" class="w-[150px]" alt="Accent">
-                        <p class = "text-sm mt-[10px]">Each project in PilipiNuts 2025 draws inspiration from the United Nations Sustainable Development Goals (SDGs) — 
+                        <p class = "text-sm mt-[10px]">Each project in PilipiNuts 2024 draws inspiration from the United Nations Sustainable Development Goals (SDGs) — 
                             a global framework for ending poverty, protecting the planet, and ensuring peace and prosperity for all.
                         </p>
                         <p class = "text-sm mt-[10px]">Grounded in the realities of the Philippine context, these data science projects tackle urgent challenges such 
@@ -214,9 +214,9 @@
                     </span>
                 </div>
             </div>
-            <div class = "absolute bottom-0 flex flex-col gap-[10px]">
+            <div class = "absolute bottom-0 flex flex-col items-center gap-[10px]">
                 <p class=font-mono>PROCEED TO THE PROJECTS</p>
-                <i class="proceed fa-solid fa-arrow-down"></i>
+                <span class="nrk--arrow-down size-6"></span>
             </div>  
         </div>
     </div>
@@ -236,17 +236,17 @@
                     <h3 class="font-mono">FEATURED WORKS</h3>
                     <div class="flex gap-[30px] text-xl">
                         <button id="prev" class="styleButton flex justify-center items-center px-[10px] py-[5px]" type="button" aria-label="Previous">
-                            <span class="button-content"><i class="fa-solid fa-arrow-left"></i></span>
+                            <span class="button-content"><span class="nrk--arrow-left size-7"></span></span>
                         </button>
                         <button id="next" class="styleButton flex justify-center items-center px-[10px] py-[5px]" type="button" aria-label="Next">
-                            <span class="button-content"><i class="fa-solid fa-arrow-right"></i></span>
+                            <span class="button-content"><span class="nrk--arrow-right size-7"></span></span>
                         </button>
                     </div>
                 </div>
                 <div class="relative h-[400px] ">
                     <div class="absolute inset-y-0 left-0 w-[150px] h-full bg-gradient-to-l from-transparent to-[#080808] pointer-events-none z-10"></div>
                     <div class="absolute inset-y-0 right-0 w-[150px] h-full bg-gradient-to-r from-transparent to-[#080808] pointer-events-none z-10"></div>
-                    <div id="featuredProjects" class="text-lg/2 font-medium feature grid grid-flow-col h-full place-items-center border-y border-white/60 overflow-hidden">
+                    <div id="featuredProjects" class="text-lg/2 font-medium feature grid grid-flow-col h-full place-items-center border-y border-amber-50 overflow-hidden">
                         <!-- Features Project List -->
                     </div>
                 </div>
