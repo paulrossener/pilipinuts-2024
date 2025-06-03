@@ -45,9 +45,9 @@
     }
 
     // Getting new projects
-    let sdg_num = data.content;
-    let curr_sdg = sdgs[data.content];
-    let curr_sdg_projects = sdg_project[data.content];
+    let sdg_num = $state(data.content);
+    let curr_sdg = $derived(sdgs[data.content]);
+    let curr_sdg_projects = $derived(sdg_project[data.content]);
 
     // State reactivity for tabs
     // Yes, there are better ways to do this but... how they do it..
