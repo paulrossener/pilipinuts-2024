@@ -23,6 +23,7 @@
     }
 
     import { setContext } from 'svelte';
+    import { page } from '$app/state';
 
     import ProjectList from './ProjectList.svelte';
     import ProjectTable from './ProjectTable.svelte';
@@ -45,7 +46,7 @@
     }
 
     // Getting new projects
-    let sdg_num = $state(data.content);
+    let sdg_num = $derived(data.content);
     let curr_sdg = $derived(sdgs[data.content]);
     let curr_sdg_projects = $derived(sdg_project[data.content]);
 
@@ -91,7 +92,7 @@
     
 
     onMount(() => {
-        let navbar = document.getElementById("topBarColored");
+        let navbar = document.getElementById("topBarColored") as HTMLDivElement;
 
         let scrollWatcher = document.querySelector("#data-scroll-watcher") as HTMLDivElement;
 
@@ -129,6 +130,7 @@
                 <button type = "button" aria-label="Search Button"><span class="size-4 nrk--search-active"></span></button>
             </div>
             <div class="dropdown dropdown-end h-full">
+                <!-- svelte-ignore a11y_no_noninteractive_tabindex -->
                 <div tabindex="0" class="hover:bg-[rgb(255,255,255,0.3)] flex flex-row items-center h-full border-l-1 border-l-black text-sm px-6 gap-6 cursor-pointer">View SDGs <span class="size-4 nrk--category-active"></span></div>
                 <div class="dropdown-content z-1 h-[calc(100dvh-60px)] overflow-y-auto flex flex-col m-auto bg-black text-white">
                     <!-- NOTE: projectList function -->

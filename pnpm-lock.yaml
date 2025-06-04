@@ -41,6 +41,9 @@ importers:
       '@tomjs/vite-plugin-iconify':
         specifier: ^1.2.1
         version: 1.2.1(@iconify/json@2.2.341)(vite@6.3.5(jiti@2.4.2)(lightningcss@1.29.2))
+      daisyui:
+        specifier: ^5.0.43
+        version: 5.0.43
       prettier:
         specifier: ^3.5.3
         version: 3.5.3
@@ -574,6 +577,9 @@ packages:
     resolution: {integrity: sha512-/Tb/JcjK111nNScGob5MNtsntNM1aCNUDipB/TkwZFhyDrrE47SOx/18wF2bbjgc3ZzCSKW1T5nt5EbFoAz/Vg==}
     engines: {node: '>=4'}
     hasBin: true
+
+  daisyui@5.0.43:
+    resolution: {integrity: sha512-2pshHJ73vetSpsbAyaOncGnNYL0mwvgseS1EWy1I9Qpw8D11OuBoDNIWrPIME4UFcq2xuff3A9x+eXbuFR9fUQ==}
 
   debug@4.4.0:
     resolution: {integrity: sha512-6WTZ/IxCY/T6BALoZHaE4ctp9xm+Z5kY/pzYaCHRFeyVhojxlrm+46y68HA6hr0TcwEssoxNiDEUJQjfPZ/RYA==}
@@ -1422,6 +1428,8 @@ snapshots:
   css-what@6.1.0: {}
 
   cssesc@3.0.0: {}
+
+  daisyui@5.0.43: {}
 
   debug@4.4.0:
     dependencies:

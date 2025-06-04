@@ -51,7 +51,7 @@
         window.location.href = `/sdg-${sdg_num}`;
     }
 
-    function changeSDGBGColor(newColor: String, target_sdg: Number){
+    function changeSDGBGColor(newColor: String, target_sdg: String){
         const color = newColor.replace(/^bg-|\[|\]/g, '');
         const target_element = document.getElementById(`sdg-${target_sdg}`) as HTMLDivElement;
         target_element.style.backgroundColor = color;
@@ -261,6 +261,7 @@
                     <!-- sdgs -> JSON File -->
                     {#each sdg_entries as [number, sdg]}
                         <a href="/sdg-{number}">
+                            <!-- svelte-ignore a11y_no_static_element_interactions -->
                             <div
                                 id="sdg-{number}"
                                 class="sdg-item flex flex-row w-full items-center gap-4 py-[7px] border-b border-t border-amber-50"

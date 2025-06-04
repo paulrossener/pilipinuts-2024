@@ -70,7 +70,7 @@
                     <!-- NOTE: projectList function -->
                     <!-- sdgs -> JSON File -->
                     {#each sdg_entries as [number, sdg]}
-                        <a href="/sdg-{number}">
+                        <a data-sveltekit-reload href="/sdg-{number}">
                             <!-- svelte-ignore a11y_no_static_element_interactions -->
                             <div
                                 id="sdg-header-{number}"
