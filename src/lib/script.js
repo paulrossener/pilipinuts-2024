@@ -1,4 +1,5 @@
 import sdgs from "$lib/data/sdg.json";
+import projects from "$lib/data/projects.json";
 
 export function projectList() {
     const col1 = document.getElementById('col-1');
@@ -64,6 +65,9 @@ function sdgItem(key, sdg) {
     return sdgCont;
 }
 
+
+
+
 export async function featuredProjects() {
     const featured = document.getElementById('featuredProjects');
     const prev = document.getElementById('prev');
@@ -78,36 +82,40 @@ export async function featuredProjects() {
     emptyStart.appendChild(emptyText);
     featured.appendChild(emptyStart);
 
-    for (const [key, sdg] of Object.entries(sdgs)) {
-        const container = document.createElement('div');
-        container.setAttribute('class', 'featured flex w-full h-full');
+    for (const [key, sdg] of Object.entries(projects)) {
+        for (const project of sdg) {
+            const sdgItem = sdgs[key];
 
-        const rotateContainer = document.createElement('div');
-        rotateContainer.setAttribute('class', 'rotating flex flex-col w-[500px] h-full p-[15px]');
-        rotateContainer.appendChild(await image());
+            const container = document.createElement('div');
+            container.setAttribute('class', 'featured flex w-full h-full');
 
-        const header = document.createElement("h3");
-        header.setAttribute('class', 'flex flex-grow text-base');
-        header.innerText = sdg.description;
-        rotateContainer.appendChild(header);
+            const rotateContainer = document.createElement('div');
+            rotateContainer.setAttribute('class', 'rotating flex flex-col w-[500px] h-full p-[15px]');
+            rotateContainer.appendChild(await image());
 
-        const stuff = document.createElement('div');
-        stuff.setAttribute('class', 'flex flex-row w-full h-[20px] justify-between mt-auto');
+            const header = document.createElement("h3");
+            header.setAttribute('class', 'flex flex-grow text-base px-2');
+            header.innerText = project.title;
+            rotateContainer.appendChild(header);
 
-        const p1 = document.createElement('p');
-        p1.setAttribute('class', 'text-sm');
-        p1.innerText = "FLASK";
+            const stuff = document.createElement('div');
+            stuff.setAttribute('class', 'flex flex-row w-full h-[20px] justify-between mt-auto');
 
-        const p2 = document.createElement('p');
-        p2.setAttribute('class', 'text-sm');
-        p2.innerText = sdg.title || "SDG NAME";
+            const p1 = document.createElement('p');
+            p1.setAttribute('class', 'text-sm');
+            p1.innerText = project.class || "FLASK";
 
-        stuff.appendChild(p1);
-        stuff.appendChild(p2);
-        rotateContainer.appendChild(stuff);
-        container.appendChild(rotateContainer);
+            const p2 = document.createElement('p');
+            p2.setAttribute('class', 'text-sm');
+            p2.innerText = sdgItem.title || "SDG NAME";
 
-        featured.appendChild(container);
+            stuff.appendChild(p1);
+            stuff.appendChild(p2);
+            rotateContainer.appendChild(stuff);
+            container.appendChild(rotateContainer);
+
+            featured.appendChild(container);
+        }
     };
 
     const emptyTextEnd = document.createElement('h3');
