@@ -23,7 +23,6 @@
         // projectList();
         featuredProjects();
         icons();
-        // proceedProject();
     });
 
     let homeButton = [
@@ -40,9 +39,11 @@
 
     function scrollToSection(id: any) {
         const el = document.getElementById(id);
+        console.log(el)
         if (id === "nutshell") {
             if (el) el.scrollIntoView({ behavior: 'smooth' });
         } else {
+            console.log('hello');
             if (el) proceedProject();
         }
     }
@@ -219,7 +220,7 @@
             </div>
             <div class = "absolute bottom-0 flex flex-col items-center gap-[10px]">
                 <p class=font-mono>PROCEED TO THE PROJECTS</p>
-                <span class="nrk--arrow-down size-6"></span>
+                <span class="proceed nrk--arrow-down size-6"></span>
             </div>  
         </div>
     </div>
@@ -246,7 +247,7 @@
                         </button>
                     </div>
                 </div>
-                <div class="relative h-[400px] ">
+                <div class="relative">
                     <div class="absolute inset-y-0 left-0 w-[150px] h-full bg-gradient-to-l from-transparent to-[#080808] pointer-events-none z-10"></div>
                     <div class="absolute inset-y-0 right-0 w-[150px] h-full bg-gradient-to-r from-transparent to-[#080808] pointer-events-none z-10"></div>
                     <div id="featuredProjects" class="text-lg/2 font-medium feature grid grid-flow-col h-full place-items-center border-y border-amber-50 overflow-hidden">
@@ -388,6 +389,9 @@
 
     .styleButton:hover {
         background-color: white;
+    }
+
+    .styleButton:hover .button-content {
         color: black;
     }
 
@@ -408,24 +412,31 @@
     }
 
     :global(.featured) {
-        transition: background-color 0.5s ease, color 0.5s ease, transform 0.3s ease;
+        transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out, transform 0.5s ease-in-out;
         perspective: 1000px;
     }
 
     :global(.rotating) {
-        transition: transform 0.3s ease;
+        transition: transform 0.3s ease-in-out;
         transform-style: preserve-3d; 
     }
 
     :global(.featured:hover) {
         cursor: pointer;
-        background-color: white;
-        color: black;
     }
 
     :global(.featured:hover .rotating) {
         transform: rotateX(5deg) scale(0.98);
         transform-origin: center; 
+    }
+
+    :global(.projectImage) {
+        filter: brightness(0.5);
+        transition: filter 0.5s ease-in-out;
+    }
+
+    :global(.featured:hover .projectImage) {
+        filter: brightness(1);
     }
 
     :global(.sdg-img),

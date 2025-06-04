@@ -99,11 +99,11 @@
 
     function handleFocusOut(event: FocusEvent) {
         setTimeout(() => {
-            const currentTarget = event.currentTarget as HTMLElement;
-            if (!currentTarget.contains(document.activeElement)) {
+            const currentTarget = event.currentTarget as HTMLElement || null;
+            if (currentTarget && !currentTarget.contains(document.activeElement)) {
                 isDropdownOpen = false;
             }
-        }, 0);
+        }, 10);
     }
 
     import { browser } from '$app/environment';

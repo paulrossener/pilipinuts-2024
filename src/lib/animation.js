@@ -54,11 +54,16 @@ function startTyping(el, speed = 50) {
 }
 
 export function proceedProject() {
+  console.log('heheh');
   const projectIntro = document.getElementById('projectIntro');
   const projectStart = document.getElementById('startProject');
   const proceedIcon = projectIntro?.querySelector('.proceed');
 
-  if (!projectIntro || !projectStart || !proceedIcon) return; // Safety check
+  console.log(projectIntro);
+  console.log(projectStart);
+  console.log(proceedIcon);
+
+  if (!projectIntro || !projectStart || !proceedIcon) return; 
 
   projectIntro.scrollIntoView({ behavior: 'smooth' });
   proceedIcon.classList.add('animate');

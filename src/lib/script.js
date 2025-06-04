@@ -65,116 +65,175 @@ function sdgItem(key, sdg) {
     return sdgCont;
 }
 
-
-
-
 export async function featuredProjects() {
     const featured = document.getElementById('featuredProjects');
     const prev = document.getElementById('prev');
     const next = document.getElementById('next');
 
-    const emptyText = document.createElement('h3');
-    emptyText.setAttribute('class', 'text-white')
-    emptyText.innerText = 'NOTHING FOLLOWS';
+    const projectSlides = document.createElement('div');
+    projectSlides.setAttribute('class', 'flex');
+    featured.appendChild(projectSlides);
 
-    const emptyStart = document.createElement('div');
-    emptyStart.setAttribute('class', 'empty flex flex-col justify-center items-center w-[500px] h-full p-[15px]');
-    emptyStart.appendChild(emptyText);
-    featured.appendChild(emptyStart);
+    async function createProjectCard(project, key) {
+        const sdgItem = sdgs[key];
 
+        const container = document.createElement('div');
+        container.setAttribute('class', 'featured flex w-full h-full group');
+
+        const rotateContainer = document.createElement('div');
+        rotateContainer.setAttribute('class', 'relative rotating flex flex-col w-[500px] h-full p-[15px]');
+        rotateContainer.appendChild(await image());
+
+        const textContainer = document.createElement('div');
+        textContainer.setAttribute('class', 'absolute h-[40%] flex flex-col w-full bottom-0 left-0 px-[30px] pb-[30px]');
+
+        const header = document.createElement("h3");
+        header.setAttribute('class', 'flex flex-grow text-base font-semibold will-change-transform transition duration-300 delay-150 group-hover:-translate-y-1');
+        header.innerText = project.title;
+        textContainer.appendChild(header);
+
+        const stuff = document.createElement('div');
+        stuff.setAttribute('class', 'flex flex-row w-full h-[20px] justify-between mt-auto will-change-transform transition duration-300 delay-250 group-hover:-translate-y-1');
+
+        const p1 = document.createElement('p');
+        p1.setAttribute('class', 'text-xs');
+        p1.innerText = project.class || "FLASK";
+
+        const p2 = document.createElement('div');
+        p2.setAttribute('class', 'flex items-center gap-2 text-xs');
+
+        const img = document.createElement('img');
+        img.src = sdgItem.image;
+        img.alt = 'SDG Icon';
+        img.setAttribute('class', `w-3 h-3 p-0.5 rounded-full ${sdgItem.color}`);
+
+        const title = document.createElement('span');
+        title.innerText = sdgItem.title || "SDG NAME";
+
+        p2.appendChild(img);
+        p2.appendChild(title);
+
+        stuff.appendChild(p1);
+        stuff.appendChild(p2);
+        textContainer.appendChild(stuff);
+        rotateContainer.appendChild(textContainer);
+        container.appendChild(rotateContainer);
+
+        container.onclick = () => {
+            try {
+                const url = new URL(project.website);
+                window.open(url.href, '_blank', 'noopener,noreferrer');
+            } catch {
+                console.error("Invalid URL:", project.website);
+            }
+        };
+
+        return container;
+    }
+
+    const realProjects = [];
     for (const [key, sdg] of Object.entries(projects)) {
         for (const project of sdg) {
-            const sdgItem = sdgs[key];
-
-            const container = document.createElement('div');
-            container.setAttribute('class', 'featured flex w-full h-full');
-
-            const rotateContainer = document.createElement('div');
-            rotateContainer.setAttribute('class', 'rotating flex flex-col w-[500px] h-full p-[15px]');
-            rotateContainer.appendChild(await image());
-
-            const header = document.createElement("h3");
-            header.setAttribute('class', 'flex flex-grow text-base px-2');
-            header.innerText = project.title;
-            rotateContainer.appendChild(header);
-
-            const stuff = document.createElement('div');
-            stuff.setAttribute('class', 'flex flex-row w-full h-[20px] justify-between mt-auto');
-
-            const p1 = document.createElement('p');
-            p1.setAttribute('class', 'text-sm');
-            p1.innerText = project.class || "FLASK";
-
-            const p2 = document.createElement('p');
-            p2.setAttribute('class', 'text-sm');
-            p2.innerText = sdgItem.title || "SDG NAME";
-
-            stuff.appendChild(p1);
-            stuff.appendChild(p2);
-            rotateContainer.appendChild(stuff);
-            container.appendChild(rotateContainer);
-
-            featured.appendChild(container);
+            const card = await createProjectCard(project, key);
+            realProjects.push(card);
         }
-    };
+    }
 
-    const emptyTextEnd = document.createElement('h3');
-    emptyTextEnd.setAttribute('class', 'text-white')
-    emptyTextEnd.innerText = 'NOTHING FOLLOWS';
+    const firstClone = realProjects[0].cloneNode(true);
+    const lastClone = realProjects[realProjects.length - 1].cloneNode(true);
 
-    const emptyEnd = document.createElement('div');
-    emptyEnd.setAttribute('class', 'empty flex flex-col justify-center items-center w-[500px] h-full p-[15px] opacty-0.5');
-    emptyEnd.appendChild(emptyTextEnd);
-    featured.appendChild(emptyEnd);
+    projectSlides.appendChild(lastClone);
+    realProjects.forEach(card => projectSlides.appendChild(card));
+    projectSlides.appendChild(firstClone);
 
-    function centerCard(index) {
-        const card = featured.children[index];
+    let currentIndex = 1;
+    const totalCards = realProjects.length;
+
+    function centerCard(index, behavior = 'smooth') {
+        const card = projectSlides.children[index];
         const cardOffsetLeft = card.offsetLeft;
         const containerWidth = featured.offsetWidth;
         const cardWidth = card.offsetWidth;
         const scrollTarget = cardOffsetLeft - (containerWidth / 2) + (cardWidth / 2);
 
-        const maxScroll = featured.scrollWidth - containerWidth;
-        const allowedScroll = Math.min(scrollTarget, maxScroll);
-
         featured.scrollTo({
-            left: allowedScroll,
-            behavior: 'smooth'
+            left: scrollTarget,
+            behavior
         });
     }
 
-    centerCard(2);
-
-    let currentIndex = 1;
-    const totalCards = featured.children.length;
+    centerCard(currentIndex);
 
     next.addEventListener('click', () => {
-        if (currentIndex < totalCards - 2) currentIndex++;
-        centerCard(currentIndex);
+        if (currentIndex <= totalCards) {
+            currentIndex++;
+            centerCard(currentIndex);
+        }
+
+        if (currentIndex === totalCards + 1) {
+            currentIndex = 1;
+            centerCard(currentIndex);
+        }
     });
 
     prev.addEventListener('click', () => {
-        if (currentIndex > 1) currentIndex--;
-        centerCard(currentIndex);
+        if (currentIndex >= 0) {
+            currentIndex--;
+            centerCard(currentIndex);
+        }
+
+        if (currentIndex === 0) {
+            currentIndex = totalCards;
+            centerCard(currentIndex);
+        }
     });
 }
+
 
 async function image() {
     try {
         const module = await import('$lib/assets/plots/16.png');
         const src = module.default;
 
+        // Create wrapper div to hold image + brightness overlay
+        const wrapper = document.createElement('div');
+        wrapper.classList.add('relative', 'w-auto', 'h-auto', 'group');
+
+        // Create the image
         const img = document.createElement('img');
         img.src = src;
         img.alt = 'Profile';
-        img.classList.add('mb-4', 'h-auto', 'w-auto');
-        
-        return img;
+        img.classList.add(
+            'projectImage',
+            'w-full',
+            'h-auto',
+        );
+
+        const overlay = document.createElement('div');
+        overlay.classList.add(
+            'absolute',
+            'bottom-0',
+            'left-0',
+            'w-full',
+            'h-[100%]',
+            'bg-gradient-to-t',
+            'from-black/90',
+            'to-transparent',
+            'transition',
+            'duration-500',
+            'ease-in-out',
+            'pointer-events-none'
+        );
+        wrapper.appendChild(img);
+        wrapper.appendChild(overlay);
+
+        return wrapper;
 
     } catch (error) {
         console.error('Error loading the image:', error);
     }
 }
+
 
 export function icons() {
     const iconList = document.getElementById('iconList');
