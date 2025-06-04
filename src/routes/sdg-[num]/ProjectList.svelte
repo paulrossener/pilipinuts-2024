@@ -1,8 +1,8 @@
 <script lang="ts">
 
     let { 
-        project_data,
-        sdg_num
+        project_data = $bindable(),
+        sdg_num = $bindable()
     } = $props();
 
     import ProjectListItem from './ProjectListItem.svelte';

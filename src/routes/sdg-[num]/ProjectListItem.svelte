@@ -52,9 +52,9 @@
 
 <!-- If List View -->
 <div class="mb-30">
-    <h1 class="mb-4 text-4xl font-medium">{title}</h1>
+    <h1 class="mb-4 text-3xl sm:text-4xl font-medium">{title}</h1>
 
-    <div class="grid grid-cols-[70%_auto] border-collapse gap-4">
+    <div class="grid grid-cols-1 sm:grid-cols-[70%_auto] border-collapse gap-4">
         <!-- First Column -->
         <div class="flex">
             {#await import(`$lib/assets/plots/${plot}.png`) then { default: src }}
@@ -63,6 +63,10 @@
             </button>
             {/await}
         </div>
+
+        <!-- Description (Mobile) -->
+        <p class="text-sm py-6 block sm:hidden">{desc}</p>
+
         <!-- Second Column -->
         <!-- Flex is needed for a good reason.  -->
         <div class="flex flex-col">
@@ -163,8 +167,8 @@
         </div>
     </div>
 
-    <!-- Description -->
-    <p class="text-sm py-6">{desc}</p>
+    <!-- Description (Not Mobile) -->
+    <p class="text-sm py-6 hidden sm:block">{desc}</p>
     {@render theSeparator()}
 </div>
 

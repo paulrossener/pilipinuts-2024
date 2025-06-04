@@ -6,6 +6,7 @@
 @import 'tailwindcss';
 @plugin '@tailwindcss/forms';
 @plugin '@tailwindcss/typography';
+@plugin "daisyui";
 @plugin "@iconify/tailwind4";
 
 @theme {

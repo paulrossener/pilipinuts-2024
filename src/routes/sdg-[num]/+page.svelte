@@ -106,7 +106,7 @@
 </script>
 
 <nav id="topBarColored" class="top-bar fixed flex flex-row items-center top-0 w-full h-[60px] {curr_sdg.color} text-black border-b border-black z-[1000]">
-    <div class="flex flex-row items-center bg-black-500 w-full h-full ">
+    <div class="flex flex-row items-center w-full h-full ">
         <a target="_self" href="/" aria-label="Page Title" class="px-4 py-[10px] title-content flex items-center" onmouseenter={triggerAnimation}>
             <div class="relative flex items-center gap-2">
                 <h3 class="text-2xl tracking-[-1%]">PilipiNuts</h3>
@@ -125,7 +125,7 @@
         <div class=flex-grow></div>
         <div class="flex items-center h-full font-mono transition duration-300 ease-in">
             <div class="hover:bg-[rgb(255,255,255,0.3)] serch-input relative flex flex-row h-full border-l-1 border-l-black gap-6 px-6">
-                <input type="text" placeholder="Search by Project Name" class="flex p-0 bg-transparent text-sm text-black placeholder-black border-none">
+                <input type="text" placeholder="Search by Project Name" class="flex field-sizing-content p-0 bg-transparent text-sm text-black placeholder-black border-none focus:ring-0"> <!-- Paul: Changed text to black ? -->
                 <button type = "button" aria-label="Search Button"><span class="size-4 nrk--search-active"></span></button>
             </div>
             <div class="dropdown dropdown-end h-full">
@@ -135,6 +135,7 @@
                     <!-- sdgs -> JSON File -->
                     {#each sdg_entries as [number, sdg]}
                         <a href="sdg-{number}">
+                            <!-- svelte-ignore a11y_no_static_element_interactions -->
                             <div
                                 id="sdg-dynamic-{number}"
                                 class="sdg-item flex flex-row w-full items-center gap-4 py-2 pl-2 border-b-[0.5] border-t border-amber-50"
@@ -159,37 +160,39 @@
 <div id="data-scroll-watcher"></div>
 <div class="flex flex-col items-center {curr_sdg.color} w-full text-black p-10">
     <img src={curr_sdg.image} class="sdg-img p-2 w-[50px] h-[50px] object-contain bg-white mb-2" alt="sdg">
-    <h1 class="font-bold text-5xl mb-4">{curr_sdg.title}</h1>
-    <p class="font-mono text-sm">{curr_sdg.description}</p>
+    <h1 class="font-bold text-5xl text-center mb-4">{curr_sdg.title}</h1>
+    <p class="font-mono text-sm text-center">{curr_sdg.description}</p>
 </div>
 <div class="w-full flex flex-col flex-grow items-center">
-    <div class="w-[70%] p-[50px]">
+    <div class="w-[70%] py-[50px] sm:px-[50px]">
         
         {#if sdg_project[data.content] == null}
             <div class="flex items-center justify-center w-full h-full flex-col">
                 <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 24 24"><rect width="6" height="14" x="1" y="4" fill="#fff"><animate id="svgSpinnersBarsFade0" fill="freeze" attributeName="opacity" begin="0;svgSpinnersBarsFade1.end-0.25s" dur="0.75s" values="1;0.2"/></rect><rect width="6" height="14" x="9" y="4" fill="#fff" opacity="0.4"><animate fill="freeze" attributeName="opacity" begin="svgSpinnersBarsFade0.begin+0.15s" dur="0.75s" values="1;0.2"/></rect><rect width="6" height="14" x="17" y="4" fill="#fff" opacity="0.3"><animate id="svgSpinnersBarsFade1" fill="freeze" attributeName="opacity" begin="svgSpinnersBarsFade0.begin+0.3s" dur="0.75s" values="1;0.2"/></rect></svg>
-                <span class="font-mono">No Projects Found.</span>
+                <span class="font-mono mb-3">No Projects Found.</span>
                 <a target="_self" href="/#sdgProjects" class="underline"><span class="font-mono">Back to the SDGs</span></a>
             </div>
         {:else}
             <!-- Button section -->
             <section class="container mx-auto mt-2 mb-10">
-                <div class="grid grid-cols-[80%_20%]">
-                    <div class="flex flex-row gap-2 text-xs font-mono font-medium text-black items-center">
-                        <a href="/"><button class="uppercase bg-[rgb(255,255,255,0.3)] hover:bg-white h-full py-2 px-4">PilipiNuts 2024</button></a>
+                <div class="grid grid-cols-1 sm:grid-cols-[80%_20%]">
+                    <div class="hidden sm:flex flex-row gap-2 text-xs font-mono font-medium text-black items-center">
+                        <a href="/">
+                            <button class="uppercase bg-[rgb(255,255,255,0.3)] hover:bg-white h-full py-2 px-4">PilipiNuts 2024</button> <!-- Paul: why not directly a href -->
+                        </a>
                         <button class="uppercase {curr_sdg.color} h-full py-2 px-4">SUSTAINABLE DEVELOPMENT GOAL #{sdg_num}</button>
                         <span class="uppercase text-white font-mono ml-2">{curr_sdg_projects.length} Projects Found</span>
                     </div>
                     <!-- <h2 class="font-medium">Projects</h2> -->
                     <div>
-                        <ul class="flex flex-wrap text-xs font-medium text-center border-collapse font-mono">
-                            <li class="py-1 flex-grow border border-white {currentTab == "list" ? "bg-white text-black" : ""}">
-                                <button class="uppercase" onclick={() => currentTab = "list"}>
+                        <ul class="flex flex-wrap w-full text-xs font-medium text-center font-mono">
+                            <li class="flex-grow py-1 border border-white {currentTab == 'list' ? 'bg-white text-black' : ''}">
+                                <button class="uppercase w-full" onclick={() => currentTab = 'list'}>
                                     List View
                                 </button>
                             </li>
-                            <li class="py-1 flex-grow border border-white {currentTab == "table" ? "bg-white text-black" : ""}">
-                                <button class="uppercase" onclick={() => currentTab = "table"}>
+                            <li class="flex-grow py-1 border border-white {currentTab == 'table' ? 'bg-white text-black' : ''}">
+                                <button class="uppercase w-full" onclick={() => currentTab = 'table'}>
                                     Table View
                                 </button>
                             </li>
@@ -202,12 +205,12 @@
             <section>
                 <!-- List View -->
                 {#if currentTab == "list"}
-                <ProjectList project_data={curr_sdg_projects} sdg_num={sdg_num}/>
+                <ProjectList bind:project_data={curr_sdg_projects} bind:sdg_num={sdg_num}/>
                 {/if}
                 
                 <!-- Table View -->
                 {#if currentTab == "table"}
-                <ProjectTable project_data={curr_sdg_projects} sdg_num={sdg_num}/>
+                <ProjectTable bind:project_data={curr_sdg_projects} bind:sdg_num={sdg_num}/>
                 {/if}
                 
             </section>

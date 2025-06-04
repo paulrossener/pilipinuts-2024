@@ -59,7 +59,7 @@
 
 </script>
 
-<div id="home" class = "bg-black flex items-center justify-center w-full h-[calc(100dvh-60px)] text-white bg-black">
+<div id="home" class = "bg-black flex items-center justify-center w-full h-[calc(100dvh-60px)] text-white">
     <div class="home-container flex flex-row w-[70%] h-full gap-[10px] max-[950px]:justify-center max-[950px]:items-center bg-black">
         <div class="flex flex-col h-full w-[60%] justify-center">
             <div class="flex flex-col gap-4">
