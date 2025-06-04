@@ -29,7 +29,7 @@
 </script>
 
 <tr class="border-b border-b-amber-50">
-    <td class="w-xs py-2">
+    <td class="w-[200px] py-2 pr-2">
         <div>
             <p class="text-xl font-medium">
                 {name}
@@ -42,10 +42,10 @@
             {/each}
         </p>
     </td>
-    <td class="w-lg py-2 font-medium text-xl/6">
+    <td class="w-md py-2 font-medium text-xl/6">
         {title}
     </td>
-    <td class="py-2 flex flex-row flex-wrap gap-2 items-center">
+    <td class="w-[160px] py-2 flex flex-row flex-wrap gap-2 items-center">
         {#each related_sdg as sdg_num }
             <img 
                 src="{sdgs[sdg_num].image}"
