@@ -59,7 +59,7 @@
         <div class="flex">
             {#await import(`$lib/assets/plots/${plot}.png`) then { default: src }}
             <button onclick={()=>showModalImage(plot)} type="button" aria-haspopup="dialog" aria-expanded="false" data-melt-dialog-trigger="" data-dialog-trigger="">
-                <img {src} class="h-full w-auto transition-all duration-200 hover:scale-[1.01] hover:brightness-125" alt="Profile">
+                <img {src} class="w-auto transition-all duration-200 hover:scale-[1.01] hover:brightness-125" alt="Profile">
             </button>
             {/await}
         </div>
