@@ -321,7 +321,7 @@
             "plot": "20",
             "website": "https://disboikaaarl.github.io/CS132_SDG16/",
             "dataset": ["https://docs.google.com/spreadsheets/d/1n75vu-pxSNtaExi_43i31aW3uC2apfbIyaFokpP-FWY/edit?usp=sharing"],
-            "related_sdg": [1,5,8,10]
+            "related_sdg": [1,8,10]
         }
     ]
 }
