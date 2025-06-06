@@ -168,7 +168,9 @@
     </div>
 
     <!-- Description (Not Mobile) -->
-    <p class="text-sm py-6 hidden sm:block">{desc}</p>
+    <p class="text-sm py-6 hidden sm:block">
+        {@html desc}
+    </p>
     {@render theSeparator()}
 </div>
 

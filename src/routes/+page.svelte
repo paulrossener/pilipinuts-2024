@@ -61,10 +61,10 @@
 </script>
 
 <div id="home" class = "bg-black flex items-center justify-center w-full h-[calc(100dvh-60px)] text-white">
-    <div class="home-container flex flex-row w-[70%] h-full gap-[10px] max-[950px]:justify-center max-[950px]:items-center bg-black">
-        <div class="flex flex-col h-full w-[60%] justify-center">
-            <div class="flex flex-col gap-4">
-                <h3 class = "text-7xl font-medium">Can Numbers<br>Change a Nation?</h3>
+    <div class="home-container flex flex-row w-full lg:w-[70%] h-full gap-[10px] justify-center lg:justify-start items-center lg:items-start">
+        <div class="flex flex-col h-full w-[70%] justify-center">
+            <div class="flex flex-col gap-4 items-center lg:items-start">
+                <h3 class = "text-5xl sm:text-6xl md:text-7xl font-medium text-center lg:text-start">Can Numbers<br>Change a Nation?</h3>
                 <p class = "text-sm w-[65%] max-[700px]:w-full max-[700px]:justify-center max-[700px]:items-center">Dive into data science projects that expose the truths, trends, and turning points in the Philippines’ path to sustainable development.</p>
                 <p class = "text-sm w-[65%] max-[700px]:w-full max-[700px]:justify-center max-[700px]:items-center">Scroll to explore how data science is shaping the future of the Philippines.</p>
                 <div class="buttons flex flex-row gap-[20px] mt-[5px] max-[700px]:flex-col max-[700px]:justify-center max-[700px]:items-center uppercase">
@@ -72,7 +72,7 @@
                         <button class = {`home-btn relative flex flex-row items-center justify-center ${btn.width} border border-white 
                         overflow-hidden rounded-none font-mono px-2 py-[10px] text-[15px] `} 
                         type="button" onclick={() => scrollToSection(btn.id)}>
-                            <div class="original absolute flex justify-center items-center bg-black text-white gap-[10px] inset-0 ">{btn.content} <span class="nrk--arrow-right size-5"></span></div>
+                            <div class="original absolute flex justify-center items-center gap-[10px] inset-0 ">{btn.content} <i class="fa-solid fa-arrow-right-long"></i></div>
                             <div class="inline-flex bg-transparent" role="button" aria-label="Hover effect button" tabindex = 0>
                                 {#each btn.spanList as n, i} 
                                     {#if n === ' '}
@@ -87,44 +87,26 @@
                 </div>
             </div>
         </div>
-        <!-- <div class="home-content flex flex-col w-[60%] h-full justify-center items-center p-[10px] max-[950px]:w-[70%]">
-            <div class="container flex flex-grow max-[700px]:w-full"></div>
-            <div class="container min-h-[60%] flex flex-col gap-[20px] px-[200px] max-[700px]:w-full">
-                <h3 class = "text-7xl font-medium">Can Numbers<br>Change a Nation?</h3>
-                <p class = "text-sm w-[65%] max-[700px]:w-full max-[700px]:justify-center max-[700px]:items-center">Dive into data science projects that expose the truths, trends, and turning points in the Philippines’ path to sustainable development.</p>
-                <div class="buttons flex flex-row gap-[20px] mt-[5px] max-[700px]:flex-col max-[700px]:justify-center max-[700px]:items-center uppercase">
-                    {#each homeButton as btn}
-                        <button class = {`home-btn relative flex flex-row items-center justify-center ${btn.width} border border-white 
-                        overflow-hidden rounded-none font-mono px-2 py-[10px] text-[15px] `} 
-                        type="button" onclick={() => scrollToSection(btn.id)}>
-                            <div class="original absolute flex justify-center items-center bg-black text-white gap-[10px] inset-0 ">{btn.content} <i class="fa-solid fa-arrow-right"></i></div>
-                            <div class="inline-flex bg-transparent" role="button" aria-label="Hover effect button" tabindex = 0>
-                                {#each btn.spanList as n, i} 
-                                    {#if n === ' '}
-                                        <span style="--i: {i + 1}">&nbsp;</span>
-                                    {:else}
-                                        <span style="--i: {i + 1}">{n}</span>
-                                    {/if}
-                                {/each}
-                            </div>
-                        </button>
-                    {/each}
-                </div>
-            </div>
-        </div> -->
-        <div class="home-pic bg-blue h-full max-[950px]:hidden">
+        <div class="hidden home-pic h-full lg:block">
             <img src="misc/map-colored.svg" class="map h-full object-cover" alt="pic">
         </div>
     </div>
 </div>
-<div id="nutshell" class = "flex flex-col justify-center items-center w-full pt-[55px] text-white gap-[50px]">
-    <div class="flex flex-col items-center w-full h-[calc(100dvh-60px)] pt-[20vh] pb-[20vh]">
-        <div class="flex flex-col w-[70%]">
-            <div class="flex flex-row w-full gap-[20px] mb-24">
-                <div class="w-full justify-start text-left">
-                    <h3 class="text-5xl font-medium">Where Data Meets <br> the Philippines' <br> Most Urgent <br> Questions</h3>
+<div id="nutshell" class = "flex flex-col justify-center items-center w-full pt-[0px] lg:pt-[55px] text-white gap-[50px]">
+    <div class="flex flex-col items-center w-full pt-[10dvh] sm:pt-[13dvh] md:pt-[17dvh] lg:pt-[19dvh] sm:pb-[1dvh] md:pb-[5dvh] lg:pb-[10dvh]">
+        <div class="flex flex-col w-[87%] sm:w-[83%] md:w-[76%] lg:w-[70%]">
+            <div class="flex flex-col w-full gap-[20px] xl:flex-row xl:mb-24">
+                <div class="w-full text-center xl:text-left">
+                    <h3 class="text-5xl font-medium xl:hidden">
+                        Where Data Meets the Philippines' Most Urgent Questions
+                    </h3>
+
+                    <h3 class="text-5xl font-medium hidden xl:block">
+                        Where Data Meets <br> the Philippines' <br> Most Urgent <br> 
+                        Questions
+                    </h3>
                 </div>
-                <div class="">
+                <div class="flex flex-col items-center ">
                     <div class="mb-6">
                         <h3 class="break-words font-mono mb-3">PILIPINUTS 2024</h3>
                         <img src="/misc/accent-sm.svg" class="w-[150px]" alt="Accent">
@@ -136,14 +118,14 @@
                     </p>
                 </div>
             </div>
-            <div id = "iconList" class="w-full flex flex-wrap justify-between h-[55px]"></div>
+            <div id = "iconList" class="w-full flex flex-wrap justify-between pb-[1dvh]"></div>
         </div>
-        <div class="flex-grow"></div>
+        <!-- <div class="flex-grow"></div> -->
         <img src="/misc/accent-lg.svg" class="w-full" alt="Accent">
     </div>
-    <div class="flex justify-center items-center w-full h-[calc(100dvh-60px)]">
-        <div class="w-[70%] flex flex-row gap-12">
-            <div class="nutshell-c-child flex w-[50%] aspect-square items-center justify-center max-[1200px]:w-full">
+    <div class="flex justify-center items-center w-full lg:h-[calc(100dvh-60px)]">
+        <div class="w-[70%] lg:w-[80%] flex flex-col lg:flex-row gap-8 pt-[1dvh]">
+            <div class="nutshell-c-child flex w-full xl:w-1/2 aspect-square items-center justify-center">
                 <div class="nutshell-pic w-full h-[100%] relative ">
                     <div class="absolute inset-0 z-0 grid grid-cols-2 grid-rows-2 gap-[10px] ">
                         <div class="nutshell-change bg-gray-400/50 transition duration-200 ease-in-out hover:bg-blue">
@@ -155,21 +137,22 @@
                         <div class="nutshell-change bg-gray-400/50 transition duration-200 ease-in-out hover:bg-yellow">
                         </div>
                     </div>
-                    <div class="absolute inset-0 z-10 bg-[url('/misc/map.svg')] bg-no-repeat bg-size-[100%] bg-position-[50%_20%] max-[1200px]:bg-size-[60%] pointer-events-none"></div>
+                    <div class="absolute inset-0 z-10 bg-[url('/misc/map.svg')] bg-no-repeat xl:bg-size-[100%] bg-size-[60%] bg-position-[50%_20%] pointer-events-none"></div>
                     <div class=" absolute inset-0 z-20 grid grid-cols-2 grid-rows-2 gap-[10px] text-white pointer-events-none">
-                        <div class="nutshell-hover  flex flex-col justify-start bg-transparent p-[30px] text-3xl aspect-square">
-                            <span>42</span>
+                        <div class="nutshell-hover  flex flex-col justify-start bg-transparent p-[10px] sm:p-[15px] md:p-[20px] lg:p-[25px] text-xl sm:text-2xl md:text-3xl aspect-square ">
+                            <span>18</span>
                             <span>Projects</span>
                         </div>
-                        <div class="nutshell-hover flex flex-col items-end bg-transparent p-[30px] text-3xl aspect-square">
+                        <div class="nutshell-hover flex flex-col items-end p-[10px] sm:p-[15px] md:p-[20px] lg:p-[25px] text-xl sm:text-2xl md:text-3xl aspect-square">
                             <span>15</span>
-                            <span>Global Goals</span>
+                            <span>Global</span>
+                            <span>Goals</span>
                         </div>
-                        <div class="nutshell-hover flex flex-col justify-end bg-transparent p-[30px] text-3xl aspect-square">
+                        <div class="nutshell-hover flex flex-col justify-end bg-transparent p-[10px] sm:p-[15px] md:p-[20px] lg:p-[25px] text-xl sm:text-2xl md:text-3xl aspect-square">
                             <span>1</span>
                             <span>Country</span>
                         </div>
-                        <div class="nutshell-hover z-10 flex flex-col justify-end items-end bg-transparent p-[30px] text-3xl aspect-square">
+                        <div class="nutshell-hover z-10 flex flex-col justify-end items-end bg-transparent p-[10px] sm:p-[15px] md:p-[20px] lg:p-[25px] text-xl sm:text-2xl md:text-3xl aspect-square">
                             <span>All In</span>
                             <span>A Nutshell</span>
                         </div>
@@ -177,9 +160,9 @@
                     <!-- <div class="absolute inset-0 z-10 bg-[url('/misc/map.svg')] bg-no-repeat bg-size-[100%] bg-position-[50%_20%] max-[1200px]:bg-size-[60%]"></div> -->
                 </div>
             </div>
-            <div class="nutshell-content flex flex-col w-[50%] flex-grow max-[1200px]:flex-row max-[1200px]:w-full max-[1200px]:h-[50%] ">
-                <div class="container w-[100%] h-full flex flex-col border-b border-amber-50">
-                    <div class = "flex flex-col w-full gap-[10px] max-[1200px]:h-[80%]">
+            <div class="nutshell-content flex flex-row w-full h-1/2 xl:flex-col xl:w-[60%]">
+                <div class="nutshell-container w-[100%] h-full flex flex-col border-b border-amber-50 gap-10">
+                    <div class="flex flex-col w-full gap-[10px] h-[80%] xl:h-auto">
                         <h3 class="font-mono">WHY PILIPINUTS?</h3>
                         <img src="/misc/accent-sm.svg" class="w-[150px]" alt="Accent">
                         <p class = "text-sm mt-[10px]">
@@ -189,13 +172,14 @@
                             Grounded in the realities of the Philippine context, these data science projects tackle urgent challenges such as climate change, gender inequality, and poverty. More than just academic work, they represent informed, data-driven contributions to shaping a more just, resilient, and sustainable future.
                         </p>
                     </div>
-                    <div class="flex-grow"></div>
-                    <div class="flex flex-col w-full pb-12">
-                        <div class="text-container text-5xl gap-[10px] flex flex-col max-[1200px]:flex-row max-[1200px]:gap-[0px] max-[1200px]:text-base font-medium">
+                    <div class="flex flex-col w-full pb-[12px]">
+                        <div class="text-container flex flex-row lg:flex-col flex-wrap lg:flex-nowrap gap-0 xl:gap-[10px] text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-medium xl:bg-red">
                             <span class="typing-text"><span class="cursor font-medium">This is the story of the</span></span>
-                            <span class="typing-text ml-2"><span class="cursor font-medium">Philippines, told</span></span>
-                            <span class="typing-text ml-2"><span class="cursor font-medium">through data —</span></span>
-                            <span class="typing-text ml-2"><span class="cursor font-medium">one SDG at a time.</span></span>
+                            <span class="typing-text ml-1 lg:ml-0"><span class="cursor font-medium">Philippines, told</span></span>
+                            <div class="flex ml-1 w-full flex-wrap gap-1 lg:flex-nowrap lg:flex-col">
+                                <span class="typing-text"><span class="cursor font-medium">through data —</span></span>
+                                <span class="typing-text"><span class="cursor font-medium">one SDG at a time.</span></span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -351,7 +335,7 @@
         transition-delay: calc(0.05s * (var(--i) - 1));
     }
     
-    #nutshell .container h3{
+    #nutshell .nutshell-container h3{
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -388,11 +372,7 @@
     }
 
     .styleButton:hover {
-        background-color: white;
-    }
-
-    .styleButton:hover .button-content {
-        color: black;
+        cursor: pointer;
     }
 
     .button-content {

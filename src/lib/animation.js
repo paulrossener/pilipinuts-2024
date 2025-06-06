@@ -36,7 +36,6 @@ function startTyping(el, speed = 50) {
     cursor.style.animation = '';
     cursor.dataset.typed = "true"; 
 
-    // const baseDelay = elem.classList.contains("delay") ? 1200 : 0;
 
     setTimeout(() => {
       const interval = setInterval(() => {

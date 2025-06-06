@@ -243,6 +243,7 @@ export function icons() {
         img.setAttribute('src', sdg.image);
         img.setAttribute('alt', sdg.title);
         img.setAttribute('class', `sdg-img p-2 w-[50px] h-[50px] object-contain ${sdg.color}`);
+        // img.setAttribute('class', `sdg-img p-1 lg:p-2 w-[25px] h-[25px] sm:w-[33px] sm:h-[33px] md:w-[40px] md:h-[40px] lg:w-[50px] lg:h-[50px] xl:w-[50px] xl:h-[50px] object-contain ${sdg.color} flex-shrink`);
         iconList.appendChild(img);
     });
 }
