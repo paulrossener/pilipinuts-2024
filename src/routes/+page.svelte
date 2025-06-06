@@ -106,7 +106,7 @@
                         Questions
                     </h3>
                 </div>
-                <div class="flex flex-col items-center ">
+                <div class="flex flex-col items-center xl:items-start ">
                     <div class="mb-6">
                         <h3 class="break-words font-mono mb-3">PILIPINUTS 2024</h3>
                         <img src="/misc/accent-sm.svg" class="w-[150px]" alt="Accent">
