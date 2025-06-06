@@ -121,10 +121,10 @@
 </script>
 
 <nav id="topBar" class="top-bar fixed flex flex-row items-center top-0 w-full h-[60px] bg-black text-white border-b border-amber-50 z-[1000]">
-    <div class="flex flex-row items-center w-full h-full ">
+    <div class="flex flex-row items-center w-full h-full">
         <a target="_self" href="/" aria-label="Page Title" class="px-4 py-[10px] title-content flex items-center" onmouseenter={triggerAnimation}>
             <div class="relative flex items-center gap-2">
-                <h3 class="text-2xl tracking-[-1%]">PilipiNuts</h3>
+                <h3 class="hidden sm:block text-2xl tracking-[-1%]">PilipiNuts</h3>
                 <div class="flex flex-row text-black text-lg font-bold gap-1">
                     {#each num as n, i}
                         <div
@@ -137,14 +137,14 @@
                 </div>
             </div>
         </a>
-        <div class=flex-grow></div>
-        <div class="flex items-center h-full font-mono transition duration-300 ease-in">
-            <div class="dropdown dropdown-end h-full">
-                <div class="hover:bg-[rgb(255,255,255,0.3)] serch-input flex flex-row h-full border-l-1 border-l-amber-50 gap-6 px-6">
+        <div class="flex-grow"></div>
+        <div class="flex items-center h-full font-mono transition duration-300 ease-in ">
+            <div class="dropdown dropdown-end h-full flex">
+                <div class="hidden sm:flex hover:bg-[rgb(255,255,255,0.3)] serch-input flex-row h-full border-l-1 border-l-amber-50 gap-6 px-6">
                     <input 
                     type="text" 
                     placeholder="Search by Project Name" 
-                    class="flex field-sizing-content p-0 bg-transparent text-sm text-white placeholder-white border-none focus:ring-0"
+                    class="field-sizing-content p-0 bg-transparent text-sm text-white placeholder-white border-none focus:ring-0"
                     bind:value={searchTerm}
                     onfocus={() => toggleDropdown(true)}
                     onblur={handleBlur}
@@ -154,42 +154,56 @@
                     onclick={() => toggleDropdown(true)}
                     ><span class="size-4 nrk--search-active"></span></button>
                 </div>
-            {#if searchContent && Object.keys(filteredProjects).length > 0}
-                <div id = "input-text" class="dropdown-content z-1 w-[350px] overflow-y-auto flex flex-col flex-grow m-auto bg-black shadow-[0_4px_20px_rgba(194,_218,_253,_0.5)]">
-                    {#each Object.entries(filteredProjects) as [key, projects]}
-                        {#each projects as project, index}
-                            <a
-                                data-sveltekit-reload
-                                href={project.website}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                class= {`sdg-header-${key}-${index} sdg-item flex flex-row w-full items-center gap-4 py-2 pl-2 border-b-[0.5] border-t border-amber-50`}
-                                onmouseenter={() => changeSDGBGColor("input-text", getSDG(key).color, `${key}-${index}`)}
-                                onmouseleave={() => changeSDGBGColor("input-text", '', `${key}-${index}`)}
-                            >
-                                <div class="min-w-[50px] max-w-[50px]">
-                                <img
-                                    src={getSDG(key).image}
-                                    alt={getSDG(key).title}
-                                    class="sdg-img p-2 w-full h-[50px] object-contain {getSDG(key).color}"
-                                />
-                                </div>
-                                <div class="flex flex-col h-full justify-center break-words overflow-hidden p-4">
-                                    <h6 class="font-normal">{project.title}</h6>
-                                </div>
-                            </a>
-                        {/each}
-                    {/each}
+                <div class="flex sm:hidden hover:bg-[rgb(255,255,255,0.3)] serch-input flex-row h-full border-l-1 border-l-amber-50 gap-6 px-6">
+                    <input 
+                    type="text" 
+                    placeholder="Search"
+                    class="field-sizing-content p-0 bg-transparent text-sm text-white placeholder-white border-none focus:ring-0"
+                    bind:value={searchTerm}
+                    onfocus={() => toggleDropdown(true)}
+                    onblur={handleBlur}
+                    >
+                    <button type = "button" 
+                    aria-label="Search Button"
+                    onclick={() => toggleDropdown(true)}
+                    ><span class="size-4 nrk--search-active"></span></button>
                 </div>
-            {:else if (searchContent && searchTerm != '') && Object.keys(filteredProjects).length === 0 }
-                <div id = "input-text" class="dropdown-content z-1 w-[350px] overflow-y-auto flex flex-col flex-grow m-auto bg-black shadow-[0_4px_20px_rgba(194,_218,_253,_0.5)]">
-                    <div class = "sdg-item flex flex-row w-full items-center gap-4 py-2 pl-2 border-b-[0.5] border-t border-amber-50">
-                        <div class="flex flex-col h-full justify-center break-words overflow-hidden p-4">
-                            <h6 class="font-normal">No Data Found!</h6>
+                {#if searchContent && Object.keys(filteredProjects).length > 0}
+                    <div id = "input-text" class="dropdown-content z-1 w-[350px] overflow-y-auto flex flex-col flex-grow m-auto bg-black shadow-[0_4px_20px_rgba(194,_218,_253,_0.5)]">
+                        {#each Object.entries(filteredProjects) as [key, projects]}
+                            {#each projects as project, index}
+                                <a
+                                    data-sveltekit-reload
+                                    href={project.website}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    class= {`sdg-header-${key}-${index} sdg-item flex flex-row w-full items-center gap-4 py-2 pl-2 border-b-[0.5] border-t border-amber-50`}
+                                    onmouseenter={() => changeSDGBGColor("input-text", getSDG(key).color, `${key}-${index}`)}
+                                    onmouseleave={() => changeSDGBGColor("input-text", '', `${key}-${index}`)}
+                                >
+                                    <div class="min-w-[50px] max-w-[50px]">
+                                    <img
+                                        src={getSDG(key).image}
+                                        alt={getSDG(key).title}
+                                        class="sdg-img p-2 w-full h-[50px] object-contain {getSDG(key).color}"
+                                    />
+                                    </div>
+                                    <div class="flex flex-col h-full justify-center break-words overflow-hidden p-4">
+                                        <h6 class="font-normal">{project.title}</h6>
+                                    </div>
+                                </a>
+                            {/each}
+                        {/each}
+                    </div>
+                {:else if (searchContent && searchTerm != '') && Object.keys(filteredProjects).length === 0 }
+                    <div id = "input-text" class="dropdown-content z-1 w-[350px] overflow-y-auto flex flex-col flex-grow m-auto bg-black shadow-[0_4px_20px_rgba(194,_218,_253,_0.5)]">
+                        <div class = "sdg-item flex flex-row w-full items-center gap-4 py-2 pl-2 border-b-[0.5] border-t border-amber-50">
+                            <div class="flex flex-col h-full justify-center break-words overflow-hidden p-4">
+                                <h6 class="font-normal">No Data Found!</h6>
+                            </div>
                         </div>
                     </div>
-                </div>
-            {/if}
+                {/if}
             </div>
             <div class="dropdown dropdown-end h-full"
                 onfocusin={handleFocusIn}
