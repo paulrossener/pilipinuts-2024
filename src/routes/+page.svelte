@@ -158,7 +158,7 @@
                     <div class="absolute inset-0 z-10 bg-[url('/misc/map.svg')] bg-no-repeat bg-size-[100%] bg-position-[50%_20%] max-[1200px]:bg-size-[60%] pointer-events-none"></div>
                     <div class=" absolute inset-0 z-20 grid grid-cols-2 grid-rows-2 gap-[10px] text-white pointer-events-none">
                         <div class="nutshell-hover  flex flex-col justify-start bg-transparent p-[30px] text-3xl aspect-square">
-                            <span>42</span>
+                            <span>18</span>
                             <span>Projects</span>
                         </div>
                         <div class="nutshell-hover flex flex-col items-end bg-transparent p-[30px] text-3xl aspect-square">
