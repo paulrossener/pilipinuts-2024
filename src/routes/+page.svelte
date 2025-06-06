@@ -213,10 +213,8 @@
             <h1 class="text-5xl break-words font-medium mb-3">Our Projects</h1>
             <img src="/misc/accent-sm.svg" class="w-[150px]" alt="Accent">
         </div>
-        <p class="flex w-full my-[20px] mb-12 text-center lg:text-start">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et orci sem. Maecenas pharetra venenatis est, non rutrum odio dignissim ac. 
-            Duis fermentum eleifend turpis. Donec viverra mi in odio varius fringilla. Fusce lacinia vehicula fringilla. 
-            Integer enim arcu, bibendum suscipit tortor quis, scelerisque tempor nulla. Vivamus scelerisque elit vitae sem tristique, fermentum faucibus urna maximus.
+        <p class="flex w-full my-[20px] mb-12 text-justify lg:text-start">
+            Explore a collection of data-driven stories that decode real-world issues through the lens of student insight. From climate to health, every project here transforms raw numbers into meaningful narratives—interactive, insightful, and built to spark impact.
         </p>
         <div class="flex flex-col w-full h-full gap-[75px]">
             <div class="flex flex-col gap-[30px]">
@@ -224,11 +222,11 @@
                     <h3 class="font-mono hidden lg:block">FEATURED WORKS</h3>
                     <div class="flex gap-[30px] text-xl w-full lg:w-auto justify-between lg:justify-start">
                         <button id="prev" class="styleButton flex justify-center items-center px-[10px] py-[5px]" type="button" aria-label="Previous">
-                            <span class="button-content"><span class="nrk--arrow-left size-7"></span></span>
+                            <span class="button-content"><span class="nrk--arrow-left size-5 lg:size-7"></span></span>
                         </button>
-                        <h3 class="font-mono block lg:hidden">FEATURED WORKS</h3>
+                        <h4 class="font-mono block lg:hidden">FEATURED WORKS</h4>
                         <button id="next" class="styleButton flex justwify-center items-center px-[10px] py-[5px]" type="button" aria-label="Next">
-                            <span class="button-content"><span class="nrk--arrow-right size-7"></span></span>
+                            <span class="button-content"><span class="nrk--arrow-right size-5 lg:size-7"></span></span>
                         </button>
                     </div>
                 </div>
