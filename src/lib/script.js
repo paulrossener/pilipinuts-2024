@@ -81,14 +81,14 @@ export async function featuredProjects() {
         container.setAttribute('class', 'featured flex w-full h-full group');
 
         const rotateContainer = document.createElement('div');
-        rotateContainer.setAttribute('class', 'relative rotating flex flex-col w-[500px] h-full p-[15px]');
-        rotateContainer.appendChild(await image());
+        rotateContainer.setAttribute('class', 'relative rotating flex flex-col w-[250px] sm:w-[300px] md:w-[400px] lg:w-[450px] xl:w-[500px] h-full p-[15px]');
+        rotateContainer.appendChild(await image(project.plot));
 
         const textContainer = document.createElement('div');
-        textContainer.setAttribute('class', 'absolute h-[40%] flex flex-col w-full bottom-0 left-0 px-[30px] pb-[30px]');
+        textContainer.setAttribute('class', 'absolute h-[100px] gap-[20px] flex flex-col w-full bottom-0 left-0 px-[30px] pb-[30px]');
 
         const header = document.createElement("h3");
-        header.setAttribute('class', 'flex flex-grow text-base font-semibold will-change-transform transition duration-300 delay-150 group-hover:-translate-y-1');
+        header.setAttribute('class', 'flex flex-grow text-xs sm:text-sm md:text-base font-semibold will-change-transform transition duration-300 delay-150 group-hover:-translate-y-1');
         header.innerText = project.title;
         textContainer.appendChild(header);
 
@@ -96,11 +96,11 @@ export async function featuredProjects() {
         stuff.setAttribute('class', 'flex flex-row w-full h-[20px] justify-between mt-auto will-change-transform transition duration-300 delay-250 group-hover:-translate-y-1');
 
         const p1 = document.createElement('p');
-        p1.setAttribute('class', 'text-xs');
+        p1.setAttribute('class', 'text-[8px] sm:text-[10px] md:text-xs');
         p1.innerText = project.class || "FLASK";
 
         const p2 = document.createElement('div');
-        p2.setAttribute('class', 'flex items-center gap-2 text-xs');
+        p2.setAttribute('class', 'flex items-center gap-2 text-[8px] sm:text-[10px] md:text-xs');
 
         const img = document.createElement('img');
         img.src = sdgItem.image;
@@ -109,6 +109,7 @@ export async function featuredProjects() {
 
         const title = document.createElement('span');
         title.innerText = sdgItem.title || "SDG NAME";
+        title.setAttribute('class', 'hidden md:inline')
 
         p2.appendChild(img);
         p2.appendChild(title);
@@ -190,16 +191,17 @@ export async function featuredProjects() {
 }
 
 
-async function image() {
+async function image(plotNumber) {
     try {
-        const module = await import('$lib/assets/plots/16.png');
-        const src = module.default;
+        console.log(plotNumber)
+        // const module = await import(`$lib/assets/plots/${plotNumber}.png`);
+        // const src = module.default;
+        const src = `/plots/${plotNumber}.png`;
+        console.log(src)
 
-        // Create wrapper div to hold image + brightness overlay
         const wrapper = document.createElement('div');
-        wrapper.classList.add('relative', 'w-auto', 'h-auto', 'group');
+        wrapper.setAttribute('class', 'relative w-auto h-[150px] sm:h-[180px] md:h-[210px] lg:h-[240px] xl:h-[270px]  group');
 
-        // Create the image
         const img = document.createElement('img');
         img.src = src;
         img.alt = 'Profile';
@@ -207,6 +209,7 @@ async function image() {
             'projectImage',
             'w-full',
             'h-auto',
+            'object-cover'
         );
 
         const overlay = document.createElement('div');

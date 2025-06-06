@@ -173,7 +173,7 @@
                         </p>
                     </div>
                     <div class="flex flex-col w-full pb-[12px]">
-                        <div class="text-container flex flex-row lg:flex-col flex-wrap lg:flex-nowrap gap-0 xl:gap-[10px] text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-medium xl:bg-red">
+                        <div class="text-container flex flex-row lg:flex-col flex-wrap lg:flex-nowrap gap-0 xl:gap-[10px] text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-medium">
                             <span class="typing-text"><span class="cursor font-medium">This is the story of the</span></span>
                             <span class="typing-text ml-1 lg:ml-0"><span class="cursor font-medium">Philippines, told</span></span>
                             <div class="flex ml-1 w-full flex-wrap gap-1 lg:flex-nowrap lg:flex-col">
@@ -194,7 +194,7 @@
                 <img src="/misc/accent-sm.svg" class="w-[150px]" alt="Accent">
                 <p class="font-mono">WHEN POWERED BY PURPOSE,<br>DATA SCIENCE DOESN’T JUST REVEAL THE TRUTH —</p>
                 <div class="w-full max-w-[800px] font-medium">
-                    <span class="text-5xl">It sparks 
+                    <span class="text-3xl sm:text-5xl">It sparks 
                         <span class = "underline decoration-red-500">action</span>, drives 
                         <span class = "underline decoration-yellow-500">change</span>, and helps build a 
                         <span class = "underline decoration-pink-500">better future</span>
@@ -202,18 +202,18 @@
                     </span>
                 </div>
             </div>
-            <div class = "absolute bottom-0 flex flex-col items-center gap-[10px]">
+            <div class = "absolute bottom-20 sm:bottom-0 flex flex-col items-center gap-[10px]">
                 <p class=font-mono>PROCEED TO THE PROJECTS</p>
                 <span class="proceed nrk--arrow-down size-6"></span>
             </div>  
         </div>
     </div>
-    <div id="startProject" class="w-[70%] pt-[75px]">
-        <div class = "flex flex-col mb-4">
+    <div id="startProject" class="w-[90%] sm:w-[80%] md:[70%] pt-[75px]">
+        <div class = "flex flex-col mb-4 items-center lg:items-start">
             <h1 class="text-5xl break-words font-medium mb-3">Our Projects</h1>
             <img src="/misc/accent-sm.svg" class="w-[150px]" alt="Accent">
         </div>
-        <p class="w-full my-[20px] mb-12">
+        <p class="flex w-full my-[20px] mb-12 text-center lg:text-start">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et orci sem. Maecenas pharetra venenatis est, non rutrum odio dignissim ac. 
             Duis fermentum eleifend turpis. Donec viverra mi in odio varius fringilla. Fusce lacinia vehicula fringilla. 
             Integer enim arcu, bibendum suscipit tortor quis, scelerisque tempor nulla. Vivamus scelerisque elit vitae sem tristique, fermentum faucibus urna maximus.
@@ -221,12 +221,13 @@
         <div class="flex flex-col w-full h-full gap-[75px]">
             <div class="flex flex-col gap-[30px]">
                 <div class="flex justify-between w-full">
-                    <h3 class="font-mono">FEATURED WORKS</h3>
-                    <div class="flex gap-[30px] text-xl">
+                    <h3 class="font-mono hidden lg:block">FEATURED WORKS</h3>
+                    <div class="flex gap-[30px] text-xl w-full lg:w-auto justify-between lg:justify-start">
                         <button id="prev" class="styleButton flex justify-center items-center px-[10px] py-[5px]" type="button" aria-label="Previous">
                             <span class="button-content"><span class="nrk--arrow-left size-7"></span></span>
                         </button>
-                        <button id="next" class="styleButton flex justify-center items-center px-[10px] py-[5px]" type="button" aria-label="Next">
+                        <h3 class="font-mono block lg:hidden">FEATURED WORKS</h3>
+                        <button id="next" class="styleButton flex justwify-center items-center px-[10px] py-[5px]" type="button" aria-label="Next">
                             <span class="button-content"><span class="nrk--arrow-right size-7"></span></span>
                         </button>
                     </div>
@@ -241,7 +242,7 @@
             </div>
             <div id="sdgProjects" class="flex flex-col flex-grow w-full gap-[20px] mt-8">
                 <h3 class="font-mono">ALL PROJECTS BY SDG</h3>
-                <div class="grid grid-flow-col grid-cols-2 grid-rows-9 gap-x-4 m-auto">
+                <div class="grid grid-cols-1 lg:grid-cols-2 lg:grid-rows-9 gap-x-4 m-auto">
                     <!-- NOTE: projectList function -->
                     <!-- sdgs -> JSON File -->
                     {#each sdg_entries as [number, sdg]}
@@ -257,8 +258,8 @@
                                     <img src={sdg.image} alt="{sdg.title}" class="sdg-img p-2 w-full h-[50px] object-contain {sdg.color}"/>
                                 </div>
                                 <div class="flex flex-col h-[100%] justify-center truncate">
-                                    <h3 class="font-semibold">{sdg.title}</h3>
-                                    <p class="truncate font-mono font-light text-sm">{sdg.description}</p>
+                                    <h3 class="font-semibold text-sm sm:text-lg">{sdg.title}</h3>
+                                    <p class="truncate font-mono font-light text-xs">{sdg.description}</p>
                                 </div>
                             </div>
                         </a>
@@ -278,7 +279,7 @@
         </div>
     </div>
 </div>
-<div id="inquiries" class = "flex flex-col w-full justify-center min-h-[80dvh] px-[50px] text-white">
+<div id="inquiries" class = "flex flex-col w-full justify-center min-h-[60dvh] px-[50px] text-white">
     <div class="flex flex-col mt-[75px] justify-center items-center gap-[15px]">
         <img src="/misc/accent-sm.svg" class="w-[150px]" alt="Accent">
         <h3 class="font-mono">GOT QUESTIONS?</h3>
@@ -416,7 +417,7 @@
     }
 
     :global(.featured:hover .projectImage) {
-        filter: brightness(1);
+        filter: brightness(1.1);
     }
 
     :global(.sdg-img),
