@@ -5,7 +5,7 @@
     } = $props();
 
     const encoded_url = encodeURIComponent(project_title);
-    const tweet_text = encodeURIComponent("Lets get this started.")
+    const tweet_text = encodeURIComponent(project_title)
 
     import { base } from '$app/paths';
     import { page } from '$app/state';
