@@ -52,9 +52,9 @@
 
 <!-- If List View -->
 <div class="mb-30">
-    <h1 class="mb-4 text-3xl sm:text-4xl font-medium">{title}</h1>
+    <h1 class="mb-4 text-3xl/7 sm:text-4xl font-medium">{title}</h1>
 
-    <div class="grid grid-cols-1 sm:grid-cols-[70%_auto] border-collapse gap-4">
+    <div class="grid grid-cols-1 lg:grid-cols-[70%_auto] border-collapse gap-4">
         <!-- First Column -->
         <div class="flex">
             <!-- {#await import(`$lib/assets/plots/${plot}.png`) then { default: src }} -->
@@ -65,7 +65,7 @@
         </div>
 
         <!-- Description (Mobile) -->
-        <p class="text-sm py-6 block sm:hidden">{desc}</p>
+        <p class="text-sm block lg:hidden whitespace-pre-line">{desc}</p>
 
         <!-- Second Column -->
         <!-- Flex is needed for a good reason.  -->
@@ -97,10 +97,9 @@
 
                 <!-- Group Description -->
                 <div class="uppercase font-mono text-xs tracking-widest mb-2 py-3.5">
-                    Group
+                    Authors
                 </div>
                 <div class="py-2">
-                    <p class="text-xl mb-1 font-medium">{name}</p>
                     {#each authors as author}
                     <p class="text-sm font-mono">{author}</p>
                     {/each}
@@ -162,15 +161,15 @@
                 </div>
             </div>
 
-            {@render theSeparator()}
+            <hr class="h-px border-0 bg-amber-50">
 
         </div>
     </div>
 
     <!-- Description (Not Mobile) -->
-    <p class="text-sm py-6 hidden sm:block">
+    <p class="text-sm py-6 hidden lg:block whitespace-pre-line">
         {@html desc}
     </p>
-    {@render theSeparator()}
+    <hr class="h-px border-0 bg-amber-50">
 </div>
 

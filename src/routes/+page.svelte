@@ -90,8 +90,8 @@
     <div class="home-container z-10 flex flex-row w-full xl:w-[70%] h-full gap-[10px] justify-center xl:justify-start items-center xl:items-start">
         <div class="flex flex-col h-full w-[70%] justify-center">
             <div class="flex flex-col gap-4 items-center xl:items-start">
-                <h3 class = "text-5xl sm:text-6xl md:text-7xl font-medium text-center xl:text-start">Can Numbers<br>Change a Nation?</h3>
-                <p class = "text-sm w-[65%] max-[700px]:w-full max-[700px]:justify-center max-[700px]:items-center">Dive into data science projects that expose the truths, trends, and turning points in the Philippines’ path to sustainable development.</p>
+                <h3 class = "text-4xl/8 sm:text-6xl md:text-7xl font-medium text-center xl:text-start">Can Numbers<br>Change a Nation?</h3>
+                <p class = "text-xs w-[65%] max-[700px]:w-full max-[700px]:justify-center max-[700px]:items-center">Dive into data science projects that expose the truths, trends, and turning points in the Philippines’ path to sustainable development.</p>
                 <p class = "text-sm w-[65%] max-[700px]:w-full max-[700px]:justify-center max-[700px]:items-center">Scroll to explore how data science is shaping the future of the Philippines.</p>
                 <div class="buttons flex flex-row gap-[20px] mt-[5px] max-[700px]:flex-col max-[700px]:justify-center max-[700px]:items-center uppercase bg-black">
                     {#each homeButton as btn}
@@ -122,6 +122,10 @@
     <div class="flex flex-col items-center w-full pt-[10dvh] sm:pt-[13dvh] md:pt-[17dvh] lg:pt-[19dvh] sm:pb-[1dvh] md:pb-[5dvh] lg:pb-[10dvh]">
         <div class="flex flex-col w-[87%] sm:w-[83%] md:w-[76%] lg:w-[70%]">
             <div class="flex flex-col w-full gap-[20px] xl:flex-row xl:mb-24">
+                <div class="mb-6 block xl:hidden w-full flex flex-col items-center">
+                    <h3 class="break-words font-mono mb-3">PILIPINUTS 2024</h3>
+                    <img src="/misc/accent-sm.svg" class="w-[150px]" alt="Accent">
+                </div>
                 <div class="w-full text-center xl:text-left">
                     <h3 class="text-5xl font-medium xl:hidden">
                         Where Data Meets the Philippines' Most Urgent Questions
@@ -132,8 +136,9 @@
                         Questions
                     </h3>
                 </div>
+                
                 <div class="flex flex-col items-center xl:items-start ">
-                    <div class="mb-6">
+                    <div class="mb-6 hidden xl:block">
                         <h3 class="break-words font-mono mb-3">PILIPINUTS 2024</h3>
                         <img src="/misc/accent-sm.svg" class="w-[150px]" alt="Accent">
                     </div>
@@ -144,13 +149,13 @@
                     </p>
                 </div>
             </div>
-            <div id = "iconList" class="w-full flex flex-wrap justify-between pb-[2dvh] gap-1"></div>
+            <div id = "iconList" class="w-full flex flex-wrap xl:justify-between pb-[2dvh] gap-1"></div>
         </div>
         <!-- <div class="flex-grow"></div> -->
-        <img src="/misc/accent-lg.svg" class="w-full" alt="Accent">
+        <img src="/misc/accent-lg.svg" class="hidden xl:block w-full" alt="Accent">
     </div>
     <div class="flex justify-center items-center w-full lg:h-[calc(100dvh-60px)]">
-        <div class="w-[70%] lg:w-[80%] flex flex-col lg:flex-row gap-8 pt-[1dvh]">
+        <div class="w-[87%] sm:w-[83%] md:w-[76%] lg:w-[70%] flex flex-col lg:flex-row gap-8 pt-[1dvh]">
             <div class="nutshell-c-child flex w-full xl:w-1/2 aspect-square items-center justify-center">
                 <div class="nutshell-pic w-full h-[100%] relative ">
                     <div class="absolute inset-0 z-0 grid grid-cols-2 grid-rows-2 gap-[10px] ">
@@ -307,15 +312,19 @@
     <div class="flex flex-col mt-[75px] justify-center items-center gap-[15px]">
         <img src="/misc/accent-sm.svg" class="w-[150px]" alt="Accent">
         <h3 class="font-mono">GOT QUESTIONS?</h3>
-        <div class="flex flex-col flex-grow gap border-y mt-[10px] w-[280px] text-white">
-            <button type = "button" class = "inquiry-btn flex justify-between items-center w-full px-[2px] py-[15px] border-b ">
-                <p class='text-xl'>Google Form</p>    
-                <i class="fa-solid fa-arrow-up-right-from-square"></i>
-            </button>
-            <button type = "button" class = "inquiry-btn flex justify-between items-center w-full px-[2px] py-[10px]">
-                <p class='text-xl'>Dev Team</p>    
-                <i class="fa-solid fa-code"></i>
-            </button>
+        <div class="flex flex-col flex-grow gap border-y mt-[10px] w-[280px] text-white pointer-events-auto">
+            <a href="https://forms.gle/NpJN26zYiJUeqJuQ9" target="_blank" class="pointer-events-auto">
+                <button type = "button" class = "pointer-events-auto inquiry-btn flex justify-between items-center w-full px-[2px] py-[15px] border-b ">
+                    <p class='text-xl'>Google Form</p>    
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </button>
+            </a>
+            <a href="/bts" class="">
+                <button type = "button" class = "pointer-events-auto inquiry-btn flex justify-between items-center w-full px-[2px] py-[10px]">
+                    <p class='text-xl'>Dev Team</p>    
+                    <i class="fa-solid fa-code"></i>
+                </button>
+            </a>
         </div>
     </div>
 </div>

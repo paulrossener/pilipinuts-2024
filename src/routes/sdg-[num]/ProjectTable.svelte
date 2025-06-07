@@ -41,7 +41,7 @@
             <tr class="uppercase  text-xs mb-4 font-mono font-medium">
                 <th class="py-4">Project by</th>
                 <th class="py-4">Title</th>
-                <th class="py-4">Related SDGs</th>
+                <th class="py-4 hidden md:table-cell">Related SDGs</th>
                 <th class="py-4"></th>
             </tr>
         </thead>
