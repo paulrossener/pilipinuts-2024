@@ -264,7 +264,7 @@
                     </div>
                 </div>
             </div>
-            <div id="sdgProjects" class="flex flex-col flex-grow w-full gap-[20px] mt-8">
+            <div id="sdgProjects" class="scroll-mt-20 flex flex-col flex-grow w-full gap-[20px] mt-8">
                 <h3 class="font-mono">ALL PROJECTS BY SDG</h3>
                 <div class="grid grid-cols-1 lg:grid-cols-2 lg:grid-rows-9 gap-x-4 m-auto">
                     <!-- NOTE: projectList function -->
