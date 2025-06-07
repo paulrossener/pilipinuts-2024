@@ -122,7 +122,7 @@
     <div class="flex flex-col items-center w-full pt-[10dvh] sm:pt-[13dvh] md:pt-[17dvh] lg:pt-[19dvh] sm:pb-[1dvh] md:pb-[5dvh] lg:pb-[10dvh]">
         <div class="flex flex-col w-[87%] sm:w-[83%] md:w-[76%] lg:w-[70%]">
             <div class="flex flex-col w-full gap-[20px] xl:flex-row xl:mb-24">
-                <div class="mb-6 block xl:hidden w-full flex flex-col items-center">
+                <div class="mb-6 xl:hidden w-full flex flex-col items-center">
                     <h3 class="break-words font-mono mb-3">PILIPINUTS 2024</h3>
                     <img src="/misc/accent-sm.svg" class="w-[150px]" alt="Accent">
                 </div>
@@ -149,23 +149,23 @@
                     </p>
                 </div>
             </div>
-            <div id = "iconList" class="w-full flex flex-wrap xl:justify-between pb-[2dvh] gap-1"></div>
+            <div id = "iconList" class="w-full flex flex-wrap justify-center xl:justify-between pb-[2dvh] gap-1"></div>
         </div>
         <!-- <div class="flex-grow"></div> -->
-        <img src="/misc/accent-lg.svg" class="hidden xl:block w-full" alt="Accent">
+        <img src="/misc/accent-lg.svg" class="hidden xl:block mt-36 w-full" alt="Accent">
     </div>
     <div class="flex justify-center items-center w-full lg:h-[calc(100dvh-60px)]">
         <div class="w-[87%] sm:w-[83%] md:w-[76%] lg:w-[70%] flex flex-col lg:flex-row gap-8 pt-[1dvh]">
             <div class="nutshell-c-child flex w-full xl:w-1/2 aspect-square items-center justify-center">
                 <div class="nutshell-pic w-full h-[100%] relative ">
                     <div class="absolute inset-0 z-0 grid grid-cols-2 grid-rows-2 gap-[10px] ">
-                        <div class="nutshell-change bg-gray-400/50 transition duration-200 ease-in-out hover:bg-blue">
+                        <div class="nutshell-change bg-gray-400/50 transition duration-200 ease-in-out hover:bg-blue active:bg-blue">
                         </div>
-                        <div class="nutshell-change bg-gray-400/50 transition duration-200 ease-in-out hover:bg-red">
+                        <div class="nutshell-change bg-gray-400/50 transition duration-200 ease-in-out hover:bg-red active:bg-red">
                         </div>
-                        <div class="nutshell-change bg-gray-400/50 transition duration-200 ease-in-out hover:bg-pink">
+                        <div class="nutshell-change bg-gray-400/50 transition duration-200 ease-in-out hover:bg-pink active:bg-pink">
                         </div>
-                        <div class="nutshell-change bg-gray-400/50 transition duration-200 ease-in-out hover:bg-yellow">
+                        <div class="nutshell-change bg-gray-400/50 transition duration-200 ease-in-out hover:bg-yellow active:bg-yellow">
                         </div>
                     </div>
                     <div class="absolute inset-0 z-10 bg-[url('/misc/map.svg')] bg-no-repeat xl:bg-size-[100%] bg-size-[60%] bg-position-[50%_20%] pointer-events-none"></div>
