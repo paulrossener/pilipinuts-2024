@@ -75,15 +75,46 @@
     onMount(() => {
         let scrollWatcher = document.querySelector("#data-scroll-watcher") as HTMLDivElement;
         let navbar = document.querySelector("#topBar") as HTMLDivElement;
+        let numButtons = document.querySelectorAll<HTMLDivElement>("div.num-buttons");
+        let pilipinutsText = document.querySelector("#pilipinuts-text") as HTMLDivElement;
+        let searchBar = document.querySelectorAll<HTMLDivElement>("div.serch-input");
+        let viewSDG = document.querySelector("#view-sdg") as HTMLDivElement;
         const color = curr_sdg.color.replace(/^bg-|\[|\]/g, '');
         navbar.style.backgroundColor = color;
 
         const navObserver = new IntersectionObserver((entries) => {
             if (entries[0].isIntersecting) {
                 navbar.style.backgroundColor = color;
+                navbar.style.borderColor = "black";
+                pilipinutsText.style.color = "black";
+                searchBar.forEach(bar => {
+                    bar.style.color = "black";
+                    bar.style.borderColor = "black";
+                });
+                viewSDG.style.color = "black";
+                viewSDG.style.borderColor = "black";
+                numButtons.forEach(elem => {
+                    elem.style.backgroundColor = "black";
+                    elem.style.color = "white";
+                });
             }
             else {
                 navbar.style.backgroundColor = "#000000";
+                navbar.style.borderColor = "white";
+                pilipinutsText.style.color = "white";
+                searchBar.forEach(bar => {
+                    bar.style.color = "white";
+                    bar.style.borderColor = "white";
+                });
+                viewSDG.style.color = "white";
+                viewSDG.style.borderColor = "white";
+                numButtons[0].style.backgroundColor = "var(--color-yellow-500)";
+                numButtons[1].style.backgroundColor = "var(--color-red-500)";
+                numButtons[2].style.backgroundColor = "var(--color-blue-500)";
+                numButtons[3].style.backgroundColor = "var(--color-pink-500)";
+                numButtons.forEach( elem => {
+                    elem.style.color = "black";
+                });
             }
 
             //const target_element = document.getElementById(`sdg-${target_sdg}`) as HTMLDivElement;

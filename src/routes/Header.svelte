@@ -124,7 +124,7 @@
     <div class="flex flex-row items-center w-full h-full">
         <a target="_self" href="/" aria-label="Page Title" class="px-4 py-[10px] title-content flex items-center" onmouseenter={triggerAnimation}>
             <div class="relative flex items-center gap-2">
-                <h3 class="hidden sm:block text-2xl tracking-[-1%]">PilipiNuts</h3>
+                <h3 id="pilipinuts-text" class="hidden sm:block text-2xl tracking-[-1%]">PilipiNuts</h3>
                 <div class="flex flex-row text-black text-lg font-bold gap-1">
                     {#each num as n, i}
                         <div
@@ -145,7 +145,7 @@
                     <input 
                     type="text" 
                     placeholder="Search by Project Name" 
-                    class="w-[23ch] p-0 bg-transparent text-sm text-white placeholder-white border-none focus:ring-0"
+                    class="w-[23ch] p-0 bg-transparent text-sm text-white placeholder-[rgb(255,255,255,0.3)] border-none focus:ring-0"
                     bind:value={searchTerm}
                     onfocus={() => toggleDropdown(true)}
                     onblur={handleBlur}
@@ -159,7 +159,7 @@
                     <input 
                     type="text" 
                     placeholder="Search"
-                    class="w-[6ch] p-0 bg-transparent text-xs text-white placeholder-white border-none focus:ring-0"
+                    class="w-[6ch] p-0 bg-transparent text-xs text-white placeholder-[rgb(255,255,255,0.3)] border-none focus:ring-0"
                     bind:value={searchTerm}
                     onfocus={() => toggleDropdown(true)}
                     onblur={handleBlur}
@@ -212,6 +212,7 @@
             >
 
                 <div 
+                    id="view-sdg"
                     role="button"
                     tabindex="0" 
                     class="hover:bg-[rgb(255,255,255,0.3)] flex flex-row items-center h-full border-l-1 border-l-amber-50 text-xs sm:text-sm px-4 sm:px-6 gap-4 sm:gap-6 cursor-pointer"

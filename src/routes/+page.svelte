@@ -120,15 +120,15 @@
     </div>
 </div>
 <div id="nutshell" class = "flex flex-col justify-center items-center w-full pt-[0px] lg:pt-[55px] text-white gap-[50px]">
-    <div class="flex flex-col items-center w-full pt-[10dvh] sm:pt-[13dvh] md:pt-[17dvh] lg:pt-[19dvh] sm:pb-[1dvh] md:pb-[5dvh] lg:pb-[10dvh]">
+    <div class="flex flex-col items-center w-full pt-[10dvh] sm:pt-[13dvh] md:pt-[17dvh] lg:pt-[19dvh] sm:pb-[1dvh] md:pb-[5dvh] lg:pb-[10dvh] mb-[50%] xl:mb-0">
         <div class="flex flex-col w-[87%] sm:w-[83%] md:w-[76%] lg:w-[70%]">
-            <div class="flex flex-col w-full gap-[20px] xl:flex-row xl:mb-24">
+            <div class="flex flex-col w-full gap-[20px] xl:flex-row mb-4 md:mb-8 xl:mb-24">
                 <div class="mb-6 xl:hidden w-full flex flex-col items-center">
-                    <h3 class="break-words font-mono mb-3">PILIPINUTS 2024</h3>
+                    <h3 class="text-sm md:text-base break-words font-mono mb-3">PILIPINUTS 2024</h3>
                     <img src="/misc/accent-sm.svg" class="w-[150px]" alt="Accent">
                 </div>
                 <div class="w-full text-center xl:text-left">
-                    <h3 class="text-5xl font-medium xl:hidden">
+                    <h3 class="text-4xl md:text-5xl font-medium xl:hidden">
                         Where Data Meets the Philippines' Most Urgent Questions
                     </h3>
 
@@ -155,8 +155,12 @@
         <!-- <div class="flex-grow"></div> -->
         <img src="/misc/accent-lg.svg" class="hidden xl:block mt-36 w-full" alt="Accent">
     </div>
-    <div class="flex justify-center items-center w-full lg:h-[calc(100dvh-60px)]">
+    <div class="flex justify-center items-center w-full lg:h-[calc(100dvh-60px)] mb-[50%] xl:mb-0">
         <div class="w-[87%] sm:w-[83%] md:w-[76%] lg:w-[70%] flex flex-col lg:flex-row gap-8 pt-[1dvh]">
+            <div class="mb-6 xl:hidden w-full flex flex-col items-center">
+                <h3 class="text-sm md:text-base break-words font-mono mb-3">WHY PILIPINUTS?</h3>
+                <img src="/misc/accent-sm.svg" class="w-[150px]" alt="Accent">
+            </div>
             <div class="nutshell-c-child flex w-full xl:w-1/2 aspect-square items-center justify-center">
                 <div class="nutshell-pic w-full h-[100%] relative ">
                     <div class="absolute inset-0 z-0 grid grid-cols-2 grid-rows-2 gap-[10px] ">
@@ -195,8 +199,8 @@
             <div class="nutshell-content flex flex-row w-full h-1/2 xl:flex-col xl:w-[60%]">
                 <div class="nutshell-container w-[100%] h-full flex flex-col border-b border-amber-50 gap-10">
                     <div class="flex flex-col w-full gap-[10px] h-[80%] xl:h-auto">
-                        <h3 class="font-mono">WHY PILIPINUTS?</h3>
-                        <img src="/misc/accent-sm.svg" class="w-[150px]" alt="Accent">
+                        <span class="hidden xl:block"><h3 class="font-mono">WHY PILIPINUTS?</h3></span>
+                        <img src="/misc/accent-sm.svg" class="hidden xl:block w-[150px]" alt="Accent">
                         <p class = "text-sm mt-[10px]">
                             Each project in PilipiNuts 2024 draws inspiration from the United Nations Sustainable Development Goals (SDGs) — a global framework for ending poverty, protecting the planet, and ensuring peace and prosperity for all.
                         </p>
@@ -219,12 +223,12 @@
         </div>
     </div>
 </div>
-<div id="projects" class = "flex flex-col items-center w-full px-[50px] text-white">
+<div id="projects" class = "flex flex-col items-center w-full lg:px-[50px] text-white">
     <div class="flex justify-center items-center w-full h-[calc(100dvh)] pb-[135px]">
-        <div id="projectIntro" class="relative flex flex-col justify-center items-center text-center w-full h-full">
+        <div id="projectIntro" class="relative flex flex-col justify-center items-center text-center w-[87%] sm:w-[83%] md:w-[76%] lg:w-[70%] h-full mb-[50%] xl:mb-0">
             <div class="flex flex-col justify-center items-center w-[100%] gap-[20px]">
                 <img src="/misc/accent-sm.svg" class="w-[150px]" alt="Accent">
-                <p class="font-mono">WHEN POWERED BY PURPOSE,<br>DATA SCIENCE DOESN’T JUST REVEAL THE TRUTH —</p>
+                <p class="text-sm lg:text-base font-mono">WHEN POWERED BY PURPOSE,<br>DATA SCIENCE DOESN’T JUST REVEAL THE TRUTH —</p>
                 <div class="w-full max-w-[800px] font-medium">
                     <span class="text-3xl sm:text-5xl">It sparks 
                         <span class = "underline decoration-red-500">action</span>, drives 
@@ -235,28 +239,28 @@
                 </div>
             </div>
             <div class = "absolute bottom-10 sm:bottom-0 flex flex-col items-center gap-[10px]">
-                <p class=font-mono>PROCEED TO THE PROJECTS</p>
+                <p class="text-sm lg:text-base font-mono">PROCEED TO THE PROJECTS</p>
                 <span class="proceed nrk--arrow-down size-6"></span>
             </div>  
         </div>
     </div>
     <div id="startProject" class="w-[90%] sm:w-[80%] md:[70%] pt-[75px]">
         <div class = "flex flex-col mb-4 items-center lg:items-start">
-            <h1 class="text-5xl break-words font-medium mb-3">Our Projects</h1>
+            <h1 class="text-3xl md:text-5xl break-words font-medium mb-3">Our Projects</h1>
             <img src="/misc/accent-sm.svg" class="w-[150px]" alt="Accent">
         </div>
-        <p class="flex w-full my-[20px] mb-12 text-justify lg:text-start">
+        <p class="text-sm flex w-full my-[20px] mb-12 text-justify lg:text-start">
             Explore a collection of data-driven stories that decode real-world issues through the lens of student insight. From climate to health, every project here transforms raw numbers into meaningful narratives—interactive, insightful, and built to spark impact.
         </p>
         <div class="flex flex-col w-full h-full gap-[75px]">
             <div class="flex flex-col gap-[30px]">
                 <div class="flex justify-between w-full">
-                    <h3 class="font-mono hidden lg:block">FEATURED WORKS</h3>
+                    <h3 class="text-sm lg:text-base font-mono hidden lg:block">FEATURED WORKS</h3>
                     <div class="flex gap-[30px] text-xl w-full lg:w-auto justify-between lg:justify-start">
                         <button id="prev" class="styleButton flex justify-center items-center px-[10px] py-[5px]" type="button" aria-label="Previous">
                             <span class="button-content"><span class="nrk--arrow-left size-5 lg:size-7"></span></span>
                         </button>
-                        <h4 class="font-mono block lg:hidden">FEATURED WORKS</h4>
+                        <h4 class="text-sm lg:text-base font-mono block lg:hidden">FEATURED WORKS</h4>
                         <button id="next" class="styleButton flex justwify-center items-center px-[10px] py-[5px]" type="button" aria-label="Next">
                             <span class="button-content"><span class="nrk--arrow-right size-5 lg:size-7"></span></span>
                         </button>
@@ -271,7 +275,7 @@
                 </div>
             </div>
             <div id="sdgProjects" class="scroll-mt-20 flex flex-col flex-grow w-full gap-[20px] mt-8">
-                <h3 class="font-mono">ALL PROJECTS BY SDG</h3>
+                <h3 class="text-sm lg:text-base font-mono">ALL PROJECTS BY SDG</h3>
                 <div class="grid grid-cols-1 lg:grid-cols-2 lg:grid-rows-9 gap-x-4 m-auto">
                     <!-- NOTE: projectList function -->
                     <!-- sdgs -> JSON File -->
@@ -312,8 +316,8 @@
 <div id="inquiries" class = "flex flex-col w-full justify-center min-h-[60dvh] px-[50px] text-white">
     <div class="flex flex-col mt-[75px] justify-center items-center gap-[15px]">
         <img src="/misc/accent-sm.svg" class="w-[150px]" alt="Accent">
-        <h3 class="font-mono">GOT QUESTIONS?</h3>
-        <div class="flex flex-col flex-grow gap border-y mt-[10px] w-[280px] text-white pointer-events-auto">
+        <h3 class="text-sm lg:text-base font-mono">GOT QUESTIONS?</h3>
+        <div class="flex flex-col flex-grow gap border-y mt-[10px] w-[280px] text-white cursor-pointer">
             <a href="https://forms.gle/NpJN26zYiJUeqJuQ9" target="_blank" class="pointer-events-auto">
                 <button type = "button" class = "pointer-events-auto inquiry-btn flex justify-between items-center w-full px-[2px] py-[15px] border-b ">
                     <p class='text-xl'>Google Form</p>    
