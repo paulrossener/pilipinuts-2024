@@ -76,7 +76,7 @@
         let scrollWatcher = document.querySelector("#data-scroll-watcher") as HTMLDivElement;
         let navbar = document.querySelector("#topBar") as HTMLDivElement;
         const color = curr_sdg.color.replace(/^bg-|\[|\]/g, '');
-        
+        navbar.style.backgroundColor = color;
 
         const navObserver = new IntersectionObserver((entries) => {
             if (entries[0].isIntersecting) {
