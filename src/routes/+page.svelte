@@ -67,7 +67,7 @@
 </script>
 
 <div id="home" class = "relative bg-black flex items-center justify-center w-full h-[calc(100dvh-60px)] text-white">
-    <div class="circles-container absolute block xl:hidden w-full h-[100dvh] mt-[60px] overflow-hidden">
+    <div class="circles-container absolute block xl:hidden w-full h-[100dvh] mt-[60px] overflow-hidden pointer-events-none">
         <div class="relative">
             {#each circles as c (c.id)}
                 <div
