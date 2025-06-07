@@ -91,7 +91,7 @@
         <div class="flex flex-col h-full w-[70%] justify-center">
             <div class="flex flex-col gap-4 items-center xl:items-start">
                 <h3 class = "text-4xl/8 sm:text-6xl md:text-7xl font-medium text-center xl:text-start">Can Numbers<br>Change a Nation?</h3>
-                <p class = "text-xs w-[65%] max-[700px]:w-full max-[700px]:justify-center max-[700px]:items-center">Dive into data science projects that expose the truths, trends, and turning points in the Philippines’ path to sustainable development.</p>
+                <p class = "text-sm w-[65%] max-[700px]:w-full max-[700px]:justify-center max-[700px]:items-center">Dive into data science projects that expose the truths, trends, and turning points in the Philippines’ path to sustainable development.</p>
                 <p class = "text-sm w-[65%] max-[700px]:w-full max-[700px]:justify-center max-[700px]:items-center">Scroll to explore how data science is shaping the future of the Philippines.</p>
                 <div class="buttons flex flex-row gap-[20px] mt-[5px] max-[700px]:flex-col max-[700px]:justify-center max-[700px]:items-center uppercase bg-black">
                     {#each homeButton as btn}
