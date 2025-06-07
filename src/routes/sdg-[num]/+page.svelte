@@ -158,7 +158,7 @@
         <div class=flex-grow></div>
         <div class="flex items-center h-full font-mono transition duration-300 ease-in">
             <div class="hidden hover:bg-[rgb(255,255,255,0.3)] serch-input relative sm:flex flex-row h-full border-l-1 border-l-black gap-4 sm:gap-6 px-4 sm:px-6">
-                <input type="text" placeholder="Search by Project Name" class="field-sizing-content p-0 bg-transparent text-sm text-black placeholder-black border-none focus:ring-0">
+                <input type="text" placeholder="Search by Project Name" class="w-[23ch] p-0 bg-transparent text-sm text-black placeholder-black border-none focus:ring-0">
                 <button type = "button" aria-label="Search Button"><span class="size-4 nrk--search-active"></span></button>
             </div>
             <div class="hidden sm:hidden hover:bg-[rgb(255,255,255,0.3)] serch-input flex-row h-full border-l-1 border-l-black gap-4 sm:gap-6 px-4 sm:px-6">
@@ -195,6 +195,7 @@
                     <!-- sdgs -> JSON File -->
                     {#each sdg_entries as [number, sdg]}
                         <a href="/sdg-2/">
+                            <!-- svelte-ignore a11y_no_static_element_interactions -->
                             <div
                                 id="sdg-dynamic-{number}"
                                 class="sdg-item flex flex-row w-full items-center gap-4 py-2 pl-2 border-b-[0.5] border-t border-amber-50"

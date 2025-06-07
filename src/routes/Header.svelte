@@ -148,7 +148,7 @@
                     <input 
                     type="text" 
                     placeholder="Search by Project Name" 
-                    class="field-sizing-content p-0 bg-transparent text-sm text-white placeholder-white border-none focus:ring-0"
+                    class="w-[23ch] p-0 bg-transparent text-sm text-white placeholder-white border-none focus:ring-0"
                     bind:value={searchTerm}
                     onfocus={() => toggleDropdown(true)}
                     onblur={handleBlur}
