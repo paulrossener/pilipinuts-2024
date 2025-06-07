@@ -68,155 +68,37 @@
         thisModal.classList.add('hidden');
     }
 
-    let num = [
-        {num: "2", color: "bg-black"},
-        {num: "0", color: "bg-black"},
-        {num: "2", color: "bg-black"},
-        {num: "4", color: "bg-black"}
-    ]
-
-    let titleAnimation = false;
-
-    function triggerAnimation() {
-        if (titleAnimation) return;
-
-        titleAnimation = true;
-        setTimeout(() => {
-            titleAnimation = false;
-        }, 1500 + num.length * 100);
-    }
-
     import {onMount} from "svelte";
     
     
 
     onMount(() => {
-        let navbar = document.getElementById("topBarColored");
-
         let scrollWatcher = document.querySelector("#data-scroll-watcher") as HTMLDivElement;
+        let navbar = document.querySelector("#topBar") as HTMLDivElement;
+        const color = curr_sdg.color.replace(/^bg-|\[|\]/g, '');
+        
 
         const navObserver = new IntersectionObserver((entries) => {
-            navbar.classList.toggle("hidden", !entries[0].isIntersecting);
+            if (entries[0].isIntersecting) {
+                navbar.style.backgroundColor = color;
+            }
+            else {
+                navbar.style.backgroundColor = "#000000";
+            }
+
+            //const target_element = document.getElementById(`sdg-${target_sdg}`) as HTMLDivElement;
+            //navbar.classList.toggle("navBarChange", !entries[0].isIntersecting);
         })
 
         navObserver.observe(scrollWatcher);
     });
     
-    // Prevent document scrolling when dropdown is open
-    let isDropdownOpen = false;
-
-    function handleFocusIn() {
-        isDropdownOpen = true;
-    }
-
-    function handleFocusOut(event: FocusEvent) {
-        setTimeout(() => {
-            const currentTarget = event.currentTarget as HTMLElement || null;
-            if (currentTarget && !currentTarget.contains(document.activeElement)) {
-                isDropdownOpen = false;
-            }
-        }, 10);
-    }
-
-    import { browser } from '$app/environment';
-
-    if (browser) {
-        if (isDropdownOpen) {
-            document.body.style.overflow = 'hidden';
-        } else {
-            document.body.style.overflow = '';
-        }
-    }
-    
-
 </script>
 
 <svelte:head>
 	<title>SDG {sdg_num} | PilipiNuts 2024</title>
 </svelte:head>
 
-<nav id="topBarColored" class="top-bar fixed flex flex-row items-center top-0 w-full h-[60px] {curr_sdg.color} text-black border-b border-black z-[1000]">
-    <div class="flex flex-row items-center bg-black-500 w-full h-full ">
-        <a target="_self" href="/" aria-label="Page Title" class="px-4 py-[10px] title-content flex items-center" onmouseenter={triggerAnimation}>
-            <div class="relative flex items-center gap-1">
-                <div class="w-[24px] h-[24px] flex items-center justify-center">
-                    <img src="misc/logo-black.svg" class="block" alt="pilipinuts-logo">
-                </div>
-                <h3 class="hidden sm:block text-2xl tracking-[-1%]">PilipiNuts</h3>
-                <div class="flex flex-row text-white text-lg font-bold gap-1">
-                    {#each num as n, i}
-                        <div
-                        class={`num-buttons flex flex-row w-[24px] h-[24px] text-base m-0 ${n.color} items-center justify-center ${titleAnimation ? 'spin' : ''}`}
-                        style={`animation-delay: ${i * 0.1}s`}
-                        >
-                        {n.num}
-                        </div>
-                    {/each}
-                </div>
-            </div>
-        </a>
-        <div class=flex-grow></div>
-        <div class="flex items-center h-full font-mono transition duration-300 ease-in">
-            <div class="hidden hover:bg-[rgb(255,255,255,0.3)] serch-input relative sm:flex flex-row h-full border-l-1 border-l-black gap-4 sm:gap-6 px-4 sm:px-6">
-                <input type="text" placeholder="Search by Project Name" class="w-[23ch] p-0 bg-transparent text-sm text-black placeholder-black border-none focus:ring-0">
-                <button type = "button" aria-label="Search Button"><span class="size-4 nrk--search-active"></span></button>
-            </div>
-            <div class="hidden sm:hidden hover:bg-[rgb(255,255,255,0.3)] serch-input flex-row h-full border-l-1 border-l-black gap-4 sm:gap-6 px-4 sm:px-6">
-                <input 
-                type="text" 
-                placeholder="Search"
-                class="w-[6ch] p-0 bg-transparent text-xs text-white placeholder-white border-none focus:ring-0"
-                >
-                <button type = "button" 
-                aria-label="Search Button"
-                ><span class="size-3 sm:size-4 nrk--search-active"></span></button>
-            </div>
-            <div class="dropdown dropdown-end h-full">
-                <div 
-                    role="button"
-                    tabindex="0" 
-                    class="hover:bg-[rgb(255,255,255,0.3)] flex flex-row items-center h-full border-l-1 border-l-black text-xs sm:text-sm px-4 sm:px-6 gap-4 sm:gap-6 cursor-pointer"
-                >
-                    <span class="font-mono hidden md:inline-block">View SDGs </span>
-                    <span class="font-mono inline-block md:hidden">SDGs </span>
-                    <span class="size-3 sm:size-4 nrk--category-active"></span>
-                </div>
-                {#if isDropdownOpen}
-                    <div
-                        class="fixed inset-0 bg-black opacity-60 z-40"
-                        onclick={() => isDropdownOpen = false}
-                        aria-hidden="true"
-                    ></div>
-                {/if}
-                <div id = "sdg-drop" class="dropdown-content z-50 max-h-[60dvh] w-[350px] sm:w-auto overflow-y-auto flex flex-col m-auto bg-black
-                shadow-[0_4px_15px_rgba(194,_218,_253,_0.5)] border border-white/50 text-white
-                ">
-                    <!-- NOTE: projectList function -->
-                    <!-- sdgs -> JSON File -->
-                    {#each sdg_entries as [number, sdg]}
-                        <a href="/sdg-2/">
-                            <!-- svelte-ignore a11y_no_static_element_interactions -->
-                            <div
-                                id="sdg-dynamic-{number}"
-                                class="sdg-item flex flex-row w-full items-center gap-4 py-2 pl-2 border-b-[0.5] border-t border-amber-50"
-                                onmouseenter={()=>changeSDGBGColor(sdg.color, number)}
-                                onmouseleave={()=>changeSDGBGColor("", number)}
-                            >
-                                <div class="min-w-[50px] max-w-[50px]">
-                                    <img src={sdg.image} alt="{sdg.title}" class="sdg-img p-2 w-full h-[50px] object-contain {sdg.color}"/>
-                                </div>
-                                <div class="flex flex-col h-[100%] justify-center truncate">
-                                    <h3 class="font-semibold">{sdg.title}</h3>
-                                    <!-- <p class="truncate font-mono font-light text-sm">{sdg.description}</p> -->
-                                </div>
-                            </div>
-                        </a>
-                    {/each}
-                </div>
-            </div>
-        </div>
-    </div>
-</nav>
 <div id="data-scroll-watcher"></div>
 <div class="flex flex-col items-center {curr_sdg.color} w-full text-black p-10 text-center">
     <img src={curr_sdg.image} class="sdg-img p-2 w-[50px] h-[50px] object-contain bg-white mb-2" alt="sdg">
@@ -297,5 +179,3 @@
         <img bind:this={view_image} class="mb-4 h-auto w-full" alt="Profile">
     </div>
 </div>
-
-
