@@ -28,7 +28,6 @@ function startTyping(el, speed = 50) {
     const fullText = cursor.textContent.trim(); 
     let i = 0;
 
-    console.log('helloo');
     if (cursor.dataset.typed === "true") return;
 
     // Prepare
@@ -53,21 +52,15 @@ function startTyping(el, speed = 50) {
 }
 
 export function proceedProject() {
-  console.log('heheh');
   const projectIntro = document.getElementById('projectIntro');
   const projectStart = document.getElementById('startProject');
   const proceedIcon = projectIntro?.querySelector('.proceed');
-
-  console.log(projectIntro);
-  console.log(projectStart);
-  console.log(proceedIcon);
 
   if (!projectIntro || !projectStart || !proceedIcon) return; 
 
   projectIntro.scrollIntoView({ behavior: 'smooth' });
   proceedIcon.classList.add('animate');
     setTimeout(() => {
-      console.log('ugh');
       proceedIcon.classList.remove('animate');
       projectStart.scrollIntoView({ behavior: 'smooth' });
     }, 2500); 

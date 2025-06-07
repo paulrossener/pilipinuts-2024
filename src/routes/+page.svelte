@@ -1,4 +1,8 @@
 <script lang="ts">
+    import { triggerTypingAnimation, proceedProject } from '$lib/animation.js';
+    import { featuredProjects, icons } from '$lib/script.js';
+    import { onMount } from 'svelte';
+
     interface SDG {
         [key: string]: { 
             title: string;
@@ -7,20 +11,13 @@
             color: string;
         };
     }
-    
-    import { triggerTypingAnimation, proceedProject } from '$lib/animation.js';
-    import { projectList, featuredProjects, icons } from '$lib/script.js';
-    import { onMount } from 'svelte';
-    
-    import sdg from "$lib/data/sdg.json";
-    
-    const sdgs: SDG = sdg;
 
+    import sdg from "$lib/data/sdg.json";
+    const sdgs: SDG = sdg;
     const sdg_entries = Object.entries(sdgs);
 
     onMount(() => {
         triggerTypingAnimation();
-        // projectList();
         featuredProjects();
         icons();
     });
@@ -30,26 +27,14 @@
         {id: "nutshell", content: "PilipiNuts 2024", width: "w-[180px]", spanList: ['I', ' ', 'W', 'A', 'N', 'N', 'A', ' ', 'K', 'N', 'O', 'W', '!']}
     ]
 
-    let num = [
-        {num: "2", color: "bg-yellow-500"},
-        {num: "0", color: "bg-red-500"},
-        {num: "2", color: "bg-blue-500"},
-        {num: "4", color: "bg-pink-500"}
-    ]
-
     function scrollToSection(id: any) {
         const el = document.getElementById(id);
         console.log(el)
         if (id === "nutshell") {
             if (el) el.scrollIntoView({ behavior: 'smooth' });
         } else {
-            console.log('hello');
             if (el) proceedProject();
         }
-    }
-
-    function goToSDG(sdg_num: Number){
-        window.location.href = `/sdg-${sdg_num}`;
     }
 
     function changeSDGBGColor(newColor: String, target_sdg: String){
@@ -58,16 +43,57 @@
         target_element.style.backgroundColor = color;
     }
 
+	const colors = ['bg-blue-500', 'bg-red-500', 'bg-yellow-400', 'bg-pink-400'];
+	let circles = Array.from({ length: 30 }, (_, i) => {
+		const size = Math.floor(Math.random() * 10) + 4;
+		const x = Math.random() * 100;
+		const y = Math.random() * 100;
+		const moveX = `${Math.random() * 100 - 50}px`;
+		const moveY = `${Math.random() * 100 - 50}px`;
+		const duration = `${Math.random() * 10 + 5}s`;
+
+		return {
+			id: i,
+			color: colors[i % colors.length],
+			size,
+			x,
+			y,
+			moveX,
+			moveY,
+			duration,
+		};
+	});
+
 </script>
 
-<div id="home" class = "bg-black flex items-center justify-center w-full h-[calc(100dvh-60px)] text-white">
-    <div class="home-container flex flex-row w-full lg:w-[70%] h-full gap-[10px] justify-center lg:justify-start items-center lg:items-start">
+<div id="home" class = "relative bg-black flex items-center justify-center w-full h-[calc(100dvh-60px)] text-white">
+    <div class="circles-container absolute block xl:hidden w-full h-[100dvh] mt-[60px] overflow-hidden">
+        <div class="relative">
+            {#each circles as c (c.id)}
+                <div
+                    class={`circle absolute opacity-70 brightness-125 rounded-full ${c.color}`}
+                    style="
+                    width: {c.size}px;
+                    height: {c.size}px;
+                    left: {c.x}vw;
+                    top: {c.y}vh;
+                    --x: {c.moveX};
+                    --y: {c.moveY};
+                    z-index: 0;
+                    animation-duration: {c.duration};
+                    "
+                >
+                </div>
+            {/each}
+        </div>
+    </div>
+    <div class="home-container z-10 flex flex-row w-full xl:w-[70%] h-full gap-[10px] justify-center xl:justify-start items-center xl:items-start">
         <div class="flex flex-col h-full w-[70%] justify-center">
-            <div class="flex flex-col gap-4 items-center lg:items-start">
-                <h3 class = "text-5xl sm:text-6xl md:text-7xl font-medium text-center lg:text-start">Can Numbers<br>Change a Nation?</h3>
+            <div class="flex flex-col gap-4 items-center xl:items-start">
+                <h3 class = "text-5xl sm:text-6xl md:text-7xl font-medium text-center xl:text-start">Can Numbers<br>Change a Nation?</h3>
                 <p class = "text-sm w-[65%] max-[700px]:w-full max-[700px]:justify-center max-[700px]:items-center">Dive into data science projects that expose the truths, trends, and turning points in the Philippines’ path to sustainable development.</p>
                 <p class = "text-sm w-[65%] max-[700px]:w-full max-[700px]:justify-center max-[700px]:items-center">Scroll to explore how data science is shaping the future of the Philippines.</p>
-                <div class="buttons flex flex-row gap-[20px] mt-[5px] max-[700px]:flex-col max-[700px]:justify-center max-[700px]:items-center uppercase">
+                <div class="buttons flex flex-row gap-[20px] mt-[5px] max-[700px]:flex-col max-[700px]:justify-center max-[700px]:items-center uppercase bg-black">
                     {#each homeButton as btn}
                         <button class = {`home-btn relative flex flex-row items-center justify-center ${btn.width} border border-white 
                         overflow-hidden rounded-none font-mono px-2 py-[10px] text-[15px] `} 
@@ -87,8 +113,8 @@
                 </div>
             </div>
         </div>
-        <div class="hidden home-pic h-full lg:block">
-            <img src="misc/map-colored.svg" class="map h-full object-cover" alt="pic">
+        <div class="hidden home-pic h-full xl:block bg-black">
+            <img src="misc/map-colored.svg" class="map h-full object-cover " alt="pic">
         </div>
     </div>
 </div>
@@ -118,7 +144,7 @@
                     </p>
                 </div>
             </div>
-            <div id = "iconList" class="w-full flex flex-wrap justify-between pb-[1dvh]"></div>
+            <div id = "iconList" class="w-full flex flex-wrap justify-between pb-[2dvh] gap-1"></div>
         </div>
         <!-- <div class="flex-grow"></div> -->
         <img src="/misc/accent-lg.svg" class="w-full" alt="Accent">
@@ -176,7 +202,7 @@
                         <div class="text-container flex flex-row lg:flex-col flex-wrap lg:flex-nowrap gap-0 xl:gap-[10px] text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-medium">
                             <span class="typing-text"><span class="cursor font-medium">This is the story of the</span></span>
                             <span class="typing-text ml-1 lg:ml-0"><span class="cursor font-medium">Philippines, told</span></span>
-                            <div class="flex ml-1 w-full flex-wrap gap-1 lg:flex-nowrap lg:flex-col">
+                            <div class="flex ml-1 w-full flex-wrap gap-[10px] lg:flex-nowrap lg:flex-col">
                                 <span class="typing-text"><span class="cursor font-medium">through data —</span></span>
                                 <span class="typing-text"><span class="cursor font-medium">one SDG at a time.</span></span>
                             </div>
@@ -202,7 +228,7 @@
                     </span>
                 </div>
             </div>
-            <div class = "absolute bottom-20 sm:bottom-0 flex flex-col items-center gap-[10px]">
+            <div class = "absolute bottom-10 sm:bottom-0 flex flex-col items-center gap-[10px]">
                 <p class=font-mono>PROCEED TO THE PROJECTS</p>
                 <span class="proceed nrk--arrow-down size-6"></span>
             </div>  
@@ -295,9 +321,6 @@
 </div>
 
 <style>
-    .hello {
-        text-decoration: underline;
-    }
     #home {
         background: linear-gradient(170deg, gray 0%,  rgb(89, 89, 89) 8%, black 20%);
     }
@@ -332,6 +355,23 @@
         opacity: 1;
         transform: translateY(0);
         transition-delay: calc(0.05s * (var(--i) - 1));
+    }
+
+    .circle {
+        animation: floatAround linear infinite;
+        transition: transform 0.3s ease;
+    }
+
+    @keyframes floatAround {
+		0% {
+			transform: translate(0, 0);
+		}
+		50% {
+			transform: translate(var(--x), var(--y));
+		}
+		100% {
+			transform: translate(0, 0);
+		}
     }
     
     #nutshell .nutshell-container h3{

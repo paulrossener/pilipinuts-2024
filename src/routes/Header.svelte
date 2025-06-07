@@ -139,8 +139,9 @@
         </a>
         <div class="flex-grow"></div>
         <div class="flex items-center h-full font-mono transition duration-300 ease-in ">
-            <div class="dropdown dropdown-end h-full flex">
-                <div class="hidden sm:flex hover:bg-[rgb(255,255,255,0.3)] serch-input flex-row h-full border-l-1 border-l-amber-50 gap-6 px-6">
+            <div class="dropdown dropdown-end h-full">
+    
+                <div class="hidden sm:flex hover:bg-[rgb(255,255,255,0.3)] serch-input flex-row h-full border-l-1 border-l-amber-50 gap-4 sm:gap-6 px-4 sm:px-6">
                     <input 
                     type="text" 
                     placeholder="Search by Project Name" 
@@ -154,11 +155,11 @@
                     onclick={() => toggleDropdown(true)}
                     ><span class="size-4 nrk--search-active"></span></button>
                 </div>
-                <div class="flex sm:hidden hover:bg-[rgb(255,255,255,0.3)] serch-input flex-row h-full border-l-1 border-l-amber-50 gap-6 px-6">
+                <div class="flex sm:hidden hover:bg-[rgb(255,255,255,0.3)] serch-input flex-row h-full border-l-1 border-l-amber-50 gap-4 sm:gap-6 px-4 sm:px-6">
                     <input 
                     type="text" 
                     placeholder="Search"
-                    class="field-sizing-content p-0 bg-transparent text-sm text-white placeholder-white border-none focus:ring-0"
+                    class="field-sizing-content p-0 bg-transparent text-xs text-white placeholder-white border-none focus:ring-0"
                     bind:value={searchTerm}
                     onfocus={() => toggleDropdown(true)}
                     onblur={handleBlur}
@@ -166,10 +167,10 @@
                     <button type = "button" 
                     aria-label="Search Button"
                     onclick={() => toggleDropdown(true)}
-                    ><span class="size-4 nrk--search-active"></span></button>
+                    ><span class="size-3 sm:size-4 nrk--search-active"></span></button>
                 </div>
                 {#if searchContent && Object.keys(filteredProjects).length > 0}
-                    <div id = "input-text" class="dropdown-content z-1 w-[350px] overflow-y-auto flex flex-col flex-grow m-auto bg-black shadow-[0_4px_20px_rgba(194,_218,_253,_0.5)]">
+                    <div id = "input-text" class="dropdown-content z-50 w-[250px] sm:w-[350px] max-h-[60dvh] overflow-y-auto flex flex-col m-auto bg-black shadow-[0_4px_15px_rgba(194,_218,_253,_0.5)] border border-white/50">
                         {#each Object.entries(filteredProjects) as [key, projects]}
                             {#each projects as project, index}
                                 <a
@@ -177,7 +178,7 @@
                                     href={project.website}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    class= {`sdg-header-${key}-${index} sdg-item flex flex-row w-full items-center gap-4 py-2 pl-2 border-b-[0.5] border-t border-amber-50`}
+                                    class= {`sdg-header-${key}-${index} sdg-item flex flex-row w-full items-center gap-3 py-2 pl-2 border-b-[0.5] border-t border-amber-50`}
                                     onmouseenter={() => changeSDGBGColor("input-text", getSDG(key).color, `${key}-${index}`)}
                                     onmouseleave={() => changeSDGBGColor("input-text", '', `${key}-${index}`)}
                                 >
@@ -188,7 +189,7 @@
                                         class="sdg-img p-2 w-full h-[50px] object-contain {getSDG(key).color}"
                                     />
                                     </div>
-                                    <div class="flex flex-col h-full justify-center break-words overflow-hidden p-4">
+                                    <div class="flex flex-col h-full justify-center break-words overflow-hidden p-1">
                                         <h6 class="font-normal">{project.title}</h6>
                                     </div>
                                 </a>
@@ -196,7 +197,7 @@
                         {/each}
                     </div>
                 {:else if (searchContent && searchTerm != '') && Object.keys(filteredProjects).length === 0 }
-                    <div id = "input-text" class="dropdown-content z-1 w-[350px] overflow-y-auto flex flex-col flex-grow m-auto bg-black shadow-[0_4px_20px_rgba(194,_218,_253,_0.5)]">
+                    <div id = "input-text" class="dropdown-content z-50 w-[250px] sm:w-[350px] overflow-y-auto flex flex-col m-auto bg-black shadow-[0_4px_15px_rgba(194,_218,_253,_0.5)] border border-white/50">
                         <div class = "sdg-item flex flex-row w-full items-center gap-4 py-2 pl-2 border-b-[0.5] border-t border-amber-50">
                             <div class="flex flex-col h-full justify-center break-words overflow-hidden p-4">
                                 <h6 class="font-normal">No Data Found!</h6>
@@ -213,9 +214,9 @@
                 <div 
                     role="button"
                     tabindex="0" 
-                    class="hover:bg-[rgb(255,255,255,0.3)] flex flex-row items-center h-full border-l-1 border-l-amber-50 text-sm px-6 gap-6 cursor-pointer"
+                    class="hover:bg-[rgb(255,255,255,0.3)] flex flex-row items-center h-full border-l-1 border-l-amber-50 text-xs sm:text-sm px-4 sm:px-6 gap-4 sm:gap-6 cursor-pointer"
 
-                >View SDGs <span class="size-4 nrk--category-active"></span></div>
+                >View SDGs <span class="size-3 sm:size-4 nrk--category-active"></span></div>
                 {#if isDropdownOpen}
                     <div
                         class="fixed inset-0 bg-black opacity-60 z-40"
@@ -223,8 +224,8 @@
                         aria-hidden="true"
                     ></div>
                 {/if}
-                <div id = "sdg-drop" class="dropdown-content z-50 h-[calc(100dvh-60px)] overflow-y-auto flex flex-col m-auto bg-black
-                shadow-[0_4px_35px_rgba(194,_218,_253,_0.5)]
+                <div id = "sdg-drop" class="dropdown-content z-50 max-h-[60dvh] w-[350px] sm:w-auto overflow-y-auto flex flex-col m-auto bg-black
+                shadow-[0_4px_15px_rgba(194,_218,_253,_0.5)] border border-white/50
                 ">
                     <!-- NOTE: projectList function -->
                     <!-- sdgs -> JSON File -->
@@ -239,8 +240,8 @@
                                 <div class="min-w-[50px] max-w-[50px]">
                                     <img src={sdg.image} alt="{sdg.title}" class="sdg-img p-2 w-full h-[50px] object-contain {sdg.color}"/>
                                 </div>
-                                <div class="flex flex-col h-[100%] justify-center truncate">
-                                    <h3 class="font-semibold">{sdg.title}</h3>
+                                <div class="flex flex-col w-[350px] h-[100%] justify-center">
+                                    <h6 class="font-semibold flex flex-wrap">{sdg.title}</h6>
                                     <!-- <p class="truncate font-mono font-light text-sm">{sdg.description}</p> -->
                                 </div>
                             </div>
