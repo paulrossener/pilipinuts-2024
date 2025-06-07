@@ -29,23 +29,18 @@
 </script>
 
 <tr class="border-b border-b-amber-50">
-    <td class="w-[200px] py-2 pr-2">
-        <div>
-            <p class="text-xl font-medium">
-                {name}
-            </p>
-        </div>
-        <p class="text-xs font-mono">
+    <td class="w-[200px] py-2 pr-2 align-top">
+        <p class="text-[8pt] md:text-xs font-mono">
             {#each authors as author, i}
                 {#if i > 0},{/if}
                 {author}
             {/each}
         </p>
     </td>
-    <td class="w-md py-2 font-medium text-xl/6">
+    <td class="w-md py-2 font-medium text-xs md:text-xl/6">
         {title}
     </td>
-    <td class="w-[160px] py-2 flex flex-row flex-wrap gap-2 items-center">
+    <td class="w-[160px] py-2 flex-row flex-wrap gap-2 items-center hidden md:flex">
         {#each related_sdg as sdg_num }
             <img 
                 src="{sdgs[sdg_num].image}"
@@ -55,9 +50,10 @@
     </td>
     <td class="py-2">
         <button class="float-right flex items-center gap-3 font-dmsans hover:bg-[rgb(255,255,255,0.3)] px-4 py-2 transition duration-150" onclick={view_item}>
-            View
+            <span class="hidden md:inline-block">
+                View
+            </span>
             <span class="nrk--fullscreen size-4"></span>
         </button>
-        
     </td>
 </tr>

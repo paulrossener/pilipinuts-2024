@@ -145,7 +145,7 @@
                     <input 
                     type="text" 
                     placeholder="Search by Project Name" 
-                    class="field-sizing-content p-0 bg-transparent text-sm text-white placeholder-white border-none focus:ring-0"
+                    class="w-[23ch] p-0 bg-transparent text-sm text-white placeholder-white border-none focus:ring-0"
                     bind:value={searchTerm}
                     onfocus={() => toggleDropdown(true)}
                     onblur={handleBlur}
@@ -159,7 +159,7 @@
                     <input 
                     type="text" 
                     placeholder="Search"
-                    class="field-sizing-content p-0 bg-transparent text-xs text-white placeholder-white border-none focus:ring-0"
+                    class="w-[6ch] p-0 bg-transparent text-xs text-white placeholder-white border-none focus:ring-0"
                     bind:value={searchTerm}
                     onfocus={() => toggleDropdown(true)}
                     onblur={handleBlur}
@@ -189,7 +189,7 @@
                                         class="sdg-img p-2 w-full h-[50px] object-contain {getSDG(key).color}"
                                     />
                                     </div>
-                                    <div class="flex flex-col h-full justify-center break-words overflow-hidden p-1">
+                                    <div class="flex flex-col h-full justify-center break-words overflow-hidden p-2">
                                         <h6 class="font-normal">{project.title}</h6>
                                     </div>
                                 </a>
