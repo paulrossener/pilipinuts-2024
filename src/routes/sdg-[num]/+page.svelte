@@ -239,7 +239,7 @@
                         <a href="/"><button class="uppercase bg-[rgb(255,255,255,0.3)] hover:bg-white h-full p-2 lg:py-2 lg:px-4">
                         <img src="misc/logo-black.svg" class="lg:hidden w-[20px]" alt="pilipinuts"><span class="hidden lg:block">PilipiNuts 2024</span></button></a>
                         <button class="flex-grow lg:flex-grow-0 uppercase {curr_sdg.color} h-full py-2 px-4">Sustainable Development Goal #{sdg_num}</button>
-                        <span class="hidden lg:block uppercase text-white font-mono ml-2">{curr_sdg_projects.length} Projects Found</span>
+                        <span class="hidden lg:block uppercase text-white font-mono ml-2">{`${curr_sdg_projects.length} Project${curr_sdg_projects.length > 1 ? 's' : ''} Found`}</span>
                     </div>
                     <!-- <h2 class="font-medium">Projects</h2> -->
                     <div>
