@@ -194,7 +194,7 @@
                     <!-- NOTE: projectList function -->
                     <!-- sdgs -> JSON File -->
                     {#each sdg_entries as [number, sdg]}
-                        <a href="/sdg-2/">
+                        <a data-sveltekit-reload href="/sdg-{number}/">
                             <div
                                 id="sdg-dynamic-{number}"
                                 class="sdg-item flex flex-row w-full items-center gap-4 py-2 pl-2 border-b-[0.5] border-t border-amber-50"

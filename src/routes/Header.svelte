@@ -123,10 +123,7 @@
 <nav id="topBar" class="top-bar fixed flex flex-row items-center top-0 w-full h-[60px] bg-black text-white border-b border-amber-50 z-[1000]">
     <div class="flex flex-row items-center w-full h-full">
         <a target="_self" href="/" aria-label="Page Title" class="px-4 py-[10px] title-content flex items-center" onmouseenter={triggerAnimation}>
-            <div class="relative flex items-center gap-1">
-                <div class="w-[24px] h-[24px] md:bg-black flex items-center justify-center">
-                    <img src="misc/logo.svg" class="block" alt="pilipinuts-logo">
-                </div>
+            <div class="relative flex items-center gap-2">
                 <h3 class="hidden sm:block text-2xl tracking-[-1%]">PilipiNuts</h3>
                 <div class="flex flex-row text-black text-lg font-bold gap-1">
                     {#each num as n, i}
@@ -158,7 +155,7 @@
                     onclick={() => toggleDropdown(true)}
                     ><span class="size-4 nrk--search-active"></span></button>
                 </div>
-                <div class="hidden flex sm:hidden hover:bg-[rgb(255,255,255,0.3)] serch-input flex-row h-full border-l-1 border-l-amber-50 gap-4 sm:gap-6 px-4 sm:px-6">
+                <div class="flex sm:hidden hover:bg-[rgb(255,255,255,0.3)] serch-input flex-row h-full border-l-1 border-l-amber-50 gap-4 sm:gap-6 px-4 sm:px-6">
                     <input 
                     type="text" 
                     placeholder="Search"
@@ -218,11 +215,8 @@
                     role="button"
                     tabindex="0" 
                     class="hover:bg-[rgb(255,255,255,0.3)] flex flex-row items-center h-full border-l-1 border-l-amber-50 text-xs sm:text-sm px-4 sm:px-6 gap-4 sm:gap-6 cursor-pointer"
-                >
-                    <span class="font-mono hidden md:inline-block">View SDGs </span>
-                    <span class="font-mono inline-block md:hidden">SDGs </span>
-                    <span class="size-3 sm:size-4 nrk--category-active"></span>
-                </div>
+
+                >View SDGs <span class="size-3 sm:size-4 nrk--category-active"></span></div>
                 {#if isDropdownOpen}
                     <div
                         class="fixed inset-0 bg-black opacity-60 z-40"
