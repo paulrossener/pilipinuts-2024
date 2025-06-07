@@ -165,7 +165,7 @@
                 <input 
                 type="text" 
                 placeholder="Search"
-                class="field-sizing-content p-0 bg-transparent text-xs text-white placeholder-white border-none focus:ring-0"
+                class="w-[6ch] p-0 bg-transparent text-xs text-white placeholder-white border-none focus:ring-0"
                 >
                 <button type = "button" 
                 aria-label="Search Button"
