@@ -13,7 +13,7 @@
 
 <!-- svelte-ignore a11y_consider_explicit_label -->
  <a 
-    href="https://www.facebook.com/sharer/sharer.php?u={base}{page.url.pathname}/#{encodeURIComponent(encoded_url)}"
+    href="https://www.facebook.com/sharer/sharer.php?u=https://pilipinuts-2024.vercel.app{base}{page.url.pathname}/#{encodeURIComponent(encoded_url)}"
     target="_blank"
     class="flex items-center justify-between w-1/2 {sdg_color}  hover:opacity-[0.5] text-black font-medium py-2 px-4 transition duration-150">
     Share to
