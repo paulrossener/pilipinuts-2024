@@ -308,14 +308,14 @@
         <img src="/misc/accent-sm.svg" class="w-[150px]" alt="Accent">
         <h3 class="font-mono">GOT QUESTIONS?</h3>
         <div class="flex flex-col flex-grow gap border-y mt-[10px] w-[280px] text-white">
-            <button type = "button" class = "inquiry-btn flex justify-between items-center w-full px-[2px] py-[15px] border-b ">
+            <a type = "button" class = "inquiry-btn flex justify-between items-center w-full px-[2px] py-[15px] border-b ">
                 <p class='text-xl'>Google Form</p>    
                 <i class="fa-solid fa-arrow-up-right-from-square"></i>
-            </button>
-            <button type = "button" class = "inquiry-btn flex justify-between items-center w-full px-[2px] py-[10px]">
+            </a>
+            <a href="/bts" type ="button" class = "inquiry-btn flex justify-between items-center w-full px-[2px] py-[10px]">
                 <p class='text-xl'>Dev Team</p>    
                 <i class="fa-solid fa-code"></i>
-            </button>
+            </a>
         </div>
     </div>
 </div>
