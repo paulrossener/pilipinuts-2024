@@ -71,8 +71,10 @@ export async function featuredProjects() {
     const realProjects = [];
     for (const [key, sdg] of Object.entries(projects)) {
         for (const project of sdg) {
-            const card = await createProjectCard(project, key);
-            realProjects.push(card);
+            if (project.bell) {
+                const card = await createProjectCard(project, key);
+                realProjects.push(card);
+            }
         }
     }
 
