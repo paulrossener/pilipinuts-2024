@@ -57,11 +57,11 @@
     <div class="grid grid-cols-1 sm:grid-cols-[70%_auto] border-collapse gap-4">
         <!-- First Column -->
         <div class="flex">
-            {#await import(`$lib/assets/plots/${plot}.png`) then { default: src }}
+            <!-- {#await import(`$lib/assets/plots/${plot}.png`) then { default: src }} -->
             <button onclick={()=>showModalImage(plot)} type="button" aria-haspopup="dialog" aria-expanded="false" data-melt-dialog-trigger="" data-dialog-trigger="">
-                <img {src} class="w-auto transition-all duration-200 hover:scale-[1.01] hover:brightness-125" alt="Profile">
+                <img src="plots/{plot}.png" class="w-auto transition-all duration-200 hover:scale-[1.01] hover:brightness-125" alt="Profile">
             </button>
-            {/await}
+            <!-- {/await} -->
         </div>
 
         <!-- Description (Mobile) -->
