@@ -86,6 +86,7 @@
                 </div>
             {/each}
         </div>
+        <div class="absolute bottom-0 left-0 w-full h-[40%] bg-gradient-to-t from-black/90 to-transparent transition duration-500 ease-in-out pointer-events-none"></div>
     </div>
     <div class="home-container z-10 flex flex-row w-full xl:w-[70%] h-full gap-[10px] justify-center xl:justify-start items-center xl:items-start">
         <div class="flex flex-col h-full w-[70%] justify-center">
