@@ -6,7 +6,7 @@
             "description" : "Assistant Professor, Computer Vision and Machine Intelligence Lab, UP Diliman.",
             "github" : "",
             "linkedin" : "",
-            "img" : "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Jisoo_of_Blackpink_at_a_Dior_event%2C_April_18%2C_2025_%283%29.png/1200px-Jisoo_of_Blackpink_at_a_Dior_event%2C_April_18%2C_2025_%283%29.png"
+            "img" : "https://i.ibb.co/vC4F8m8G/20211114-DSCF4757.jpg"
         },
         {
             "name" : "Gavril Coronel",
@@ -51,10 +51,10 @@
         {
             "name" : "Jakin Bacalla",
             "role": ["Content Manager"],
-            "description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. ",
-            "github" : "",
-            "linkedin" : "",
-            "img" : "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Jisoo_of_Blackpink_at_a_Dior_event%2C_April_18%2C_2025_%283%29.png/1200px-Jisoo_of_Blackpink_at_a_Dior_event%2C_April_18%2C_2025_%283%29.png"
+            "description" : "Aspiring developer-deisgner who sings, codes, and always up for something sporty.",
+            "github" : "www.github.com/jeykmishlee",
+            "linkedin" : "www.linkedin.com/in/jcbacalla",
+            "img" : "https://i.ibb.co/qY9k6rxz/Unknown-58.jpg"
         }
     ]
 }
