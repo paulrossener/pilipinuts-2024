@@ -120,7 +120,7 @@
     </div>
 </div>
 <div id="nutshell" class = "flex flex-col justify-center items-center w-full pt-[0px] lg:pt-[55px] text-white gap-[50px]">
-    <div class="flex flex-col items-center w-full pt-[10dvh] sm:pt-[13dvh] md:pt-[17dvh] lg:pt-[19dvh] sm:pb-[1dvh] md:pb-[5dvh] lg:pb-[10dvh] mb-[50%] xl:mb-0">
+    <div class="flex flex-col items-center w-full pt-[10dvh] sm:pt-[13dvh] md:pt-[17dvh] lg:pt-[19dvh] sm:pb-[1dvh] md:pb-[5dvh] lg:pb-[10dvh] mb-[10%] xl:mb-0">
         <div class="flex flex-col w-[87%] sm:w-[83%] md:w-[76%] lg:w-[70%]">
             <div class="flex flex-col w-full gap-[20px] xl:flex-row mb-4 md:mb-8 xl:mb-24">
                 <div class="mb-6 xl:hidden w-full flex flex-col items-center">
@@ -153,11 +153,11 @@
             <div id = "iconList" class="w-full flex flex-wrap justify-center xl:justify-between pb-[2dvh] gap-1"></div>
         </div>
         <!-- <div class="flex-grow"></div> -->
-        <img src="/misc/accent-lg.svg" class="hidden xl:block mt-36 w-full" alt="Accent">
+        <img src="/misc/accent-lg.svg" class="mt-12 w-full" alt="Accent">
     </div>
-    <div class="flex justify-center items-center w-full lg:h-[calc(100dvh-60px)] mb-[50%] xl:mb-0">
+    <div class="flex justify-center items-center w-full lg:h-[calc(100dvh-60px)] mb-[30%] xl:mb-0">
         <div class="w-[87%] sm:w-[83%] md:w-[76%] lg:w-[70%] flex flex-col lg:flex-row gap-8 pt-[1dvh]">
-            <div class="mb-6 xl:hidden w-full flex flex-col items-center">
+            <div class="mb-6 lg:hidden w-full flex flex-col items-center">
                 <h3 class="text-sm md:text-base break-words font-mono mb-3">WHY PILIPINUTS?</h3>
                 <img src="/misc/accent-sm.svg" class="w-[150px]" alt="Accent">
             </div>
@@ -199,8 +199,8 @@
             <div class="nutshell-content flex flex-row w-full h-1/2 xl:flex-col xl:w-[60%]">
                 <div class="nutshell-container w-[100%] h-full flex flex-col border-b border-amber-50 gap-10">
                     <div class="flex flex-col w-full gap-[10px] h-[80%] xl:h-auto">
-                        <span class="hidden xl:block"><h3 class="font-mono">WHY PILIPINUTS?</h3></span>
-                        <img src="/misc/accent-sm.svg" class="hidden xl:block w-[150px]" alt="Accent">
+                        <span class="hidden lg:block"><h3 class="font-mono">WHY PILIPINUTS?</h3></span>
+                        <img src="/misc/accent-sm.svg" class="hidden lg:block w-[150px]" alt="Accent">
                         <p class = "text-sm mt-[10px]">
                             Each project in PilipiNuts 2024 draws inspiration from the United Nations Sustainable Development Goals (SDGs) — a global framework for ending poverty, protecting the planet, and ensuring peace and prosperity for all.
                         </p>
