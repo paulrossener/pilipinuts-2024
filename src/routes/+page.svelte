@@ -63,21 +63,6 @@
 			duration,
 		};
 	});
-
-	// Added script for interactive charts
-	let currentIndex = 0;
-
-	function nextFrame(): void {
-	    
-	    const frames = document.querySelectorAll<HTMLIFrameElement>(".i-chart-segment iframe");
-	    if (frames.length === 0) return;
-	
-	    frames.forEach((frame) => frame.classList.remove("active-frame"));
-	    frames[currentIndex].classList.add("active-frame");
-	    frames[currentIndex].scrollIntoView({ behavior: "smooth", inline: "center" });
-	
-	    currentIndex = (currentIndex + 1) % frames.length;
-	}
 </script>
 
 <div id="home" class = "relative bg-black flex items-center justify-center w-full h-[calc(100dvh-60px)] text-white">
@@ -290,7 +275,7 @@
             </div>
 
 	    <!-- Added HTML for Interactive Charts -->
-	    <h3 class="text-sm lg:text-base font-mono">INTERACTIVE CHARTS</h3><button class="iframe-button" onclick={nextFrame}>Next Chart</button>
+	    <h3 class="text-sm lg:text-base font-mono">INTERACTIVE CHARTS</h3>
 	    <div class="i-chart-segment">
 	        <iframe src="/ms-1.html"></iframe>
 	        <iframe src="/ms-2.html"></iframe>
@@ -554,14 +539,12 @@
     .i-chart-segment {
     display: flex;
     overflow-x: auto;
-    gap: 1rem;
-    padding: 1rem;
    }
 
   
   .i-chart-segment iframe {
-    width: 300px;
-    height: 300px;
+    width: 1456px;
+    height: 600px;
     border: 2px solid transparent;
     transition: border 0.3s;
   }
@@ -569,11 +552,6 @@
   .i-chart-segment iframe.active-frame {
     border-color: yellow;
     box-shadow: 0 0 10px yellow;
-  }
-
-  .iframe-button {
-    margin: 1rem 0;
-    padding: 0.5rem 1rem;
   }
 </style>
 
