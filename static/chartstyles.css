@@ -1,7 +1,6 @@
 
 body{
-    width: 100%;
-    height: 100%;
+    height: 715px;
     display:  flex;
     flex-direction: column;
     justify-content: center;
@@ -20,18 +19,14 @@ body {
     background-size: cover;
 }
 
-.segment{
-    width: 100%;
-    border: 1px solid white;
-    padding: 50px;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-    gap: 10px;
-}
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-y: hidden;
+    border: none;
+  }
+  
 
 .description-container{
     width: 800px;
@@ -270,7 +265,7 @@ body {
     overflow-y: scroll;
     padding: 10px;
 
-    border: 1px solid black;
+    border: 1px solid #333;
 
     display: flex;
     flex-direction: column;
@@ -287,7 +282,7 @@ body {
     padding: 10px;
     width: 150px;
     font-size: x-small;
-    border: 1px solid black;
+    border: 1px solid #333;
 
     border-radius: 10px;
     text-align: center;
