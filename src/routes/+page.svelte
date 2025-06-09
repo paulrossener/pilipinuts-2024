@@ -290,7 +290,7 @@
             </div>
 
 	    <!-- Added HTML for Interactive Charts -->
-	    <h3 class="text-sm lg:text-base font-mono">INTERACTIVE CHARTS</h3><button class="iframe-button" on:click={nextFrame}>Next Chart</button>
+	    <h3 class="text-sm lg:text-base font-mono">INTERACTIVE CHARTS</h3><button class="iframe-button" onclick={nextFrame}>Next Chart</button>
 	    <div class="i-chart-segment">
 	        <iframe src="/ms-1.html"></iframe>
 	        <iframe src="/ms-2.html"></iframe>
