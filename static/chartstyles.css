@@ -1,16 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
 
 body{
-    height: 715px;
+    height: 650px;
     display:  flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-
-
 body {
-    font-family: Arial, sans-serif;
+    font-family: "Roboto Mono", sans-serif; 
     color: white;
     background-color: black;
     background: linear-gradient(120deg, rgba(14, 14, 14), #000 60%);
@@ -26,7 +25,7 @@ html, body {
     overflow-y: hidden;
     border: none;
   }
-  
+
 
 .description-container{
     width: 800px;
@@ -37,7 +36,7 @@ html, body {
 
 .sdg-title{
     font-weight: bold;
-    font-size: xx-large;
+    font-size: x-large;
 }
 
 .chart-container {
