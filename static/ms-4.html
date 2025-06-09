@@ -1,0 +1,32 @@
+<head>
+    <link rel="stylesheet" href="chartstyles.css">
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+</head>
+<body>
+    <div class="description-container">
+        <div class="sdg-title">Affordable and Clean Energy</div>
+      </div>
+      
+      <div class="chart-container">
+        <div class="tooltip4"></div>
+        <div class="chart-title">Gas and Electricity Monthly Price Prediction</div>
+        <div id="chart4" class="chart2"></div>
+        
+  
+      </div>
+      <div class="buttons">
+        <div class="left">
+          Lower Bound: <div class="bound" id="lower-bound"></div>
+          Upper Bound: <div class="bound" id="upper-bound"></div>
+        </div>
+        <div class="right">
+          <div class="button3 clicked3" id="gas">
+            Gas (RON 95)
+          </div>
+          <div class="button3" id="elec">
+            Electricity 
+          </div>
+        </div>
+      </div>
+      <script type="module" src="energy.js"></script>
+</body>  

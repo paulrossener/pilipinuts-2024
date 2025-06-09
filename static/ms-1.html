@@ -1,0 +1,36 @@
+<head>
+    <link rel="stylesheet" href="chartstyles.css">
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+  </head>
+  <body>
+    <div id="ms1">
+      <div class="description-container">
+        <div class="sdg-title">No Poverty</div>
+      </div>
+      <div class="chart-container">
+        <div class="chart-title">Predicted Self-Rated Poverty Count in the Philippines</div>
+        <div id="chart" class="chart"></div>
+        <div class="tooltip"></div>
+      </div>
+      <div class="buttons">
+        <div class="left">
+          Start:
+          <input id="start" type="number" value="2021">
+          End:
+          <input id="end" type="number" value="2030">
+        </div>
+        <div class="right">
+          <div class="button clicked" id="poor">
+            Poor
+          </div>
+          <div class="button" id="not-poor">
+            Not Poor
+          </div>
+          <div class="button" id="borderline">
+            Borderline
+          </div>
+        </div>
+      </div>
+      <script src="poverty.js"></script>
+    </div>
+  </body>  

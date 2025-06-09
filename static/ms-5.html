@@ -1,0 +1,40 @@
+<head>
+    <link rel="stylesheet" href="chartstyles.css">
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+</head>
+<body>
+    <div class="description-container">
+        <div class="sdg-title">Climate Action</div>
+      </div>
+      
+      <div class="chart-container">
+        <div class="tooltip5"></div>
+        <div class="chart-title">Changes in CO2 Vehicle Emission in Metro Manila Projects Temperature Difference Between Metro Manila and Surrounding Provinces</div>
+        <div id="chart5" class="chart"></div>
+        <div class="legends2">
+          <div class="sd"><div style="background-color: #ff79c6; height: 10px; width: 10px"></div>Bataan</div>
+          <div class="sd"><div style="background-color: #bd93f9; height: 10px; width: 10px"></div>Bulacan</div>
+          <div class="sd"><div style="background-color: #8be9fd; height: 10px; width: 10px"></div>Metro Manila</div>
+          <div class="sd"><div style="background-color: #50fa7b; height: 10px; width: 10px"></div>Cavite</div>
+          <div class="sd"><div style="background-color: #f1fa8c; height: 10px; width: 10px"></div>Laguna</div>
+          <div class="sd"><div style="background-color: #ffb86c; height: 10px; width: 10px"></div>Pampanga</div>
+          <div class="sd"><div style="background-color: #ff5555; height: 10px; width: 10px"></div>Rizal</div>
+        </div>
+  
+      </div>
+      <div class="buttons">
+        <div class="left">
+          CO2 Vehicle Emission (tons)<div id="co2"></div>
+          
+        </div>
+        <div class="right">
+          <div class="button4" id="wet">
+            Wet Season
+          </div>
+          <div class="button5 clicked5" id="dry">
+            Dry Season 
+          </div>
+        </div>
+      </div>
+      <script type="module" src="climate.js"></script>
+</body>  
