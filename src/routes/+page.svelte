@@ -64,6 +64,20 @@
 		};
 	});
 
+	// Added script for interactive charts
+	let currentIndex = 0;
+
+	function nextFrame(): void {
+	    
+	    const frames = document.querySelectorAll<HTMLIFrameElement>(".i-chart-segment iframe");
+	    if (frames.length === 0) return;
+	
+	    frames.forEach((frame) => frame.classList.remove("active-frame"));
+	    frames[currentIndex].classList.add("active-frame");
+	    frames[currentIndex].scrollIntoView({ behavior: "smooth", inline: "center" });
+	
+	    currentIndex = (currentIndex + 1) % frames.length;
+	}
 </script>
 
 <div id="home" class = "relative bg-black flex items-center justify-center w-full h-[calc(100dvh-60px)] text-white">
@@ -274,6 +288,17 @@
                     </div>
                 </div>
             </div>
+
+	    <!-- Added HTML for Interactive Charts -->
+	    <h3 class="text-sm lg:text-base font-mono">INTERACTIVE CHARTS</h3><button class="iframe-button" on:click={nextFrame}>Next Chart</button>
+	    <div class="i-chart-segment">
+	        <iframe src="/ms-1.html"></iframe>
+	        <iframe src="/ms-2.html"></iframe>
+	    	<iframe src="/ms-3.html"></iframe>
+	    	<iframe src="/ms-4.html"></iframe>
+	    	<iframe src="/ms-5.html"></iframe>
+	    </div>
+
             <div id="sdgProjects" class="scroll-mt-20 flex flex-col flex-grow w-full gap-[20px] mt-8">
                 <h3 class="text-sm lg:text-base font-mono">ALL PROJECTS BY SDG</h3>
                 <div class="grid grid-cols-1 lg:grid-cols-2 lg:grid-rows-9 gap-x-4 m-auto">
@@ -525,7 +550,31 @@
             align-items: center;
         }
     } */
+    /* Added Styles for interactive charts */
+    .i-chart-segment {
+    display: flex;
+    overflow-x: auto;
+    gap: 1rem;
+    padding: 1rem;
+   }
 
+  
+  .i-chart-segment iframe {
+    width: 300px;
+    height: 300px;
+    border: 2px solid transparent;
+    transition: border 0.3s;
+  }
+
+  .i-chart-segment iframe.active-frame {
+    border-color: yellow;
+    box-shadow: 0 0 10px yellow;
+  }
+
+  .iframe-button {
+    margin: 1rem 0;
+    padding: 0.5rem 1rem;
+  }
 </style>
 
     <!-- import { onMount } from 'svelte';
