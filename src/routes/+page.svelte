@@ -63,6 +63,29 @@
 			duration,
 		};
 	});
+    
+    onMount(() => {
+    function scrollToSectionLR(s: string) {
+      const scrollContainer = document.querySelector<HTMLDivElement>('.i-chart-segment');
+
+      if (scrollContainer) {
+        const targets = scrollContainer.querySelectorAll<HTMLIFrameElement>('iframe');
+
+        if (targets.length > 0) {
+          const tw = targets[0].offsetWidth;
+
+          if (s === 'L') {
+            scrollContainer.scrollBy({ left: -tw, behavior: 'smooth' });
+          } else {
+            scrollContainer.scrollBy({ left: tw, behavior: 'smooth' });
+          }
+        }
+      }
+    }
+
+    document.querySelector<HTMLButtonElement>('#btn1')?.addEventListener('click', () => scrollToSectionLR('L'));
+    document.querySelector<HTMLButtonElement>('#btn2')?.addEventListener('click', () => scrollToSectionLR('R'));
+  });
 </script>
 
 <div id="home" class = "relative bg-black flex items-center justify-center w-full h-[calc(100dvh-60px)] text-white">
@@ -275,11 +298,14 @@
             </div>
 
 	    <!-- Added HTML for Interactive Charts -->
-	    <h3 class="text-sm lg:text-base font-mono">INTERACTIVE CHARTS</h3>
+        <div class="hover-buttons">
+            <h3 class="text-sm lg:text-base font-mono">INTERACTIVE CHARTS</h3>
+            <button id="btn1" class="material-icons">arrow_back_ios</button>
+            <button id="btn2" class="material-icons">arrow_forward_ios</button></div>
 	    <div class="i-chart-segment">
+            <iframe src="/ms-3.html"></iframe>
 	        <iframe src="/ms-1.html"></iframe>
 	        <iframe src="/ms-2.html"></iframe>
-	    	<iframe src="/ms-3.html"></iframe>
 	    	<iframe src="/ms-4.html"></iframe>
 	    	<iframe src="/ms-5.html"></iframe>
 	    </div>
@@ -542,7 +568,7 @@
     display: flex;
     flex-direction: row;
     overflow-x: auto;
-    gap: 10px;
+    zoom: 0.70;
    }
 
   
@@ -552,6 +578,19 @@
     height: 700px;
     overflow: none;
     border: 1px solid black;
+  }
+
+  .hover-buttons{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    margin-bottom: -60px;
+  }
+  .hover-buttons h3{
+    flex: 2;
+  }
+  .hover-buttons button{
+    font-size: small;
   }
 </style>
 
