@@ -536,8 +536,7 @@
         }
     } */
     /* Added Styles for interactive charts */
-
-  .i-chart-segment {
+   .i-chart-segment {
     width: auto;
     height: max-content;
     display: flex;
