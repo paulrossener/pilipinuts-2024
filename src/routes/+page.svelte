@@ -536,22 +536,23 @@
         }
     } */
     /* Added Styles for interactive charts */
-    .i-chart-segment {
+
+  .i-chart-segment {
+    width: auto;
+    height: max-content;
     display: flex;
+    flex-direction: row;
     overflow-x: auto;
+    gap: 10px;
    }
 
   
   .i-chart-segment iframe {
-    width: 1456px;
-    height: 600px;
-    border: 2px solid transparent;
-    transition: border 0.3s;
-  }
-
-  .i-chart-segment iframe.active-frame {
-    border-color: yellow;
-    box-shadow: 0 0 10px yellow;
+    flex: 0 0 auto;
+    width: 100%;
+    height: 700px;
+    overflow: none;
+    border: 1px solid black;
   }
 </style>
 
