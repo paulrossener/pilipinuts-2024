@@ -571,7 +571,12 @@
     zoom: 0.70;
    }
 
-  
+   @media (max-width: 868px) {
+	.i-chart-segment{
+		zoom: 0.5;
+	}
+   }
+
   .i-chart-segment iframe {
     flex: 0 0 auto;
     width: 100%;
